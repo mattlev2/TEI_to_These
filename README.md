@@ -5,7 +5,7 @@ Ce dépôt Github contient les fichiers permettant de créer un article scientif
 Les fichiers LaTeX sont configurés et fonctionnels; ils devraient permettre d'afficher ce que nécessite un article de revue ou de journal en sciences humaines. La transformation du document XML via la feuille de transformation XSL, puis la compilation par un éditeur LaTeX, sont fonctionnelles. 
 
 Le document LaTeX est divisé en plusieurs sous-documents, pour permettre de séparer au mieux les types de fichier:
-* le document principal est Projet_de_these.tex, qui renvoie aux sous-documents suivants au moyen de la fonction \input (package #subfile#):
+* le document principal est Projet_de_these.tex, qui renvoie aux sous-documents suivants au moyen de la fonction \input (package *subfile*):
   * le préambule dans un dossier du même nom, 
   * la bibliographie est dans un dossier séparé, dans un fichier au format .tex
   * le corps du document 
