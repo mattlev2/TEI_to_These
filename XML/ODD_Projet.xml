@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--<?xml version="1.0" encoding="UTF-8"?>-->
 
-<!--Pour l'ODD: j'ai modifié un peu la façon dont on conçoit les références bibliographiques. 
+<!--Pour l'ODD: j'ai modifiÃ© un peu la faÃ§on dont on conÃ§oit les rÃ©fÃ©rences bibliographiques. 
     Le convertisseur Zotero to Latex marche mal pour les ouvrages collectifs, je convertis 
-    donc en biblatex, et je n'ai donc pas besoin de <listBibl>. L'encodage d'un référence bibliographique sera donc: 
-<ref type="bibl" n="diez_garretas_juan_2002">Díez Garretas 2002<measure type="page">135</measure></ref>
--type obligatoire dans ref. Liste fermée: biblio, url, -->
+    donc en biblatex, et je n'ai donc pas besoin de <listBibl>. L'encodage d'un rÃ©fÃ©rence bibliographique sera donc: 
+<ref type="bibl" n="diez_garretas_juan_2002">DÃ­ez Garretas 2002<measure type="page">135</measure></ref>
+-type obligatoire dans ref. Liste fermÃ©e: biblio, url, -->
 
 
-<!--Pourquoi c'est important, quelles lacunes, bien présenter la problématique, justifier
-               pour c'est important? Très grosse diffusion , à faire parce que la seule édition qui
-               existe est inutilisable, et que les travaux jusque là ne sont que philologiques,
-               qu'il reste à comprendre la pourquoi du comment de cette glose. Propre à l'Espagne?
+<!--Pourquoi c'est important, quelles lacunes, bien prÃ©senter la problÃ©matique, justifier
+               pour c'est important? TrÃ¨s grosse diffusion , Ã  faire parce que la seule Ã©dition qui
+               existe est inutilisable, et que les travaux jusque lÃ  ne sont que philologiques,
+               qu'il reste Ã  comprendre la pourquoi du comment de cette glose. Propre Ã  l'Espagne?
                Mouvements de mise en glose du texte en France? Traductions avec un peu de glose?
-               Travail de vraie re-création? Voir, déterminer la faisabilité de la thèse. Essayer de
-               donner un calendrier. Pas inutile de rappeler que j'ai consacré du temps au texte >
-               débroussailler du terrain, se procurer les ms, commencer à transcrire. Commencer par
-               la partie philologique ou ecdotique. Le gros du travail va consister à comprendre les
-               versions. Idée à peu près claire. ERC (y réflechir). Donner une dimension
-               1.1) Philologique 1.1.1) présentation du texte [résumé rapide].-->
+               Travail de vraie re-crÃ©ation? Voir, dÃ©terminer la faisabilitÃ© de la thÃ¨se. Essayer de
+               donner un calendrier. Pas inutile de rappeler que j'ai consacrÃ© du temps au texte >
+               dÃ©broussailler du terrain, se procurer les ms, commencer Ã  transcrire. Commencer par
+               la partie philologique ou ecdotique. Le gros du travail va consister Ã  comprendre les
+               versions. IdÃ©e Ã  peu prÃ¨s claire. ERC (y rÃ©flechir). Donner une dimension
+               1.1) Philologique 1.1.1) prÃ©sentation du texte [rÃ©sumÃ© rapide].-->
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_minimal.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_minimal.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
@@ -26,22 +26,22 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Projet de thèse</title>
+            <title>Projet de thÃ¨se</title>
          </titleStmt>
          <publicationStmt>
             <publisher>Matthias Gille Levenson</publisher>
          </publicationStmt>
          <sourceDesc>
-            <p>Projet de thèse nativement xml. </p>
+            <p>Projet de thÃ¨se nativement xml. </p>
          </sourceDesc>
       </fileDesc>
       <encodingDesc>
          <projectDesc>
-            <p>Projet de thèse nativement xml: permet de montrer les possibilités offertes par la
-               TEI pour la construction de textes académiques (sur le modèle jTEI), tels des
-               articles ou dans mon cas des thèses de doctorat.</p>
-            <p>Ce fichier sera transformé en fichier LaTeX par le biais de feuilles de style XSL,
-               puis compilé par un éditeur LaTeX. </p>
+            <p>Projet de thÃ¨se nativement xml: permet de montrer les possibilitÃ©s offertes par la
+               TEI pour la construction de textes acadÃ©miques (sur le modÃ¨le jTEI), tels des
+               articles ou dans mon cas des thÃ¨ses de doctorat.</p>
+            <p>Ce fichier sera transformÃ© en fichier LaTeX par le biais de feuilles de style XSL,
+               puis compilÃ© par un Ã©diteur LaTeX. </p>
          </projectDesc>
          <tagsDecl>
             <rendition xml:id="italic">font-style:italic;</rendition>
@@ -70,10 +70,10 @@
       <body>
          <div type="introduction">
             <head>Introduction</head>
-            <p>Introduction: Problématique autour de l'actualisation du discours politique</p>
+            <p>Introduction: ProblÃ©matique autour de l'actualisation du discours politique</p>
          </div>
          <div xml:id="I">
-            <head>État de la recherche</head>
+            <head>Ã‰tat de la recherche</head>
             <div xml:id="I_1">
                <head>Les travaux sur le <title>De Regimine principum</title></head>
                <p>
@@ -93,27 +93,27 @@
                   t&#xf4;t en Espagne: don Juan Manuel, par exemple, le mentionne dans le
                      <title>Libro enfinido</title>, autour de 1336-1337 donc<ref type="bibl"
                      n="bizzarri_fray_2000">Bizzarri 2000:<measure type="page">56</measure></ref>. </p>
-               <p><!-- 1.1.2) ce qui s'est fait sur le texte castillan. Les versions. Projets d'édition.
-                  Deux visions différentes.-->
+               <p><!-- 1.1.2) ce qui s'est fait sur le texte castillan. Les versions. Projets d'Ã©dition.
+                  Deux visions diffÃ©rentes.-->
                   Le <title>De regimine principum</title> est traduit au Castillan autour de 1345,
-                  ce qui contribue à sa forte diffusion en Castille entre les XIVe et XVe siècles.
-                  Il sera par exemple résumé et synthétisé en partie par le lettré Pedro de
-                  Chinchilla en 1464, dans un court ouvrage (<title>Exortaçión o ynformaçión de
-                     buena et sana doctrina</title>) à destination du jeune
-                  &#xab;roi-usurpateur&#xbb; Alfonse XII, texte que j'ai édité pour mon mémoire de
-                  Master I. L'autorité du texte est problématique, tant les divergences sont grandes
-                  entre les témoins <ref type="bibl" n="diez_garretas_juan_2002"/>. La critique,
-                  ancienne comme plus récente, a retenu Juan de Castrojeriz comme auteur du texte,
-                  mais cette réalité est douteuse, comme l'indiquent Díez Garretas <ref type="bibl"
-                     n="diez_garretas_juan_2002"><measure type="page">135</measure></ref> et Martín
-                  Sanz: Juan García de Castrojeriz semble être une autorité de convenance [Martín
-                  Sanz 2009:199, note n&#xba;6]. L'intérêt de cette recherche de l'auteur de la
-                  recomposition est certain: il s'agit de déterminer le contexte idéologique en
-                  particulier de re-création de l'oeuvre de l'Augustin Gilles de Rome [topo sur la
-                  provenance du gaillard]. En ce qui concerne les sources de cette traduction glosée
-                  et remaniée, on note un recours important, du fait de la longueur du texte, à des
-                  sources antérieures/extérieures. Cependant, les sources se réduiraient à deux ou
-                  trois textes qui fournissent la matière principale de la glose: on citera
+                  ce qui contribue Ã  sa forte diffusion en Castille entre les XIVe et XVe siÃ¨cles.
+                  Il sera par exemple rÃ©sumÃ© et synthÃ©tisÃ© en partie par le lettrÃ© Pedro de
+                  Chinchilla en 1464, dans un court ouvrage (<title>ExortaÃ§iÃ³n o ynformaÃ§iÃ³n de
+                     buena et sana doctrina</title>) Ã  destination du jeune
+                  &#xab;roi-usurpateur&#xbb; Alfonse XII, texte que j'ai Ã©ditÃ© pour mon mÃ©moire de
+                  Master I. L'autoritÃ© du texte est problÃ©matique, tant les divergences sont grandes
+                  entre les tÃ©moins <ref type="bibl" n="diez_garretas_juan_2002"/>. La critique,
+                  ancienne comme plus rÃ©cente, a retenu Juan de Castrojeriz comme auteur du texte,
+                  mais cette rÃ©alitÃ© est douteuse, comme l'indiquent DÃ­ez Garretas <ref type="bibl"
+                     n="diez_garretas_juan_2002"><measure type="page">135</measure></ref> et MartÃ­n
+                  Sanz: Juan GarcÃ­a de Castrojeriz semble Ãªtre une autoritÃ© de convenance [MartÃ­n
+                  Sanz 2009:199, note n&#xba;6]. L'intÃ©rÃªt de cette recherche de l'auteur de la
+                  recomposition est certain: il s'agit de dÃ©terminer le contexte idÃ©ologique en
+                  particulier de re-crÃ©ation de l'oeuvre de l'Augustin Gilles de Rome [topo sur la
+                  provenance du gaillard]. En ce qui concerne les sources de cette traduction glosÃ©e
+                  et remaniÃ©e, on note un recours important, du fait de la longueur du texte, Ã  des
+                  sources antÃ©rieures/extÃ©rieures. Cependant, les sources se rÃ©duiraient Ã  deux ou
+                  trois textes qui fournissent la matiÃ¨re principale de la glose: on citera
                   notamment Jean de Salisbury (avec le Policraticus), Jean de Galles et Guillaume de
                   Conches [Guardiola 1985]. </p>
 
@@ -141,49 +141,49 @@
                   de notar [Mart&#xed;n Sanz 2009: 221-226]</p>
             </div>
             <div xml:id="I_2">
-               <head>État de la recherche méthodologique. La méthode philologique</head>
-               <p>Du point de vue méthodologique, 1.2) Méthodologique 1.2.1) Lachmann et Bédier.
-                  L'école française. [Il faut que ça soit très rapide] Juste en faire une ligne. Une
-                  opposition entre deux écoles méthodologiques. Fin des années 1980: arrivent de
+               <head>Ã‰tat de la recherche mÃ©thodologique. La mÃ©thode philologique</head>
+               <p>Du point de vue mÃ©thodologique, 1.2) MÃ©thodologique 1.2.1) Lachmann et BÃ©dier.
+                  L'Ã©cole franÃ§aise. [Il faut que Ã§a soit trÃ¨s rapide] Juste en faire une ligne. Une
+                  opposition entre deux Ã©coles mÃ©thodologiques. Fin des annÃ©es 1980: arrivent de
                   nouveaux chercheurs, de Bernard Cerquiglini. 1.2.2) La variance et la New
-                  Philology [montrer le caractère très polémique des discussions avec Cerquiglini
-                  2000] J'ai l'ambition dans mon travail de laisser une place importante à la
-                  réflexion sur les méthodes que j'emploie et leur ancrage dans notre &#xab;moment
-                  scientifique&#xbb; [l'ensemble des méthodes du temps présent, trouver une
-                  expression utilisée] (qu'est ce qui se fait, qu'est ce qui me paraît intéressant,
-                  moins intéressant, o&#xf9; mon travail se situe par rapport à ce &#xab;moment
-                  scientifique&#xbb;. Partir de mon parti-pris méthodologique: les idées que
-                  j'avance me semble particulièrement adaptées aux manuscrits que j'étudie et à
-                  l'histoire de leur texte; je n'ai pas de volonté particulière de théoriser de
-                  façon générale, globale, ni de me positionner dans l'abstrait dans le débat
-                  philologique [Fransen:2005,117 = on ne peut parfois échapper à la notion d'oeuvre
+                  Philology [montrer le caractÃ¨re trÃ¨s polÃ©mique des discussions avec Cerquiglini
+                  2000] J'ai l'ambition dans mon travail de laisser une place importante Ã  la
+                  rÃ©flexion sur les mÃ©thodes que j'emploie et leur ancrage dans notre &#xab;moment
+                  scientifique&#xbb; [l'ensemble des mÃ©thodes du temps prÃ©sent, trouver une
+                  expression utilisÃ©e] (qu'est ce qui se fait, qu'est ce qui me paraÃ®t intÃ©ressant,
+                  moins intÃ©ressant, o&#xf9; mon travail se situe par rapport Ã  ce &#xab;moment
+                  scientifique&#xbb;. Partir de mon parti-pris mÃ©thodologique: les idÃ©es que
+                  j'avance me semble particuliÃ¨rement adaptÃ©es aux manuscrits que j'Ã©tudie et Ã 
+                  l'histoire de leur texte; je n'ai pas de volontÃ© particuliÃ¨re de thÃ©oriser de
+                  faÃ§on gÃ©nÃ©rale, globale, ni de me positionner dans l'abstrait dans le dÃ©bat
+                  philologique [Fransen:2005,117 = on ne peut parfois Ã©chapper Ã  la notion d'oeuvre
                   ni d'intention de l'auteur, comme c'est le cas par exemple avec le Chansonnier N].
-                  Le genre qui est celui du texte qu'il m'est donné d'étudier, un miroir des
-                  princes, texte avant tout théorique (même si la matière narrative ne peut pas être
-                  mise de c&#xf4;té) L'idée globale est donc la suivante pour l'étude de mon texte:
-                  aller chercher dans la variation entre les différents témoins des points de
-                  friction qui seraient significatifs du point de vue de la théorie, de l'idéologie
+                  Le genre qui est celui du texte qu'il m'est donnÃ© d'Ã©tudier, un miroir des
+                  princes, texte avant tout thÃ©orique (mÃªme si la matiÃ¨re narrative ne peut pas Ãªtre
+                  mise de c&#xf4;tÃ©) L'idÃ©e globale est donc la suivante pour l'Ã©tude de mon texte:
+                  aller chercher dans la variation entre les diffÃ©rents tÃ©moins des points de
+                  friction qui seraient significatifs du point de vue de la thÃ©orie, de l'idÃ©ologie
                   que l'on veut transmettre. Ces points de friction sont clairs entre les manuscrits
-                  et l'incunable (à tel point que l'on pourrait presque même parler d'une nouvelle
+                  et l'incunable (Ã  tel point que l'on pourrait presque mÃªme parler d'une nouvelle
                   recomposition du texte![note: ceci est un argument de plus dans la critique qui
-                  doit être faite à l'oeuvre de Beneyto: le Regimiento édité par le lettré espagnol
-                  est celui du temps des Rois Catholiques!]), plus subtils entre les différents
-                  manuscrits. Voici une hypothèse de travail: je n'ai pas de certitude absolue de
-                  trouver quelque chose: dans tous les cas, il s'agit d'expérimenter pour en tirer
-                  des conclusions théoriques autour du concept de &#xab;texte&#xbb;: combien de
-                  texte(s) entre mes différents témoins y a-t-il? Refus, donc, de l'idée d'une
-                  détérioration des textes avec le temps: pour l'instant, parler d'actualisations
-                  successives [mon texte se prête particulièrement bien à ce genre de théorie
-                  critique!] Le point d'achoppement entre les scientifiques semble être la qualité
-                  du scribe: copiste ou remanieur, si on veut un opposition schématique, pour
+                  doit Ãªtre faite Ã  l'oeuvre de Beneyto: le Regimiento Ã©ditÃ© par le lettrÃ© espagnol
+                  est celui du temps des Rois Catholiques!]), plus subtils entre les diffÃ©rents
+                  manuscrits. Voici une hypothÃ¨se de travail: je n'ai pas de certitude absolue de
+                  trouver quelque chose: dans tous les cas, il s'agit d'expÃ©rimenter pour en tirer
+                  des conclusions thÃ©oriques autour du concept de &#xab;texte&#xbb;: combien de
+                  texte(s) entre mes diffÃ©rents tÃ©moins y a-t-il? Refus, donc, de l'idÃ©e d'une
+                  dÃ©tÃ©rioration des textes avec le temps: pour l'instant, parler d'actualisations
+                  successives [mon texte se prÃªte particuliÃ¨rement bien Ã  ce genre de thÃ©orie
+                  critique!] Le point d'achoppement entre les scientifiques semble Ãªtre la qualitÃ©
+                  du scribe: copiste ou remanieur, si on veut un opposition schÃ©matique, pour
                   reprendre les mots de Bernard Cequiglini [Cerquiglini 1983:30]. On parle ici
-                  surtout de textes poétiques, au sens le plus fort du mot. Dans le cas qui
-                  m'intéresse, c'est plut&#xf4;t une opposition entre écoles idéologiques, familles,
+                  surtout de textes poÃ©tiques, au sens le plus fort du mot. Dans le cas qui
+                  m'intÃ©resse, c'est plut&#xf4;t une opposition entre Ã©coles idÃ©ologiques, familles,
                   classes sociales ou simplement moments historiques divergents qui seront au centre
                   de mon travail. </p>
             </div>
             <div xml:id="I_3">
-               <head>État de la recherche thématique</head>
+               <head>Ã‰tat de la recherche thÃ©matique</head>
                <p> &#xe9;tudes politiques en cours ou pass&#xe9;es. La chevalerie. [auteurs qui ont
                   travaill&#xe9; l&#xe0; dessus. Rodr&#xed;guez Velasco, Alice Carette, Monsalvo
                   Ant&#xf3;n, Beceiro Pita?] Noblesse vs chevalerie. La prudence chevaleresque.
@@ -221,7 +221,7 @@
                </p>
             </div>
             <div xml:id="I_4">
-               <head>État de la recherche personnel</head>
+               <head>Ã‰tat de la recherche personnel</head>
                <p>J'ai commenc&#xe9; &#xe0; travailler sur le <title>Regimiento de los
                      pr&#xed;n&#xe7;ipes</title> en Master II, pendant mon ann&#xe9;e &#xe0;
                   Salamanque: il s'est agi pour moi de d&#xe9;couvrir le texte selon une perspective
@@ -248,33 +248,33 @@
             </div>
          </div>
          <div xml:id="seconde_partie">
-            <head>Problématique - Axes de recherche</head>
+            <head>ProblÃ©matique - Axes de recherche</head>
             <div xml:id="II_1">
-               <head>Délimitation du corpus</head>
+               <head>DÃ©limitation du corpus</head>
                <p>Plusieurs options s'offrent au chercheur qui veut travailler sur cette traduction
-                  glosée et reomposée. On peut défendre l'idée qu'une édition de la version B reste
-                  à faire, si on considère que c'est un texte en soi, distinct de la première
-                  version. Cette version B semble en effet avoir été la plus diffusée à partir du
-                  XVe siècle; c'est celle sur laquelle travaille le savant qui a édite, de façon
-                  très criticable aujourd'hui, le texte en 1947. Une ré-édition du texte qui
-                  prendrait en compte sa nature de "seconde main" me semblerait être un travail
-                  justifiable du point de vue scientifique. Ce projet est donc intéressant, mais ce
-                  n'est pas celui que j'ai retenu pour ma thèse. En effet, au vu de la taille de
+                  glosÃ©e et reomposÃ©e. On peut dÃ©fendre l'idÃ©e qu'une Ã©dition de la version B reste
+                  Ã  faire, si on considÃ¨re que c'est un texte en soi, distinct de la premiÃ¨re
+                  version. Cette version B semble en effet avoir Ã©tÃ© la plus diffusÃ©e Ã  partir du
+                  XVe siÃ¨cle; c'est celle sur laquelle travaille le savant qui a Ã©dite, de faÃ§on
+                  trÃ¨s criticable aujourd'hui, le texte en 1947. Une rÃ©-Ã©dition du texte qui
+                  prendrait en compte sa nature de "seconde main" me semblerait Ãªtre un travail
+                  justifiable du point de vue scientifique. Ce projet est donc intÃ©ressant, mais ce
+                  n'est pas celui que j'ai retenu pour ma thÃ¨se. En effet, au vu de la taille de
                   l'ouvrage et du corpus de manuscrits (plus de deux cent chapitres, un dizaine de
-                  témoins -entre 160 et 600 folios par manuscrit-), il semble assez évident que
-                  c'est un travail qui ne peut être accompli en trois ou quatre ans, temps attendu,
-                  avec la réforme de la thèse, pour mener à bien un projet doctoral complet.
-                  D'o&#xf9; l'idée de réduire la taille du corpus pour m'intéresser à la fin du
-                  texte, qui traite de la question de la noblesse et plus particulièrement de la
-                  chevalerie. Le corpus choisi s'étend donc sur la dernière partie du livre III,
-                  partie qui compte vingt trois chapitres. En ce qui concerne les témoins de mon
+                  tÃ©moins -entre 160 et 600 folios par manuscrit-), il semble assez Ã©vident que
+                  c'est un travail qui ne peut Ãªtre accompli en trois ou quatre ans, temps attendu,
+                  avec la rÃ©forme de la thÃ¨se, pour mener Ã  bien un projet doctoral complet.
+                  D'o&#xf9; l'idÃ©e de rÃ©duire la taille du corpus pour m'intÃ©resser Ã  la fin du
+                  texte, qui traite de la question de la noblesse et plus particuliÃ¨rement de la
+                  chevalerie. Le corpus choisi s'Ã©tend donc sur la derniÃ¨re partie du livre III,
+                  partie qui compte vingt trois chapitres. En ce qui concerne les tÃ©moins de mon
                   travail, je choisirai les manuscrits de B qui courent sur tout le livre III (un
                   total de six manuscrits plus un incunable), ainsi qu'un des manuscrits de la
-                  version A pour avoir un point de comparaison tant formelle qu'idéologique entre
-                  les deux versions. 2.0 Avant tout: définition et justification du corpus.</p>
+                  version A pour avoir un point de comparaison tant formelle qu'idÃ©ologique entre
+                  les deux versions. 2.0 Avant tout: dÃ©finition et justification du corpus.</p>
             </div>
             <div>
-               <head>Actualisations du texte / débats théoriques</head>
+               <head>Actualisations du texte / dÃ©bats thÃ©oriques</head>
                <p> DECRIRE SOMMAIREMENT LES MANUSCRITS. [le travail d'&#xe9;dition ne va pas se
                   faire sur une partie tr&#xe8;s large du texte, mais la nature des t&#xe9;moins
                   conserv&#xe9;s fait qu'il est indispensable de prendre en consid&#xe9;ration
@@ -334,7 +334,7 @@
                   diffusion des manuscrits que j'&#xe9;tudie, &#xe9;dicte l'obligation de suivre la
                   doctrine de Bartole<bibl n="rodriguez_velasco_diego_1996">Rodriguez Velasco 1995:
                         <measure type="page">114</measure></bibl> en ce qui concerne la noblesse.
-                  Des r&#xe9;ponses &#xe0; cette première question, je pourrai tenter de formuler
+                  Des r&#xe9;ponses &#xe0; cette premiÃ¨re question, je pourrai tenter de formuler
                   une r&#xe9;ponse plus th&#xe9;orique au d&#xe9;bat philologique pr&#xe9;sent&#xe9;
                   plus haut: il me sera possible de d&#xe9;terminer s'il y a lieu, du point de vue
                   id&#xe9;ologique et pour le corpus singulier que j'&#xe9;tudie, de parler de texte
@@ -390,21 +390,21 @@
                   statuer sur la date de la premi&#xe8;re mise en glose?]</p>
             </div>
             <div xml:id="II_2">
-               <head>Méthodes</head>
-               <p> microscopie/macroscopie: Comme je l'ai affirmé plus haut, il nous a semblé
-                  nécessaire de restreindre mon travail à une partie du texte. Je n'abandonne pas
+               <head>MÃ©thodes</head>
+               <p> microscopie/macroscopie: Comme je l'ai affirmÃ© plus haut, il nous a semblÃ©
+                  nÃ©cessaire de restreindre mon travail Ã  une partie du texte. Je n'abandonne pas
                   pour autant mon ambition d'explication globale du texte, tant du point de vue
-                  philologique qu'idéologique. On pourra ainsi voir mon travail comme une étude
-                  microscopique à visée macroscopique. Ce travail ne sera donc pas linéaire, et
+                  philologique qu'idÃ©ologique. On pourra ainsi voir mon travail comme une Ã©tude
+                  microscopique Ã  visÃ©e macroscopique. Ce travail ne sera donc pas linÃ©aire, et
                   devra aborder des points qui me permettront de comprendre le texte et sa
-                  construction dans leur ensemble [exemple?]. Ainsi, je pense intégrer à mon travail
-                  de thèse l'étude/édition synoptique des prologues que j'ai commencé à réaliser
-                  cette année, et dont on peut trouver une ébauche ici [url]. Cette étude est une
-                  première idée de ce que pourra être mon édition des versions du texte. Mettre en
-                  avant l'idée d'un travail microscopique pour tenter de comprendre le
+                  construction dans leur ensemble [exemple?]. Ainsi, je pense intÃ©grer Ã  mon travail
+                  de thÃ¨se l'Ã©tude/Ã©dition synoptique des prologues que j'ai commencÃ© Ã  rÃ©aliser
+                  cette annÃ©e, et dont on peut trouver une Ã©bauche ici [url]. Cette Ã©tude est une
+                  premiÃ¨re idÃ©e de ce que pourra Ãªtre mon Ã©dition des versions du texte. Mettre en
+                  avant l'idÃ©e d'un travail microscopique pour tenter de comprendre le
                   fonctionnement global, macroscopique du texte, du point de vue philologique. Un
-                  travail en mosa&#xef;que, pas forcément linéaire donc (parler de l'intégration à
-                  la thèse de l'étude des prologues). </p>
+                  travail en mosa&#xef;que, pas forcÃ©ment linÃ©aire donc (parler de l'intÃ©gration Ã 
+                  la thÃ¨se de l'Ã©tude des prologues). </p>
                <p>2.2.2 Versions, distinction entre glose et traduction, arbres de relation
                   Travailler sur les m&#xe9;thodes traditionnelles: un travail philologique
                   classique peut donc &#xea;tre int&#xe9;ressant. Relations entre manuscrits [je
@@ -440,7 +440,7 @@
             </div>
          </div>
          <div xml:id="troisieme_partie">
-            <head>Un ensemble d'outils techniques à mettre en place</head>
+            <head>Un ensemble d'outils techniques Ã  mettre en place</head>
             <p> Mon travail sur les textes du Regimiento, tant philologique qu'informatique est
                intimement li&#xe9; &#xe0; ma r&#xe9;flexion technique (quels outils mettre en
                place?), m&#xe9;thodologique (comment faire?) et &#xe9;pist&#xe9;mologique (sur quoi
@@ -563,49 +563,49 @@
                clart&#xe9; dans la documentation et l'explication de la d&#xe9;marche du chercheur
                est essentielle, pour des raisons de partage de connaissance et de m&#xe9;thode
                notamment.
-               <!--3.2) Le travail sur la variance s'accomode parfaitement des outils informatiques. 3.3) Des enjeux pédagogiques/didactiques/de vulgarisation. 3.4) Une nouvelle manière d'écrire sa thèse: suivre le standard TEI/P5.--></p>
+               <!--3.2) Le travail sur la variance s'accomode parfaitement des outils informatiques. 3.3) Des enjeux pÃ©dagogiques/didactiques/de vulgarisation. 3.4) Une nouvelle maniÃ¨re d'Ã©crire sa thÃ¨se: suivre le standard TEI/P5.--></p>
          </div>
          <div xml:id="quatrieme_partie">
             <head>Localisation</head>
             <p>Je souhaiterais pouvoir travailler avec Carlos Heusch, qui me dirige depuis mon M1.
-               Professeur des Universités, chercheur au CIHAM [Centre Interuniversitaire d'Histoire
-               et d'Archéologie Médiévales] - Histoire, archéologie, littératures des mondes
-               chrétiens et musulmans médiévaux, il a en effet travaillé sur des questions de
-               théorisation politique [Theorica II], sur les concepts de chevalerie et de lignage en
-               particulier, avec de nombreux articles consacrés à ce sujet. L'oeuvre que je veux
-               étudier a aussi été commentée à plusieurs reprises par Carlos Heusch [Heusch 2005,
+               Professeur des UniversitÃ©s, chercheur au CIHAM [Centre Interuniversitaire d'Histoire
+               et d'ArchÃ©ologie MÃ©diÃ©vales] - Histoire, archÃ©ologie, littÃ©ratures des mondes
+               chrÃ©tiens et musulmans mÃ©diÃ©vaux, il a en effet travaillÃ© sur des questions de
+               thÃ©orisation politique [Theorica II], sur les concepts de chevalerie et de lignage en
+               particulier, avec de nombreux articles consacrÃ©s Ã  ce sujet. L'oeuvre que je veux
+               Ã©tudier a aussi Ã©tÃ© commentÃ©e Ã  plusieurs reprises par Carlos Heusch [Heusch 2005,
                Heusch 2010a, Heusch 2010b:291-296]. Je pense aussi travailler avec Francisco
-               Bautista, Professeur titulaire à l'Université de Salamanque, qui a été le
-               co-directeur de mon Mémoire de Master III. Sur le versant Humanités Numériques, je
-               voudrais pouvoir être encadré par Marjorie Burghart, elle-même chargée de recherche
-               au CIHAM. Marjorie Burghart a été ma formatrice principale du point de vue de la TEI
-               et des humanités numériques, lors des différents stages que j'ai pu réaliser à Lyon
-               ou ailleurs. En ce qui concerne le rattachement à un laboratoire de recherche, mon
+               Bautista, Professeur titulaire Ã  l'UniversitÃ© de Salamanque, qui a Ã©tÃ© le
+               co-directeur de mon MÃ©moire de Master III. Sur le versant HumanitÃ©s NumÃ©riques, je
+               voudrais pouvoir Ãªtre encadrÃ© par Marjorie Burghart, elle-mÃªme chargÃ©e de recherche
+               au CIHAM. Marjorie Burghart a Ã©tÃ© ma formatrice principale du point de vue de la TEI
+               et des humanitÃ©s numÃ©riques, lors des diffÃ©rents stages que j'ai pu rÃ©aliser Ã  Lyon
+               ou ailleurs. En ce qui concerne le rattachement Ã  un laboratoire de recherche, mon
                travail me semble s'inscrire assez bien dans le cadre de recherche du CIHAM. Il se
-               prête assez aisément à un rattachement à plusieurs axes de recherche, dont les trois
+               prÃªte assez aisÃ©ment Ã  un rattachement Ã  plusieurs axes de recherche, dont les trois
                suivants m'ont paru les plus proches de mon travail: <list>
-                  <item>Axe 2(4) POUVOIR ET AUTORITÉ Culture nobiliaire / Les mots pour le
+                  <item>Axe 2(4) POUVOIR ET AUTORITÃ‰ Culture nobiliaire / Les mots pour le
                      dire</item>
                   <item>Axe 4 ECRITURE, LIVRE, TRANSLATION Axe 3 CONSTRUCTION et COMMUNICATION des
                      SAVOIRS (2) dont Carlos Heusch est co-responsable avec Laurence
                      Moulinier.</item>
-                  <item>Axe transversal HUMANITÉS NUMÉRIQUES V</item>
-               </list> - Conclusion importante: j'espère avoir bien montré que Sur «le texte»:
-               l'hypothèse de travail qui motive ce projet de thèse est qu'il n'y a pas de «texte»,
-               mais «des textes». Pour l'instant donc, je parlerai de corpus. (?) Sur le titre: le
-               titre canonique du texte est Glosa castellana al regimiento de prínçipes. Au cours de
-               mon travail de Master II, il m'a semblé important d'insister sur la nécessité de
-               trouver un titre plus adapté à ce corpus. En effet, du point de vue de la réception
-               du texte, c'est bien du De regimine principum qui OBJECTIFS DU TRAVAIL: déterminer
+                  <item>Axe transversal HUMANITÃ‰S NUMÃ‰RIQUES V</item>
+               </list> - Conclusion importante: j'espÃ¨re avoir bien montrÃ© que Sur Â«le texteÂ»:
+               l'hypothÃ¨se de travail qui motive ce projet de thÃ¨se est qu'il n'y a pas de Â«texteÂ»,
+               mais Â«des textesÂ». Pour l'instant donc, je parlerai de corpus. (?) Sur le titre: le
+               titre canonique du texte est Glosa castellana al regimiento de prÃ­nÃ§ipes. Au cours de
+               mon travail de Master II, il m'a semblÃ© important d'insister sur la nÃ©cessitÃ© de
+               trouver un titre plus adaptÃ© Ã  ce corpus. En effet, du point de vue de la rÃ©ception
+               du texte, c'est bien du De regimine principum qui OBJECTIFS DU TRAVAIL: dÃ©terminer
                l'histoire du texte, les raisons de la recomposition de la glose. Pourquoi on reforme
-               un texte qui va prendre son indépendance par rapport à l'original, et où l'original
-               disparaît peu à peu ?</p>
+               un texte qui va prendre son indÃ©pendance par rapport Ã  l'original, et oÃ¹ l'original
+               disparaÃ®t peu Ã  peu ?</p>
          </div>
          <div xml:id="bibliographie">
             <head>Bibliographie</head>
-            <!--Comment insérer la biblio?-->
-            <p>Ci-dessous est la bibliographie sélective de mon projet de thèse. Une bibliographie
-               plus exhaustive est accessible à: <ref type="url"
+            <!--Comment insÃ©rer la biblio?-->
+            <p>Ci-dessous est la bibliographie sÃ©lective de mon projet de thÃ¨se. Une bibliographie
+               plus exhaustive est accessible Ã : <ref type="url"
                   target="http://perso.ens-lyon.fr/matthias.gille-levenson/these/biblio.html"/>. <listBibl>
                   <bibl/>
                </listBibl>
