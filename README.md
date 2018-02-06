@@ -14,3 +14,5 @@ Le document LaTeX est divisé en plusieurs sous-documents, pour permettre de sé
 ### Utilisation du dossier
 
 Pour configurer votre dossier, il suffit de transformer votre document .xml (dans le dossier du même nom) _valide_ avec la feuille de transformation dans /XSL, et de désigner le dossier /Sortie_LaTeX/corps comme dossier de sortie du document dans votre éditeur XML. Ne pas oublier de changer les chemins !
+
+Les noms de dossier et de fichiers sont arbitraire et peuvent être changés, mais cette structure me semble être la plus claire possible. Chaque type d'information est ainsi dans un document séparé, et les modifications sont facilitées. 
