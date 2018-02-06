@@ -88,7 +88,5 @@
     <xsl:template match="tei:hi">
         <xsl:text>\textit{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
     </xsl:template>
-    <!--Liste des éléments à transformer:
-
-        -chaîne de caractères Latex > \LaTeX-->
+ 
 </xsl:stylesheet>
