@@ -10,3 +10,7 @@ Le document LaTeX est divisé en plusieurs sous-documents, pour permettre de sé
     * la bibliographie dans un dossier séparé du même nom, dans un fichier au format .tex
   * le corps du document: c'est le fichier de sortie de la transformation xsl. 
 
+
+### Utilisation du dossier
+
+Pour configurer votre dossier, il suffit de transformer votre document .xml (dans le dossier du même nom) _valide_ avec la feuille de transformation dans /XSL, et de désigner le dossier /Sortie_LaTeX/corps comme dossier de sortie du document dans votre éditeur XML. 
