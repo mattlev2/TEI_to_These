@@ -8,4 +8,4 @@ Le document LaTeX est divisé en plusieurs sous-documents, pour permettre de sé
 * le document principal est Projet_de_these.tex, qui renvoie aux sous-documents suivants au moyen de la fonction \input (package *subfile*):
   * le préambule dans un dossier du même nom, qui renvoie lui-même à: 
     * la bibliographie dans un dossier séparé du même nom, dans un fichier au format .tex
-  * le corps du document 
+  * le corps du document: c'est le fichier de sortie de la transformation xsl. 
