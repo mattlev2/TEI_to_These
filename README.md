@@ -9,3 +9,5 @@ Le document LaTeX est divisé en plusieurs sous-documents, pour permettre de sé
   * le préambule dans un dossier du même nom, qui renvoie lui-même à: 
     * la bibliographie dans un dossier séparé du même nom, dans un fichier au format .tex
   * le corps du document: c'est le fichier de sortie de la transformation xsl. 
+
+Attention, certains chemins renvoyant vers les fichiers sont absolus et non relatifs. 
