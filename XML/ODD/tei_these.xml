@@ -43,10 +43,14 @@
         bibliographie est dans l'élément structurel <gi>back</gi>, dans un <gi>div</gi> de type
         "bibliographie".</p>
       <schemaSpec ident="tei_odd" start="TEI teiCorpus">
+        
+        <!-- required -->
         <moduleRef key="tei"/>
-
+        <!-- required -->
+        
         <!-- required -->
         <moduleRef key="core"/>
+        <!-- required -->
         <elementSpec ident="hi" mode="change" module="core">
           <attList>
             <attDef ident="rend" mode="replace" usage="req">
@@ -71,9 +75,6 @@
           </attList>
         </elementSpec>
         <!-- required -->
-
-        <moduleRef key="analysis"/>
-        <moduleRef key="corpus"/>
         <moduleRef key="header"/>
         <!-- required -->
 
@@ -99,13 +100,13 @@
             </attDef>
           </attList>
         </elementSpec>
-
         <!--rendre l'att. type obligatoire dans <seg/>-->
-        <moduleRef key="msdescription"/>
-        <moduleRef key="namesdates"/>
-        <moduleRef key="textcrit"/>
 
+        <moduleRef key="namesdates"/>
+        
+        <!-- required -->
         <moduleRef key="textstructure"/>
+        <!-- required -->
         <elementSpec ident="div" mode="change" module="textstructure">
           <attList>
             <attDef ident="xml:id" mode="replace" usage="req">
@@ -115,7 +116,7 @@
             </attDef>
           </attList>
         </elementSpec>
-        <!-- required -->
+        
 
 
         <elementSpec ident="p" mode="change" module="core">
@@ -133,7 +134,6 @@
             </attDef>
           </attList>
         </elementSpec>
-
         <moduleRef key="tagdocs"/>
       </schemaSpec>
     </body>
