@@ -1,0 +1,358 @@
+@font-face {
+    font-family: 'fbbbold';
+    src: url('Fonts/fbb-bold-webfont.woff2') format('woff2'), 
+url('Fonts/fbb-bold-webfont.woff') format('woff'), 
+url('Fonts/fbb-bold-webfont.svg#fbbbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'fbbbolditalic';
+    src: url('Fonts/fbb-bolditalic-webfont.woff2') format('woff2'), 
+url('Fonts/fbb-bolditalic-webfont.woff') format('woff'), 
+url('Fonts/fbb-bolditalic-webfont.svg#fbbbolditalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'fbbitalic';
+    src: url('Fonts/fbb-italic-webfont.woff2') format('woff2'), 
+url('Fonts/fbb-italic-webfont.woff') format('woff'), 
+url('Fonts/fbb-italic-webfont.svg#fbbitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'fbbregular';
+    src: url('Fonts/fbb-regular-webfont.woff2') format('woff2'), 
+url('Fonts/fbb-regular-webfont.woff') format('woff'), 
+url('Fonts/fbb-regular-webfont.svg#fbbregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+h1,
+h2,
+h3 {
+    text-align: center
+}
+
+body {
+    font-family: "fbb", serif;
+    text-align: justify;
+
+
+}
+
+.container {
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.container::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.main {
+    float: left;
+    display: block;
+    margin-right: 0%;
+    width: 70.88078%;
+}
+
+.surligne {
+    background-color: #e0e0eb;
+}
+
+.main:last-child {
+    margin-right: 0;
+}
+
+.sidebar2 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #e7e6e6;
+}
+
+li {
+    padding-top: 5px;
+}
+
+.check,
+.check2 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+}
+
+span.popup {
+    position: absolute;
+    width: 200px;
+    visibility: hidden;
+    background: #F2EFEF;
+    padding: 0em 1em 0em 1em;
+    border: solid 1px;
+    font-size: 90%;
+    font-family: Helvetica, Sans-serif;
+    line-height: 1.4;
+    -moz-border-radius: .5em;
+    -webkit-border-radius: .5em;
+    border-radius: .5em;
+    box-shadow: 10px 10px 5px #888888;
+    z-index: 250;
+}
+
+.main .mainInner {
+    float: left;
+    display: block;
+    margin-right: 3.57866%;
+    width: 74.10533%;
+    margin-left: 12.94733%;
+}
+.main .mainInner:last-child {
+    margin-right: 0;
+}
+.main .mainInner div {
+    display: none;
+}
+
+.main .mainInner #glosa div {
+    display: block;
+}
+
+.main .mainInner div.show {
+    display: block;
+}
+
+.sideContainer {
+    float: right;
+    display: block;
+    /*    margin-right: 2.35765%;
+*/
+    width: 25.76157%;
+}
+.sideContainer:last-child {
+    margin-right: 0;
+}
+
+
+.sideContainer2 {
+    float: right;
+    display: block;
+    margin-right: 2.35765%;
+    width: 25.76157%;
+}
+.sideContainer2:last-child {
+    margin-right: 0;
+}
+
+.sideContainer3 {
+    float: right;
+    display: block;
+    margin-right: 2.35765%;
+    width: 25.76157%;
+}
+.sideContainer3:last-child {
+    margin-right: 0;
+}
+
+.sideContainer4 {
+    float: right;
+    display: block;
+    margin-top: 3cm;
+    /*margin-right: 2.35765%;*/
+    width: 25.76157%;
+}
+.sideContainer4:last-child {
+    margin-right: 0;
+}
+
+.persName {
+    color: blue;
+    cursor: pointer;
+
+}
+
+.persName:hover {
+    color: red;
+}
+
+/*.tableMatiere:hover{
+    color: red;
+}
+*/
+.tabmat:hover {
+    color: red;
+    cursor: pointer;
+}
+
+
+
+a {
+    color: black;
+    font-size: 16px;
+    font-family: Garamond;
+    text-decoration: none;
+}
+
+.redTed {
+    color: red;
+}
+
+.fond {
+    background-color: blue;
+}
+
+body {
+    width: 100%;
+}
+
+.titreMenu itemOut {
+    background-color: #e7e6e6;
+}
+
+.sidebar {
+    background-color: #e7e6e6;
+}
+.sidebar .person {
+    display: none;
+}
+
+.person {
+    padding: 30px;
+}
+
+.notice {
+    padding: 30px;
+    background-color: #e7e6e6;
+}
+
+
+.person li {
+    list-style-position: outside;
+    margin-left: -20px;
+}
+
+.personReferenceLink {
+    cursor: pointer;
+}
+
+/*# sourceMappingURL=cssextern.css.map */
+/******** Feuille de styles du menu ************/
+.conteneurMenu {
+    float: left;
+    width: 150px; /** Tenir compte du width de titreMenu ;) **/
+    border: 1px;
+    padding: 0px;
+    margin: 5px;
+}
+
+.menu {
+    float: left;
+    margin: 1px;
+    padding: 2px;
+    clear: both;
+}
+
+.titreMenu,
+.contenuMenu,
+.lienMenu {
+    color: #000000;
+}
+
+.titreMenu,
+.contenuMenu {
+    border: 1px;
+    background-color: #e7e6e6;
+    width: 120px;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+}
+
+.titreMenu {
+    z-index: 0;
+}
+
+.contenuMenu {
+    display: none;
+    background-color: #FFFFFF;
+    position: absolute;
+    z-index: 1;
+}
+
+.menuOverflow {
+    overflow: auto;
+    height: 200px;
+}
+
+.itemOver {
+    background-color: #AAAAFF;
+    /*font-weight: bold;*/
+}
+
+.itemOut {
+    background-color: #FFFFFF;
+}
+
+.lienMenu {
+    text-decoration: none;
+}
+
+.crlf {
+    clear: both;
+    visibility: hidden;
+}
+
+.smallcaps {
+    font-variant: small-caps;
+}
+
+.biblio {
+    margin-left: 150px;
+    margin-right: 150px;
+    font-size: 130%;
+}
+
+.entree {
+    text-indent: -50px;
+    margin-left: 150px;
+    margin-right: 150px;
+    font-size: 130%;
+    padding-bottom: 20px;
+}
+
+.espace {
+    display: inline-block;
+    width: 20px;
+}
+
+/******** Fin de la feuille de styles du menu ************/
