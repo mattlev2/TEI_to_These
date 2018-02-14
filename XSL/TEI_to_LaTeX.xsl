@@ -162,7 +162,7 @@
         <xsl:text>}</xsl:text>
     </xsl:template>
 
-    <!--Mise en valeur d'un morceau de texte (car rapporté tel quel, ou car plus important que les autres-->
+    <!--Mise en valeur d'un morceau de texte (car rapporté tel quel, ou car plus important que les autres)-->
     <xsl:template match="tei:hi">
         <xsl:if test="@rend = 'italique'">
             <xsl:text>\textit{</xsl:text>
@@ -171,6 +171,11 @@
         </xsl:if>
         <xsl:if test="@rend = 'petites_capitales'">
             <xsl:text>\textsc{</xsl:text>
+            <xsl:apply-templates/>
+            <xsl:text>}</xsl:text>
+        </xsl:if>
+        <xsl:if test="@rend = 'brouillon'">
+            <xsl:text>\underline{</xsl:text>
             <xsl:apply-templates/>
             <xsl:text>}</xsl:text>
         </xsl:if>
