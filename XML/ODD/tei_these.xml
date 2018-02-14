@@ -4,7 +4,7 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>tei_odd</title>
+        <title>tei_these.odd</title>
         <author>Sebastian Rahtz</author>
       </titleStmt>
       <publicationStmt>
@@ -35,47 +35,45 @@
   <text>
     <body>
       <head>TEI Complete</head>
-      <p> of the TEI (P5) modules. This is a very useful starting place for manually creating your
-        own customizations — it is much easier to delete the modules you do not want than to add the
-        modules you do. Furthermore this customization often proves helpful for testing TEI
-        software.This TEI customization describes a schema that includes&#13; all of the TEI (P5)
-        modules. This is a very useful&#13; starting place for manually creating your own
-        customizations&#13; — it is much easier to delete the modules you do not&#13; want than to
-        add the modules you do. Furthermore this&#13; customization often proves helpful for testing
-        TEI&#13; software.all of the TEI (P5) modules. This is a very useful&#13; starting place for
-        manually creating your own customizations&#13; — it is much easier to delete the modules you
-        do not&#13; want than to add the modules you do. Furthermore this&#13; customization often
-        proves helpful for testing TEI&#13; software.This TEI customization describes a schema that
-        includes&#13; all of the TEI (P5) modules. This is a very useful&#13; starting place for
-        manually creating your own customizations&#13; — it is much easier to delete the modules you
-        do not&#13; want than to add the modules you do. Furthermore this&#13; customization often
-        proves helpful for testing TEI&#13; software.</p>
-      <p>However, this particular TEI customization is <emph>not recommended</emph> for actual use
-        for encoding documents. It produces schemas and reference documentation that will be much
-        larger, and include many more elements, than almost anyone could conceivably ever need.
-        Tempting though it may be simply to have absolutely everything, and <q>just ignore</q>
-        elements not required, experience has shown that their presence makes the documentation
-        harder to read and use, and makes a schema that is far more lax than desired.</p>
+      <p> ODD créé pour guider la construction d'une thèse au format XML TEI/P5. Inspiré de l'ODD du
+        jTEI.</p>
+      <p>Je suis les recommendations du jTEI en ce qui est de la structure du document. Des
+          <gi>div</gi> (contenant nécessairement un attribut @xml:id) marquent la structure du
+        document, dont le premier enfant est un <gi>head</gi>, le titre de la division en cours. La
+        bibliographie est dans l'élément structurel <gi>back</gi>, dans un <gi>div</gi> de type
+        "bibliographie".</p>
       <schemaSpec ident="tei_odd" start="TEI teiCorpus">
         <moduleRef key="tei"/>
+
         <!-- required -->
         <moduleRef key="core"/>
+        <elementSpec ident="hi" mode="change" module="core">
+          <attList>
+            <attDef ident="rend" mode="replace" usage="req">
+              <datatype>
+                <dataRef key="teidata.enumerated"/>
+              </datatype>
+              <valList type="closed">
+                <valItem ident="italique">
+                  <gloss>Mise en valeur traditionnelle: pensé pour être rendu en italique
+                    normalement</gloss>
+                </valItem>
+                <valItem ident="petites_capitales">
+                  <gloss>Mise en valeur spécifique: petites capitales (pour des titres ou des
+                    citations par exemple)</gloss>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
         <!-- required -->
+
         <moduleRef key="analysis"/>
-        <moduleRef key="certainty"/>
         <moduleRef key="corpus"/>
         <moduleRef key="header"/>
         <!-- required -->
-        <moduleRef key="iso-fs"/>
-        <moduleRef key="linking"/>
-        <moduleRef key="msdescription"/>
-        <moduleRef key="namesdates"/>
-        <moduleRef key="textcrit"/>
-        <moduleRef key="textstructure"/>
-        <!-- required -->
-        <moduleRef key="transcr"/>
-        <moduleRef key="tagdocs"/>
 
+        <moduleRef key="linking"/>
         <!--rendre l'att. type obligatoire dans <seg/>-->
         <elementSpec ident="ref" mode="change" module="linking">
           <attList>
@@ -97,7 +95,42 @@
             </attDef>
           </attList>
         </elementSpec>
+
         <!--rendre l'att. type obligatoire dans <seg/>-->
+        <moduleRef key="msdescription"/>
+        <moduleRef key="namesdates"/>
+        <moduleRef key="textcrit"/>
+
+        <moduleRef key="textstructure"/>
+        <elementSpec ident="div" mode="change" module="textstructure">
+          <attList>
+            <attDef ident="xml:id" mode="replace" usage="req">
+              <datatype>
+                <dataRef key="teidata.enumerated"/>
+              </datatype>
+            </attDef>
+          </attList>
+        </elementSpec>
+        <!-- required -->
+
+
+        <elementSpec ident="p" mode="change" module="core">
+          <attList>
+            <attDef ident="rend" mode="replace" usage="opt">
+              <datatype>
+                <dataRef key="teidata.enumerated"/>
+              </datatype>
+              <!--Par défaut, le paragraphe sera indenté-->
+              <valList type="open">
+                <valItem ident="sans_indentation">
+                  <gloss>Paragraphe sans indentation</gloss>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+
+        <moduleRef key="tagdocs"/>
       </schemaSpec>
     </body>
   </text>

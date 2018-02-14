@@ -7,7 +7,7 @@ namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xi = "http://www.w3.org/2001/XInclude"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2018-02-06T10:26:58Z. .
+# Schema generated from ODD source 2018-02-12T09:01:19Z. .
 # TEI Edition: Version 3.3.0. Last updated on
 #	31st January 2018, revision f4d8439
 # TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.3.0/
@@ -49,7 +49,7 @@ anyElement-content =
     (text | anyElement-content)*
   }
   >> sch:pattern [
-       id = "d543117e95376-constraint"
+       id = "d30233e86265-constraint"
        "\x{a}" ~
        "         "
        sch:rule [
@@ -73,7 +73,7 @@ anyElement-constraint =
     (text | anyElement-constraint)*
   }
   >> sch:pattern [
-       id = "d543117e95702-constraint"
+       id = "d30233e86590-constraint"
        "\x{a}" ~
        "         "
        sch:rule [
@@ -97,7 +97,7 @@ anyElement-datatype =
     (text | anyElement-datatype)*
   }
   >> sch:pattern [
-       id = "d543117e96610-constraint"
+       id = "d30233e87499-constraint"
        "\x{a}" ~
        "         "
        sch:rule [
@@ -246,41 +246,6 @@ att.written.attribute.hand =
   
   ## points to a handNote element describing the hand considered responsible for the textual content of the element concerned.
   attribute hand { xsd:anyURI }?
-att.damaged.attributes =
-  att.dimensions.attributes,
-  att.written.attributes,
-  att.damaged.attribute.agent,
-  att.damaged.attribute.degree,
-  att.damaged.attribute.group
-att.damaged.attribute.agent =
-  
-  ## categorizes the cause of the damage, if it can be identified.
-  ## Sample values include: 1] rubbing; 2] mildew; 3] smoke
-  attribute agent {
-    xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
-  }?
-att.damaged.attribute.degree =
-  
-  ## provides a coded representation of the degree of damage, either as a number between 0 (undamaged) and 1 (very extensively damaged), or as one of the codes high, medium, low, or unknown. The damage element with the degree attribute should only be used where the text may be read with some confidence; text supplied from other sources should be tagged as supplied.
-  attribute degree {
-    xsd:double
-    | (
-       ##
-       "high"
-       | 
-         ##
-         "medium"
-       | 
-         ##
-         "low"
-       | 
-         ##
-         "unknown")
-  }?
-att.damaged.attribute.group =
-  
-  ## assigns an arbitrary number to each stretch of damage regarded as forming part of the same physical phenomenon.
-  attribute group { xsd:nonNegativeInteger }?
 att.breaking.attributes = att.breaking.attribute.break
 att.breaking.attribute.break =
   
@@ -652,8 +617,6 @@ att.global.attributes =
   att.global.rendition.attributes,
   att.global.linking.attributes,
   att.global.analytic.attributes,
-  att.global.facs.attributes,
-  att.global.change.attributes,
   att.global.responsibility.attributes,
   att.global.source.attributes,
   att.global.attribute.xmlid,
@@ -1061,18 +1024,6 @@ att.pointing.group.attribute.targFunc =
       xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }*
     }
   }?
-att.scoping.attributes =
-  att.scoping.attribute.target, att.scoping.attribute.match
-att.scoping.attribute.target =
-  
-  ## points at one or several elements or sets of elements by means of one or more data pointers, using the URI syntax.
-  attribute target {
-    list { xsd:anyURI+ }
-  }?
-att.scoping.attribute.match =
-  
-  ## supplies an arbitrary XPath expression using the syntax defined in  which identifies a set of nodes, selected within the context identified by the target attribute if this is supplied, or within the context of the parent element if it is not.
-  attribute match { text }?
 att.segLike.attributes =
   att.datcat.attributes,
   att.fragmentable.attributes,
@@ -1404,144 +1355,26 @@ model.pPart.msdesc =
   | signatures
   | stamp
   | watermark
-model.pPart.editorial = choice | abbr | expan | ex | am | subst
-model.pPart.editorial_alternation =
-  choice | abbr | expan | ex | am | subst
-model.pPart.editorial_sequence = choice, abbr, expan, ex, am, subst
-model.pPart.editorial_sequenceOptional =
-  choice?, abbr?, expan?, ex?, am?, subst?
+model.pPart.editorial = choice | abbr | expan
+model.pPart.editorial_alternation = choice | abbr | expan
+model.pPart.editorial_sequence = choice, abbr, expan
+model.pPart.editorial_sequenceOptional = choice?, abbr?, expan?
 model.pPart.editorial_sequenceOptionalRepeatable =
-  choice*, abbr*, expan*, ex*, am*, subst*
-model.pPart.editorial_sequenceRepeatable =
-  choice+, abbr+, expan+, ex+, am+, subst+
+  choice*, abbr*, expan*
+model.pPart.editorial_sequenceRepeatable = choice+, abbr+, expan+
 model.pPart.transcriptional =
-  sic
-  | corr
-  | reg
-  | orig
-  | add
-  | del
-  | unclear
-  | damage
-  | handShift
-  | restore
-  | supplied
-  | surplus
-  | secl
-  | mod
-  | redo
-  | retrace
-  | undo
+  sic | corr | reg | orig | add | del | unclear
 model.pPart.transcriptional_alternation =
-  sic
-  | corr
-  | reg
-  | orig
-  | add
-  | del
-  | unclear
-  | damage
-  | handShift
-  | restore
-  | supplied
-  | surplus
-  | secl
-  | mod
-  | redo
-  | retrace
-  | undo
+  sic | corr | reg | orig | add | del | unclear
 model.pPart.transcriptional_sequence =
-  sic,
-  corr,
-  reg,
-  orig,
-  add,
-  del,
-  unclear,
-  damage,
-  handShift,
-  restore,
-  supplied,
-  surplus,
-  secl,
-  mod,
-  redo,
-  retrace,
-  undo
+  sic, corr, reg, orig, add, del, unclear
 model.pPart.transcriptional_sequenceOptional =
-  sic?,
-  corr?,
-  reg?,
-  orig?,
-  add?,
-  del?,
-  unclear?,
-  damage?,
-  handShift?,
-  restore?,
-  supplied?,
-  surplus?,
-  secl?,
-  mod?,
-  redo?,
-  retrace?,
-  undo?
+  sic?, corr?, reg?, orig?, add?, del?, unclear?
 model.pPart.transcriptional_sequenceOptionalRepeatable =
-  sic*,
-  corr*,
-  reg*,
-  orig*,
-  add*,
-  del*,
-  unclear*,
-  damage*,
-  handShift*,
-  restore*,
-  supplied*,
-  surplus*,
-  secl*,
-  mod*,
-  redo*,
-  retrace*,
-  undo*
+  sic*, corr*, reg*, orig*, add*, del*, unclear*
 model.pPart.transcriptional_sequenceRepeatable =
-  sic+,
-  corr+,
-  reg+,
-  orig+,
-  add+,
-  del+,
-  unclear+,
-  damage+,
-  handShift+,
-  restore+,
-  supplied+,
-  surplus+,
-  secl+,
-  mod+,
-  redo+,
-  retrace+,
-  undo+
+  sic+, corr+, reg+, orig+, add+, del+, unclear+
 model.pPart.edit = model.pPart.editorial | model.pPart.transcriptional
-model.linePart =
-  model.hiLike
-  | choice
-  | add
-  | del
-  | unclear
-  | w
-  | c
-  | pc
-  | seg
-  | zone
-  | damage
-  | handShift
-  | restore
-  | line
-  | mod
-  | redo
-  | retrace
-  | undo
 model.ptrLike = ptr | ref
 model.lPart = notAllowed
 model.global.meta =
@@ -1550,12 +1383,6 @@ model.global.meta =
   | spanGrp
   | interp
   | interpGrp
-  | precision
-  | certainty
-  | respons
-  | fs
-  | fLib
-  | fvLib
   | link
   | linkGrp
   | timeline
@@ -1563,9 +1390,7 @@ model.global.meta =
   | joinGrp
   | alt
   | altGrp
-  | substJoin
-  | listTranspose
-model.milestoneLike = milestone | gb | pb | lb | cb | anchor | fw
+model.milestoneLike = milestone | gb | pb | lb | cb | anchor
 model.gLike = notAllowed
 model.oddDecl =
   moduleSpec
@@ -1737,12 +1562,9 @@ model.stageLike_sequence = stage
 model.stageLike_sequenceOptional = stage?
 model.stageLike_sequenceOptionalRepeatable = stage*
 model.stageLike_sequenceRepeatable = stage+
-model.featureVal.complex = fs | vColl | vNot | vMerge
-model.featureVal.single =
-  binary | symbol | numeric | \string | vLabel | \default | vAlt
 model.entryPart = notAllowed
 model.eventLike = event | listEvent
-model.global.edit = gap | app | addSpan | damageSpan | delSpan | space
+model.global.edit = gap | app
 model.divPart = model.lLike | model.pLike | lg | sp | schemaSpec
 model.persStateLike =
   persName
@@ -1852,7 +1674,7 @@ model.publicationStmtPart.agency = publisher | distributor | authority
 model.publicationStmtPart.detail =
   model.ptrLike | address | date | pubPlace | idno | availability
 model.availabilityPart = licence
-model.certLike = precision | certainty | respons
+model.certLike = notAllowed
 model.descLike = desc
 model.glossLike = gloss | equiv | altIdent
 model.quoteLike = quote | cit
@@ -1925,17 +1747,7 @@ model.msItemPart =
   | msItemStruct
   | decoNote
 model.choicePart =
-  sic
-  | corr
-  | reg
-  | orig
-  | unclear
-  | abbr
-  | expan
-  | seg
-  | ex
-  | am
-  | supplied
+  sic | corr | reg | orig | unclear | abbr | expan | seg
 model.imprintPart = publisher | biblScope | pubPlace | distributor
 model.catDescPart = textDesc
 model.settingPart = locale | activity
@@ -1993,8 +1805,6 @@ model.global =
   | model.milestoneLike
   | model.noteLike
   | model.global.edit
-  | metamark
-model.featureVal = model.featureVal.complex | model.featureVal.single
 model.biblPart =
   model.respLike
   | model.imprintPart
@@ -2067,7 +1877,6 @@ model.encodingDescPart =
   | classDecl
   | geoDecl
   | appInfo
-  | fsdDecl
   | variantEncoding
   | schemaSpec
 model.editorialDeclPart =
@@ -2089,13 +1898,11 @@ model.profileDescPart =
   | textClass
   | calendarDesc
   | correspDesc
-  | handNotes
-  | listTranspose
 model.correspActionPart =
   model.dateLike | model.addressLike | model.nameLike | note
 model.correspContextPart = model.ptrLike | model.pLike | note
 model.correspDescPart = note | correspAction | correspContext
-model.resourceLike = fsdDecl | \text | facsimile | sourceDoc
+model.resourceLike = \text
 att.personal.attributes =
   att.naming.attributes,
   att.personal.attribute.full,
@@ -2214,10 +2021,34 @@ p =
          "\x{a}" ~
          "         "
        ],
-    att.global.attributes,
+    att.global.attribute.xmlid,
+    att.global.attribute.n,
+    att.global.attribute.xmllang,
+    att.global.attribute.xmlbase,
+    att.global.attribute.xmlspace,
+    att.global.rendition.attribute.style,
+    att.global.rendition.attribute.rendition,
+    att.global.linking.attribute.corresp,
+    att.global.linking.attribute.synch,
+    att.global.linking.attribute.sameAs,
+    att.global.linking.attribute.copyOf,
+    att.global.linking.attribute.next,
+    att.global.linking.attribute.prev,
+    att.global.linking.attribute.exclude,
+    att.global.linking.attribute.select,
+    att.global.analytic.attribute.ana,
+    att.global.responsibility.attribute.cert,
+    att.global.responsibility.attribute.resp,
+    att.global.source.attribute.source,
     att.declaring.attributes,
     att.fragmentable.attributes,
     att.written.attributes,
+    
+    ## 
+    ## Sample values include: 1] sans_indentation(Paragraphe sans indentation) 
+    attribute rend {
+      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+    }?,
     empty
   }
 foreign =
@@ -2233,8 +2064,38 @@ hi =
   ## (highlighted) marks a word or phrase as graphically distinct from the surrounding text, for reasons concerning which no claim is made. [3.3.2.2. Emphatic Words and Phrases 3.3.2. Emphasis, Foreign Words, and Unusual Language]
   element hi {
     macro.paraContent,
-    att.global.attributes,
+    att.global.attribute.xmlid,
+    att.global.attribute.n,
+    att.global.attribute.xmllang,
+    att.global.attribute.xmlbase,
+    att.global.attribute.xmlspace,
+    att.global.rendition.attribute.style,
+    att.global.rendition.attribute.rendition,
+    att.global.linking.attribute.corresp,
+    att.global.linking.attribute.synch,
+    att.global.linking.attribute.sameAs,
+    att.global.linking.attribute.copyOf,
+    att.global.linking.attribute.next,
+    att.global.linking.attribute.prev,
+    att.global.linking.attribute.exclude,
+    att.global.linking.attribute.select,
+    att.global.analytic.attribute.ana,
+    att.global.responsibility.attribute.cert,
+    att.global.responsibility.attribute.resp,
+    att.global.source.attribute.source,
     att.written.attributes,
+    
+    ##
+    attribute rend {
+      
+      ## (Mise en valeur traditionnelle: pensé pour être rendu en italique
+      ##                     normalement) 
+      "italique"
+      | 
+        ## (Mise en valeur spécifique: petites capitales (pour des titres ou des
+        ##                     citations par exemple)) 
+        "petites_capitales"
+    },
     empty
   }
 distinct =
@@ -3823,147 +3684,6 @@ interpGrp =
     att.interpLike.attributes,
     empty
   }
-precision =
-  
-  ## indicates the numerical accuracy or precision associated with some aspect of the text markup. [21.2. Indications of Precision]
-  element precision {
-    (model.descLike | model.certLike)*,
-    att.global.attributes,
-    att.scoping.attributes,
-    att.ranging.attributes,
-    att.datable.attributes,
-    
-    ## characterizes the precision of the element or attribute pointed to by the precision element.
-    attribute precision {
-      
-      ##
-      "high"
-      | 
-        ##
-        "medium"
-      | 
-        ##
-        "low"
-      | 
-        ##
-        "unknown"
-    }?,
-    
-    ## supplies a standard deviation associated with the value in question
-    attribute stdDeviation {
-      xsd:double
-      | xsd:token { pattern = "(\-?[\d]+/\-?[\d]+)" }
-      | xsd:decimal
-    }?,
-    empty
-  }
-certainty =
-  
-  ## indicates the degree of certainty associated with some aspect of the text markup. [21.1.2. Structured Indications of Uncertainty]
-  element certainty {
-    (model.descLike | model.certLike)*,
-    att.global.attribute.xmlid,
-    att.global.attribute.n,
-    att.global.attribute.xmllang,
-    att.global.attribute.xmlbase,
-    att.global.attribute.xmlspace,
-    att.global.rendition.attribute.rend,
-    att.global.rendition.attribute.style,
-    att.global.rendition.attribute.rendition,
-    att.global.linking.attribute.corresp,
-    att.global.linking.attribute.synch,
-    att.global.linking.attribute.sameAs,
-    att.global.linking.attribute.copyOf,
-    att.global.linking.attribute.next,
-    att.global.linking.attribute.prev,
-    att.global.linking.attribute.exclude,
-    att.global.linking.attribute.select,
-    att.global.analytic.attribute.ana,
-    att.global.facs.attribute.facs,
-    att.global.change.attribute.change,
-    att.global.responsibility.attribute.resp,
-    att.global.source.attribute.source,
-    att.scoping.attributes,
-    
-    ## (certainty) signifies the degree of certainty associated with the object pointed to by the certainty element.
-    attribute cert {
-      
-      ##
-      "high"
-      | 
-        ##
-        "medium"
-      | 
-        ##
-        "low"
-      | 
-        ##
-        "unknown"
-    }?,
-    
-    ## indicates more exactly the aspect concerning which certainty is being expressed: specifically, whether the markup is correctly located, whether the correct element or attribute name has been used, or whether the content of the element or attribute is correct, etc.
-    attribute locus {
-      
-      ## uncertainty concerns whether the name of the element or attribute used is correctly applied.
-      "name"
-      | 
-        ## uncertainty concerns whether the start of the element is correctly identified.
-        "start"
-      | 
-        ## uncertainty concerns whether the end of the element is correctly identified.
-        "end"
-      | 
-        ## uncertainty concerns both the start and the end of the element.
-        "location"
-      | 
-        ## uncertainty concerns the content (for an element) or the value (for an attribute)
-        "value"
-    },
-    
-    ## provides an alternative value for the aspect of the markup in question—an alternative generic identifier, transcription, or attribute value, or the identifier of an anchor element (to indicate an alternative starting or ending location). If an assertedValue is given, the confidence level specified by degree applies to the alternative markup specified by assertedValue; if none is given, it applies to the markup in the text.
-    attribute assertedValue {
-      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
-    }?,
-    
-    ## indicates one or more element(s) characterizing the conditions which are assumed in the assignment of a degree of confidence.
-    attribute given {
-      list { xsd:anyURI+ }
-    }?,
-    
-    ## indicates the degree of confidence assigned to the aspect of the markup named by the locus attribute.
-    attribute degree { xsd:double }?,
-    empty
-  }
-respons =
-  
-  ## (responsibility) identifies the individual(s) responsible for some aspect of the content or markup of particular element(s). [21.3. Attribution of Responsibility]
-  element respons {
-    (model.descLike | model.certLike)*,
-    att.global.attributes,
-    att.scoping.attributes,
-    
-    ## indicates the specific aspect of the encoding (markup or content) for which responsibility is being assigned.
-    attribute locus {
-      list {
-        (
-         ## responsibility is being assigned concerning the name of the element or attribute used.
-         "name"
-         | 
-           ## responsibility is being assigned concerning the start of the element concerned.
-           "start"
-         | 
-           ## responsibility is being assigned concerning the end of the element concerned.
-           "end"
-         | 
-           ## responsibility is being assigned concerning the location of the element concerned.
-           "location"
-         | 
-           ## responsibility is being assigned concerning the content (for an element) or the value (for an attribute)
-           "value")+
-      }
-    },
-    empty
-  }
 textDesc =
   
   ## (text description) provides a description of a text in terms of its situational parameters. [15.2.1. The Text Description]
@@ -5118,286 +4838,6 @@ listChange =
     [ a:defaultValue = "true" ] attribute ordered { xsd:boolean }?,
     empty
   }
-fsdDecl =
-  
-  ## (feature system declaration) provides a feature system declaration comprising one or more feature structure declarations or feature structure declaration links. [18.11. Feature System Declaration]
-  element fsdDecl { (fsDecl | fsdLink)+, att.global.attributes, empty }
-fsDecl =
-  
-  ## (feature structure declaration) declares one type of feature structure. [18.11. Feature System Declaration]
-  element fsDecl {
-    (fsDescr?, fDecl+, fsConstraints?),
-    att.global.attributes,
-    
-    ## gives a name for the type of feature structure being declared.
-    attribute type {
-      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
-    },
-    
-    ## gives the name of one or more typed feature structures from which this type inherits feature specifications and constraints; if this type includes a feature specification with the same name as that of any of those specified by this attribute, or if more than one specification of the same name is inherited, then the set of possible values is defined by unification. Similarly, the set of constraints applicable is derived by combining those specified explicitly within this element with those implied by the baseTypes attribute. When no baseTypes attribute is specified, no feature specification or constraint is inherited.
-    attribute baseTypes {
-      list { xsd:Name+ }
-    }?,
-    empty
-  }
-fsDescr =
-  
-  ## (feature system description (in FSD)) describes in prose what is represented by the type of feature structure declared in the enclosing fsDecl. [18.11. Feature System Declaration]
-  element fsDescr { macro.limitedContent, att.global.attributes, empty }
-fsdLink =
-  
-  ## (feature structure declaration link) associates the name of a typed feature structure with a feature structure declaration for it. [18.11. Feature System Declaration]
-  element fsdLink {
-    empty,
-    att.global.attributes,
-    
-    ## identifies the type of feature structure to be documented; this will be the value of the type attribute on at least one feature structure.
-    attribute type {
-      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
-    },
-    
-    ## supplies a pointer to a feature structure declaration (fsDecl) element within the current document or elsewhere.
-    attribute target { xsd:anyURI },
-    empty
-  }
-fDecl =
-  
-  ## (feature declaration) declares a single feature, specifying its name, organization, range of allowed values, and optionally its default value. [18.11. Feature System Declaration]
-  element fDecl {
-    (fDescr?, vRange, vDefault?),
-    att.global.attributes,
-    
-    ## a single word which follows the rules defining a legal XML name (see ), indicating the name of the feature being declared; matches the name attribute of f elements in the text.
-    attribute name { xsd:Name },
-    
-    ## indicates whether or not the value of this feature may be present.
-    [ a:defaultValue = "true" ] attribute optional { xsd:boolean }?,
-    empty
-  }
-fDescr =
-  
-  ## (feature description (in FSD)) describes in prose what is represented by the feature being declared and its values. [18.11. Feature System Declaration]
-  element fDescr { macro.limitedContent, att.global.attributes, empty }
-vRange =
-  
-  ## (value range) defines the range of allowed values for a feature, in the form of an fs, vAlt, or primitive value; for the value of an f to be valid, it must be subsumed by the specified range; if the f contains multiple values (as sanctioned by the org attribute), then each value must be subsumed by the vRange. [18.11. Feature System Declaration]
-  element vRange { model.featureVal, att.global.attributes, empty }
-vDefault =
-  
-  ## (value default) declares the default value to be supplied when a feature structure does not contain an instance of f for this name; if unconditional, it is specified as one (or, depending on the value of the org attribute of the enclosing fDecl) more fs elements or primitive values; if conditional, it is specified as one or more if elements; if no default is specified, or no condition matches, the value none is assumed. [18.11. Feature System Declaration]
-  element vDefault {
-    (model.featureVal+ | if+), att.global.attributes, empty
-  }
-if =
-  
-  ## defines a conditional default value for a feature; the condition is specified as a feature structure, and is met if it subsumes the feature structure in the text for which a default value is sought. [18.11. Feature System Declaration]
-  element if {
-    ((fs | f), then, model.featureVal),
-    att.global.attributes,
-    empty
-  }
-then =
-  
-  ## separates the condition from the default in an if, or the antecedent and the consequent in a cond element. [18.11. Feature System Declaration]
-  element then { empty, att.global.attributes, empty }
-fsConstraints =
-  
-  ## (feature-structure constraints) specifies constraints on the content of valid feature structures. [18.11. Feature System Declaration]
-  element fsConstraints {
-    (cond | bicond)*, att.global.attributes, empty
-  }
-cond =
-  
-  ## (conditional feature-structure constraint) defines a conditional feature-structure constraint; the consequent and the antecedent are specified as feature structures or feature-structure collections; the constraint is satisfied if both the antecedent and the consequent subsume a given feature structure, or if the antecedent does not. [18.11. Feature System Declaration]
-  element cond {
-    ((fs | f), then, (fs | f)),
-    att.global.attributes,
-    empty
-  }
-bicond =
-  
-  ## (bi-conditional feature-structure constraint) defines a biconditional feature-structure constraint; both consequent and antecedent are specified as feature structures or groups of feature structures; the constraint is satisfied if both subsume a given feature structure, or if both do not. [18.11. Feature System Declaration]
-  element bicond {
-    ((fs | f), iff, (fs | f)),
-    att.global.attributes,
-    empty
-  }
-iff =
-  
-  ## (if and only if) separates the condition from the consequence in a bicond element. [18.11. Feature System Declaration]
-  element iff { empty, att.global.attributes, empty }
-fs =
-  
-  ## (feature structure) represents a feature structure, that is, a collection of feature-value pairs organized as a structural unit. [18.2. Elementary Feature Structures and the Binary
-  ## Feature Value]
-  element fs {
-    f*,
-    att.global.attributes,
-    att.datcat.attributes,
-    
-    ## specifies the type of the feature structure.
-    attribute type {
-      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
-    }?,
-    
-    ## (features) references the feature-value specifications making up this feature structure.
-    attribute feats {
-      list { xsd:anyURI+ }
-    }?,
-    empty
-  }
-f =
-  
-  ## (feature) represents a feature value specification, that is, the association of a name with a value of any of several different types. [18.2. Elementary Feature Structures and the Binary
-  ## Feature Value]
-  element f {
-    (text | model.featureVal),
-    att.global.attributes,
-    att.datcat.attributes,
-    
-    ## a single word which follows the rules defining a legal XML name (see ), providing a name for the feature.
-    attribute name { xsd:Name },
-    
-    ## (feature value) references any element which can be used to represent the value of a feature.
-    attribute fVal { xsd:anyURI }?,
-    empty
-  }
-binary =
-  
-  ## (binary value) represents the value part of a feature-value specification which can contain either of exactly two possible values. [18.2. Elementary Feature Structures and the Binary
-  ## Feature Value]
-  element binary {
-    empty,
-    att.global.attributes,
-    att.datcat.attributes,
-    
-    ## supplies a binary value.
-    attribute value { xsd:boolean },
-    empty
-  }
-symbol =
-  
-  ## (symbolic value) represents the value part of a feature-value specification which contains one of a finite list of symbols. [18.3. Other Atomic Feature Values]
-  element symbol {
-    empty,
-    att.global.attributes,
-    att.datcat.attributes,
-    
-    ## supplies a symbolic value for the feature, one of a finite list that may be specified in a feature declaration.
-    attribute value {
-      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
-    },
-    empty
-  }
-numeric =
-  
-  ## (numeric value) represents the value part of a feature-value specification which contains a numeric value or range. [18.3. Other Atomic Feature Values]
-  element numeric {
-    empty,
-    att.global.attributes,
-    att.datcat.attributes,
-    
-    ## supplies a lower bound for the numeric value represented, and also (if max is not supplied) its upper bound.
-    attribute value {
-      xsd:double
-      | xsd:token { pattern = "(\-?[\d]+/\-?[\d]+)" }
-      | xsd:decimal
-    },
-    
-    ## supplies an upper bound for the numeric value represented.
-    attribute max {
-      xsd:double
-      | xsd:token { pattern = "(\-?[\d]+/\-?[\d]+)" }
-      | xsd:decimal
-    }?,
-    
-    ## specifies whether the value represented should be truncated to give an integer value.
-    attribute trunc { xsd:boolean }?,
-    empty
-  }
-\string =
-  
-  ## (string value) represents the value part of a feature-value specification which contains a string. [18.3. Other Atomic Feature Values]
-  element string {
-    macro.xtext, att.global.attributes, att.datcat.attributes, empty
-  }
-vLabel =
-  
-  ## (value label) represents the value part of a feature-value specification which appears at more than one point in a feature structure. [18.6. Re-entrant Feature Structures]
-  element vLabel {
-    model.featureVal?,
-    att.global.attributes,
-    
-    ## supplies a name identifying the sharing point.
-    attribute name {
-      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
-    },
-    empty
-  }
-vColl =
-  
-  ## (collection of values) represents the value part of a feature-value specification which contains multiple values organized as a set, bag, or list. [18.7. Collections as Complex Feature Values]
-  element vColl {
-    (fs | model.featureVal.single)*,
-    att.global.attributes,
-    
-    ## (organization) indicates organization of given value or values as set, bag or list.
-    attribute org {
-      
-      ## indicates that the given values are organized as a set.
-      "set"
-      | 
-        ## indicates that the given values are organized as a bag (multiset).
-        "bag"
-      | 
-        ## indicates that the given values are organized as a list.
-        "list"
-    }?,
-    empty
-  }
-\default =
-  
-  ## (default feature value) represents the value part of a feature-value specification which contains a defaulted value. [18.9. Default Values]
-  element default { empty, att.global.attributes, empty }
-vAlt =
-  
-  ## (value alternation) represents the value part of a feature-value specification which contains a set of values, only one of which can be valid. [18.8.1. Alternation]
-  element vAlt {
-    (model.featureVal, model.featureVal+), att.global.attributes, empty
-  }
-vNot =
-  
-  ## (value negation) represents a feature value which is the negation of its content. [18.8.2. Negation]
-  element vNot { model.featureVal, att.global.attributes, empty }
-vMerge =
-  
-  ## (merged collection of values) represents a feature value which is the result of merging together the feature values contained by its children, using the organization specified by the org attribute. [18.8.3. Collection of Values]
-  element vMerge {
-    model.featureVal+,
-    att.global.attributes,
-    
-    ## indicates the organization of the resulting merged values as set, bag or list.
-    attribute org {
-      
-      ## indicates that the resulting values are organized as a set.
-      "set"
-      | 
-        ## indicates that the resulting values are organized as a bag (multiset).
-        "bag"
-      | 
-        ## indicates that the resulting values are organized as a list.
-        "list"
-    }?,
-    empty
-  }
-fLib =
-  
-  ## (feature library) assembles a library of f (feature) elements. [18.4. Feature Libraries and Feature-Value Libraries]
-  element fLib { f+, att.global.attributes, empty }
-fvLib =
-  
-  ## (feature-value library) assembles a library of reusable feature value elements (including complete feature structures). [18.4. Feature Libraries and Feature-Value Libraries]
-  element fvLib { model.featureVal*, att.global.attributes, empty }
 att.global.linking.attributes =
   att.global.linking.attribute.corresp,
   att.global.linking.attribute.synch,
@@ -7033,8 +6473,7 @@ climate =
   
   ## contains information about the physical climate of a place. [13.3.4.3. States, Traits, and Events]
   element climate {
-    (precision*,
-     model.headLike*,
+    (model.headLike*,
      (model.pLike+ | model.labelLike+),
      (model.noteLike | model.biblLike)*,
      climate*),
@@ -7140,7 +6579,7 @@ langKnowledge =
   
   ## (language knowledge) summarizes the state of a person's linguistic knowledge, either as prose or by a list of langKnown elements. [13.3.2.1. Personal Characteristics]
   element langKnowledge {
-    (precision*, (model.pLike | langKnown+)),
+    (model.pLike | langKnown+),
     att.global.attributes,
     att.datable.attributes,
     att.editLike.attributes,
@@ -7238,8 +6677,7 @@ location =
   
   ## defines the location of a place as a set of geographical coordinates, in terms of other named geo-political entities, or as an address. [13.3.4. Places]
   element location {
-    (precision
-     | model.labelLike
+    (model.labelLike
      | model.placeNamePart
      | model.offsetLike
      | model.measureLike
@@ -7441,8 +6879,7 @@ population =
   
   ## contains information about the population of a place. [13.3.4.3. States, Traits, and Events]
   element population {
-    (precision*,
-     model.headLike*,
+    (model.headLike*,
      ((model.pLike+ | model.labelLike+),
       (model.noteLike | model.biblLike)*)?,
      population*),
@@ -7614,12 +7051,11 @@ state =
   
   ## contains a description of some status or quality attributed to a person, place, or organization often at some specific time or for a specific date range. [13.3.1. Basic Principles 13.3.2.1. Personal Characteristics]
   element state {
-    (precision*,
-     (state+
-      | (model.headLike*,
-         model.pLike+,
-         (model.noteLike | model.biblLike)*)
-      | (model.labelLike | model.noteLike | model.biblLike)*)),
+    (state+
+     | (model.headLike*,
+        model.pLike+,
+        (model.noteLike | model.biblLike)*)
+     | (model.labelLike | model.noteLike | model.biblLike)*),
     att.global.attributes,
     att.datable.attributes,
     att.editLike.attributes,
@@ -7632,8 +7068,7 @@ terrain =
   
   ## contains information about the physical terrain of a place. [13.3.4.3. States, Traits, and Events]
   element terrain {
-    (precision*,
-     model.headLike*,
+    (model.headLike*,
      (model.pLike+ | model.labelLike+),
      (model.noteLike | model.biblLike)*,
      terrain*),
@@ -7648,12 +7083,11 @@ trait =
   
   ## contains a description of some status or quality attributed to a person, place, or organization typically, but not necessarily, independent of the volition or action of the holder and usually not at some specific time or for a specific date range. [13.3.1. Basic Principles 13.3.2.1. Personal Characteristics]
   element trait {
-    (precision*,
-     (trait+
-      | (model.headLike*,
-         model.pLike+,
-         (model.noteLike | model.biblLike)*)
-      | (model.labelLike | model.noteLike | model.biblLike)*)),
+    (trait+
+     | (model.headLike*,
+        model.pLike+,
+        (model.noteLike | model.biblLike)*)
+     | (model.labelLike | model.noteLike | model.biblLike)*),
     att.global.attributes,
     att.datable.attributes,
     att.editLike.attributes,
@@ -8088,11 +7522,34 @@ floatingText =
          "\x{a}" ~
          "         "
        ],
-    att.global.attributes,
+    att.global.attribute.n,
+    att.global.attribute.xmllang,
+    att.global.attribute.xmlbase,
+    att.global.attribute.xmlspace,
+    att.global.rendition.attribute.rend,
+    att.global.rendition.attribute.style,
+    att.global.rendition.attribute.rendition,
+    att.global.linking.attribute.corresp,
+    att.global.linking.attribute.synch,
+    att.global.linking.attribute.sameAs,
+    att.global.linking.attribute.copyOf,
+    att.global.linking.attribute.next,
+    att.global.linking.attribute.prev,
+    att.global.linking.attribute.exclude,
+    att.global.linking.attribute.select,
+    att.global.analytic.attribute.ana,
+    att.global.responsibility.attribute.cert,
+    att.global.responsibility.attribute.resp,
+    att.global.source.attribute.source,
     att.divLike.attributes,
     att.typed.attributes,
     att.declaring.attributes,
     att.written.attributes,
+    
+    ##
+    attribute xml:id {
+      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+    },
     empty
   }
 div1 =
@@ -8444,598 +7901,6 @@ back =
      (model.divBottomPart, (model.divBottomPart | model.global)*)?),
     att.global.attributes,
     att.declaring.attributes,
-    empty
-  }
-att.global.facs.attributes = att.global.facs.attribute.facs
-att.global.facs.attribute.facs =
-  
-  ## (facsimile) points to all or part of an image which corresponds with the content of the element.
-  attribute facs {
-    list { xsd:anyURI+ }
-  }?
-att.global.change.attributes = att.global.change.attribute.change
-att.global.change.attribute.change =
-  
-  ## points to one or more change elements documenting a state or revision campaign to which the element bearing this attribute and its children have been assigned by the encoder.
-  attribute change {
-    list { xsd:anyURI+ }
-  }?
-att.coordinated.attributes =
-  att.coordinated.attribute.start,
-  att.coordinated.attribute.ulx,
-  att.coordinated.attribute.uly,
-  att.coordinated.attribute.lrx,
-  att.coordinated.attribute.lry,
-  att.coordinated.attribute.points
-att.coordinated.attribute.start =
-  
-  ## indicates the element within a transcription of the text containing at least the start of the writing represented by this zone or surface.
-  attribute start { xsd:anyURI }?
-att.coordinated.attribute.ulx =
-  
-  ## gives the x coordinate value for the upper left corner of a rectangular space.
-  attribute ulx {
-    xsd:double
-    | xsd:token { pattern = "(\-?[\d]+/\-?[\d]+)" }
-    | xsd:decimal
-  }?
-att.coordinated.attribute.uly =
-  
-  ## gives the y coordinate value for the upper left corner of a rectangular space.
-  attribute uly {
-    xsd:double
-    | xsd:token { pattern = "(\-?[\d]+/\-?[\d]+)" }
-    | xsd:decimal
-  }?
-att.coordinated.attribute.lrx =
-  
-  ## gives the x coordinate value for the lower right corner of a rectangular space.
-  attribute lrx {
-    xsd:double
-    | xsd:token { pattern = "(\-?[\d]+/\-?[\d]+)" }
-    | xsd:decimal
-  }?
-att.coordinated.attribute.lry =
-  
-  ## gives the y coordinate value for the lower right corner of a rectangular space.
-  attribute lry {
-    xsd:double
-    | xsd:token { pattern = "(\-?[\d]+/\-?[\d]+)" }
-    | xsd:decimal
-  }?
-att.coordinated.attribute.points =
-  
-  ## identifies a two dimensional area within the bounding box specified by the other attributes by means of a series of pairs of numbers, each of which gives the x,y coordinates of a point on a line enclosing the area.
-  attribute points {
-    list {
-      xsd:token { pattern = "(\-?[0-9]+\.?[0-9]*,\-?[0-9]+\.?[0-9]*)" },
-      xsd:token { pattern = "(\-?[0-9]+\.?[0-9]*,\-?[0-9]+\.?[0-9]*)" },
-      xsd:token { pattern = "(\-?[0-9]+\.?[0-9]*,\-?[0-9]+\.?[0-9]*)" },
-      xsd:token { pattern = "(\-?[0-9]+\.?[0-9]*,\-?[0-9]+\.?[0-9]*)" }*
-    }
-  }?
-facsimile =
-  
-  ## contains a representation of some written source in the form of a set of images rather than as transcribed or encoded text. [11.1. Digital Facsimiles]
-  element facsimile {
-    (front?, (model.graphicLike | surface | surfaceGrp)+, back?),
-    att.global.attributes,
-    att.declaring.attributes,
-    empty
-  }
-sourceDoc =
-  
-  ## contains a transcription or other representation of a single source document potentially forming part of a dossier génétique or collection of sources. [11.1. Digital Facsimiles 11.2.2. Embedded Transcription]
-  element sourceDoc {
-    (model.global | model.graphicLike | surface | surfaceGrp)+,
-    att.global.attributes,
-    att.declaring.attributes,
-    empty
-  }
-surface =
-  
-  ## defines a written surface as a two-dimensional coordinate space, optionally grouping one or more graphic representations of that space, zones of interest within that space, and transcriptions of the writing within them. [11.1. Digital Facsimiles 11.2.2. Embedded Transcription]
-  element surface {
-    ((model.global | model.labelLike | model.graphicLike)*,
-     ((zone | line | surface | surfaceGrp), model.global*)*),
-    att.global.attributes,
-    att.coordinated.attributes,
-    att.declaring.attributes,
-    att.typed.attributes,
-    
-    ## describes the method by which this surface is or was connected to the main surface
-    ## Sample values include: 1] glued; 2] pinned; 3] sewn
-    attribute attachment {
-      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
-    }?,
-    
-    ## indicates whether the surface is attached and folded in such a way as to provide two writing surfaces
-    attribute flipping { xsd:boolean }?,
-    empty
-  }
-surfaceGrp =
-  
-  ## defines any kind of useful grouping of written surfaces, for example the recto and verso of a single leaf, which the encoder wishes to treat as a single unit. [11.1. Digital Facsimiles]
-  element surfaceGrp {
-    (model.global | surface | surfaceGrp)+,
-    att.global.attributes,
-    att.declaring.attributes,
-    att.typed.attributes,
-    empty
-  }
-zone =
-  
-  ## defines any two-dimensional area within a surface element. [11.1. Digital Facsimiles 11.2.2. Embedded Transcription]
-  element zone {
-    (text
-     | model.graphicLike
-     | model.global
-     | surface
-     | model.linePart)*,
-    att.global.attributes,
-    att.coordinated.attributes,
-    att.typed.attributes,
-    att.written.attributes,
-    
-    ## indicates the amount by which this zone has been rotated clockwise, with respect to the normal orientation of the parent surface element as implied by the dimensions given in the msDesc element or by the coordinates of the surface itself. The orientation is expressed in arc degrees.
-    [ a:defaultValue = "0" ]
-    attribute rotate { xsd:nonNegativeInteger }?,
-    empty
-  }
-addSpan =
-  
-  ## (added span of text) marks the beginning of a longer sequence of text added by an author, scribe, annotator or corrector (see also add). [11.3.1.4. Additions and Deletions]
-  element addSpan {
-    empty
-    >> sch:pattern [
-         id = "tei_odd-addSpan-spanTo-constraint-assert-17"
-         "\x{a}" ~
-         "            "
-         sch:rule [
-           context = "tei:addSpan"
-           "\x{a}" ~
-           "               "
-           sch:assert [
-             test = "@spanTo"
-             "The @spanTo attribute of "
-             sch:name [ ]
-             " is required."
-           ]
-           "\x{a}" ~
-           "            "
-         ]
-         "\x{a}" ~
-         "         "
-       ]
-    >> sch:pattern [
-         id = "tei_odd-addSpan-spanTo_fr-constraint-assert-18"
-         "\x{a}" ~
-         "            "
-         sch:rule [
-           context = "tei:addSpan"
-           "\x{a}" ~
-           "               "
-           sch:assert [
-             test = "@spanTo"
-             "L'attribut spanTo est requis."
-           ]
-           "\x{a}" ~
-           "            "
-         ]
-         "\x{a}" ~
-         "         "
-       ],
-    att.global.attributes,
-    att.transcriptional.attributes,
-    att.placement.attributes,
-    att.typed.attributes,
-    att.spanning.attributes,
-    att.dimensions.attributes,
-    empty
-  }
-damage =
-  
-  ## contains an area of damage to the text witness. [11.3.3.1. Damage, Illegibility, and Supplied Text]
-  element damage {
-    macro.paraContent,
-    att.global.attributes,
-    att.typed.attributes,
-    att.damaged.attributes,
-    empty
-  }
-damageSpan =
-  
-  ## (damaged span of text) marks the beginning of a longer sequence of text which is damaged in some way but still legible. [11.3.3.1. Damage, Illegibility, and Supplied Text]
-  element damageSpan {
-    empty
-    >> sch:pattern [
-         id = "tei_odd-damageSpan-spanTo-constraint-assert-19"
-         "\x{a}" ~
-         "            "
-         sch:rule [
-           context = "tei:damageSpan"
-           "\x{a}" ~
-           "               "
-           sch:assert [
-             test = "@spanTo"
-             "\x{a}" ~
-             "The @spanTo attribute of "
-             sch:name [ ]
-             " is required."
-           ]
-           "\x{a}" ~
-           "            "
-         ]
-         "\x{a}" ~
-         "         "
-       ]
-    >> sch:pattern [
-         id = "tei_odd-damageSpan-spanTo_fr-constraint-assert-20"
-         "\x{a}" ~
-         "            "
-         sch:rule [
-           context = "tei:damageSpan"
-           "\x{a}" ~
-           "               "
-           sch:assert [
-             test = "@spanTo"
-             "L'attribut spanTo est requis."
-           ]
-           "\x{a}" ~
-           "            "
-         ]
-         "\x{a}" ~
-         "         "
-       ],
-    att.global.attributes,
-    att.damaged.attributes,
-    att.typed.attributes,
-    att.spanning.attributes,
-    empty
-  }
-delSpan =
-  
-  ## (deleted span of text) marks the beginning of a longer sequence of text deleted, marked as deleted, or otherwise signaled as superfluous or spurious by an author, scribe, annotator, or corrector. [11.3.1.4. Additions and Deletions]
-  element delSpan {
-    empty
-    >> sch:pattern [
-         id = "tei_odd-delSpan-spanTo-constraint-assert-21"
-         "\x{a}" ~
-         "            "
-         sch:rule [
-           context = "tei:delSpan"
-           "\x{a}" ~
-           "               "
-           sch:assert [
-             test = "@spanTo"
-             "The @spanTo attribute of "
-             sch:name [ ]
-             " is required."
-           ]
-           "\x{a}" ~
-           "            "
-         ]
-         "\x{a}" ~
-         "         "
-       ]
-    >> sch:pattern [
-         id = "tei_odd-delSpan-spanTo_fr-constraint-assert-22"
-         "\x{a}" ~
-         "            "
-         sch:rule [
-           context = "tei:delSpan"
-           "\x{a}" ~
-           "               "
-           sch:assert [
-             test = "@spanTo"
-             "L'attribut spanTo est requis."
-           ]
-           "\x{a}" ~
-           "            "
-         ]
-         "\x{a}" ~
-         "         "
-       ],
-    att.global.attributes,
-    att.transcriptional.attributes,
-    att.typed.attributes,
-    att.spanning.attributes,
-    att.dimensions.attributes,
-    empty
-  }
-ex =
-  
-  ## (editorial expansion) contains a sequence of letters added by an editor or transcriber when expanding an abbreviation. [11.3.1.2. Abbreviation and Expansion]
-  element ex {
-    macro.xtext,
-    att.global.attributes,
-    att.editLike.attributes,
-    att.dimensions.attributes,
-    empty
-  }
-fw =
-  
-  ## (forme work) contains a running head (e.g. a header, footer), catchword, or similar material appearing on the current page. [11.6. Headers, Footers, and Similar Matter]
-  element fw {
-    macro.phraseSeq,
-    att.global.attributes,
-    att.placement.attributes,
-    att.written.attributes,
-    
-    ## classifies the material encoded according to some useful typology.
-    ## Sample values include: 1] header; 2] footer; 3] pageNum(page number) ; 4] lineNum(line number) ; 5] sig(signature) ; 6] catch(catchword) 
-    attribute type {
-      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
-    }?,
-    empty
-  }
-handNotes =
-  
-  ## contains one or more handNote elements documenting the different hands identified within the source texts. [11.3.2.1. Document Hands]
-  element handNotes { handNote+, att.global.attributes, empty }
-handShift =
-  
-  ## marks the beginning of a sequence of text written in a new hand, or the beginning of a scribal stint. [11.3.2.1. Document Hands]
-  element handShift {
-    empty,
-    att.global.attributes,
-    att.handFeatures.attributes,
-    
-    ## indicates a handNote element describing the hand concerned.
-    attribute new { xsd:anyURI }?,
-    empty
-  }
-am =
-  
-  ## (abbreviation marker) contains a sequence of letters or signs present in an abbreviation which are omitted or replaced in the expanded form of the abbreviation. [11.3.1.2. Abbreviation and Expansion]
-  element am {
-    (text | model.gLike | model.pPart.transcriptional)*,
-    att.global.attributes,
-    att.typed.attributes,
-    att.editLike.attributes,
-    empty
-  }
-restore =
-  
-  ## indicates restoration of text to an earlier state by cancellation of an editorial or authorial marking or instruction. [11.3.1.6. Cancellation of Deletions and Other Markings]
-  element restore {
-    macro.paraContent,
-    att.global.attributes,
-    att.transcriptional.attributes,
-    att.typed.attributes,
-    att.dimensions.attributes,
-    empty
-  }
-space =
-  
-  ## indicates the location of a significant space in the text. [11.5.1. Space]
-  element space {
-    (model.descLike | model.certLike)*,
-    att.global.attribute.xmlid,
-    att.global.attribute.n,
-    att.global.attribute.xmllang,
-    att.global.attribute.xmlbase,
-    att.global.attribute.xmlspace,
-    att.global.rendition.attribute.rend,
-    att.global.rendition.attribute.style,
-    att.global.rendition.attribute.rendition,
-    att.global.linking.attribute.corresp,
-    att.global.linking.attribute.synch,
-    att.global.linking.attribute.sameAs,
-    att.global.linking.attribute.copyOf,
-    att.global.linking.attribute.next,
-    att.global.linking.attribute.prev,
-    att.global.linking.attribute.exclude,
-    att.global.linking.attribute.select,
-    att.global.analytic.attribute.ana,
-    att.global.facs.attribute.facs,
-    att.global.change.attribute.change,
-    att.global.responsibility.attribute.cert,
-    att.global.source.attribute.source,
-    att.typed.attributes,
-    att.dimensions.attributes,
-    
-    ## (responsible party) (responsible party) indicates the individual responsible for identifying and measuring the space
-    attribute resp {
-      list { xsd:anyURI+ }
-    }?,
-    
-    ## (dimension) indicates whether the space is horizontal or vertical.
-    attribute dim {
-      
-      ## the space is horizontal.
-      "horizontal"
-      | 
-        ## the space is vertical.
-        "vertical"
-    }?,
-    empty
-  }
-subst =
-  
-  ## (substitution) groups one or more deletions with one or more additions when the combination is to be regarded as a single intervention in the text. [11.3.1.5. Substitutions]
-  element subst {
-    ((add | del | model.milestoneLike)+)
-    >> sch:pattern [
-         id = "tei_odd-subst-substContents1-constraint-assert-23"
-         "\x{a}" ~
-         "            "
-         sch:rule [
-           context = "tei:subst"
-           "\x{a}" ~
-           "               "
-           sch:assert [
-             test = "child::tei:add and child::tei:del"
-             "\x{a}" ~
-             "                  "
-             sch:name [ ]
-             " must have at least one child add and at least one child del"
-           ]
-           "\x{a}" ~
-           "            "
-         ]
-         "\x{a}" ~
-         "         "
-       ],
-    att.global.attributes,
-    att.transcriptional.attributes,
-    att.dimensions.attributes,
-    empty
-  }
-substJoin =
-  
-  ## (substitution join) identifies a series of possibly fragmented additions, deletions or other revisions on a manuscript that combine to make up a single intervention in the text [11.3.1.5. Substitutions]
-  element substJoin {
-    (model.descLike | model.certLike)*,
-    att.global.attributes,
-    att.pointing.attributes,
-    att.transcriptional.attributes,
-    att.dimensions.attributes,
-    empty
-  }
-supplied =
-  
-  ## signifies text supplied by the transcriber or editor for any reason; for example because the original cannot be read due to physical damage, or because of an obvious omission by the author or scribe. [11.3.3.1. Damage, Illegibility, and Supplied Text]
-  element supplied {
-    macro.paraContent,
-    att.global.attributes,
-    att.editLike.attributes,
-    att.dimensions.attributes,
-    
-    ## one or more words indicating why the text has had to be supplied, e.g. overbinding, faded-ink, lost-folio, omitted-in-original.
-    attribute reason {
-      list {
-        xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
-      }
-    }?,
-    empty
-  }
-surplus =
-  
-  ## marks text present in the source which the editor believes to be superfluous or redundant. [11.3.3.1. Damage, Illegibility, and Supplied Text]
-  element surplus {
-    macro.paraContent,
-    att.global.attributes,
-    att.editLike.attributes,
-    att.dimensions.attributes,
-    
-    ## one or more words indicating why this text is believed to be superfluous, e.g. repeated, interpolated etc.
-    attribute reason {
-      list {
-        xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
-      }
-    }?,
-    empty
-  }
-secl =
-  
-  ## (secluded text) Secluded. Marks text present in the source which the editor believes to be genuine but out of its original place (which is unknown). [11.3.1.7. Text Omitted from or Supplied in the Transcription]
-  element secl {
-    macro.paraContent,
-    att.global.attributes,
-    att.editLike.attributes,
-    att.dimensions.attributes,
-    
-    ## one or more words indicating why this text has been secluded, e.g. interpolated etc.
-    attribute reason {
-      list {
-        xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
-      }
-    }?,
-    empty
-  }
-line =
-  
-  ## contains the transcription of a topographic line in the source document [11.2.2. Embedded Transcription]
-  element line {
-    (text | model.global | model.gLike | model.linePart)*,
-    att.typed.attributes,
-    att.global.attributes,
-    att.coordinated.attributes,
-    att.written.attributes,
-    empty
-  }
-listTranspose =
-  
-  ## supplies a list of transpositions, each of which is indicated at some point in a document typically by means of metamarks. [11.3.4.5. Transpositions]
-  element listTranspose { transpose+, att.global.attributes, empty }
-metamark =
-  
-  ## contains or describes any kind of graphic or written signal within a document the function of which is to determine how it should be read rather than forming part of the actual content of the document. [11.3.4.2. Metamarks]
-  element metamark {
-    macro.specialPara,
-    att.spanning.attributes,
-    att.placement.attributes,
-    att.global.attributes,
-    
-    ## describes the function (for example status, insertion, deletion, transposition) of the metamark.
-    attribute function {
-      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
-    }?,
-    
-    ## identifies one or more elements to which the metamark applies.
-    attribute target {
-      list { xsd:anyURI+ }
-    }?,
-    empty
-  }
-mod =
-  
-  ## represents any kind of modification identified within a single document. [11.3.4.1. Generic Modification]
-  element mod {
-    macro.paraContent,
-    att.global.attributes,
-    att.transcriptional.attributes,
-    att.typed.attributes,
-    att.spanning.attributes,
-    att.dimensions.attributes,
-    empty
-  }
-redo =
-  
-  ## indicates one or more cancelled interventions in a document which have subsequently been marked as reaffirmed or repeated. [11.3.4.4. Confirmation, Cancellation, and Reinstatement of Modifications]
-  element redo {
-    empty,
-    att.global.attributes,
-    att.spanning.attributes,
-    att.transcriptional.attributes,
-    att.dimensions.attributes,
-    
-    ## points to one or more elements representing the interventions which are being reasserted.
-    attribute target {
-      list { xsd:anyURI+ }
-    }?,
-    empty
-  }
-retrace =
-  
-  ## contains a sequence of writing which has been retraced, for example by over-inking, to clarify or fix it. [11.3.4.3. Fixation and Clarification]
-  element retrace {
-    macro.paraContent,
-    att.global.attributes,
-    att.spanning.attributes,
-    att.transcriptional.attributes,
-    att.dimensions.attributes,
-    empty
-  }
-transpose =
-  
-  ## describes a single textual transposition as an ordered list of at least two pointers specifying the order in which the elements indicated should be re-combined. [11.3.4.5. Transpositions]
-  element transpose { (ptr, ptr+), att.global.attributes, empty }
-undo =
-  
-  ## indicates one or more marked-up interventions in a document which have subsequently been marked for cancellation. [11.3.4.4. Confirmation, Cancellation, and Reinstatement of Modifications]
-  element undo {
-    empty,
-    att.global.attributes,
-    att.spanning.attributes,
-    att.transcriptional.attributes,
-    att.dimensions.attributes,
-    
-    ## points to one or more elements representing the interventions which are to be reverted or undone.
-    attribute target {
-      list { xsd:anyURI+ }
-    }?,
     empty
   }
 att.repeatable.attributes =
@@ -10219,7 +9084,7 @@ sequence =
   element sequence {
     (model.contentPart+)
     >> sch:pattern [
-         id = "tei_odd-sequence-sequencechilden-constraint-assert-29"
+         id = "tei_odd-sequence-sequencechilden-constraint-assert-22"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -10249,7 +9114,7 @@ alternate =
   element alternate {
     (model.contentPart+)
     >> sch:pattern [
-         id = "tei_odd-alternate-alternatechilden-constraint-assert-30"
+         id = "tei_odd-alternate-alternatechilden-constraint-assert-23"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -10405,7 +9270,7 @@ attDef =
          uri = "http://www.tei-c.org/ns/Examples"
        ]
     >> sch:pattern [
-         id = "tei_odd-attDef-attDefContents-constraint-assert-33"
+         id = "tei_odd-attDef-attDefContents-constraint-assert-26"
          "\x{a}" ~
          "            "
          sch:rule [
