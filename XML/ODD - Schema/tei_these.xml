@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--Attention à bien régulariser l'emploi des <quote/>: un texte entre guillemets n'est pas nécessairement une citation-->
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
+  xml:lang="en">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>tei_these.odd</title>
+        <author>Matthias Gille Levenson</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>TEI Consortium</publisher>
+        <availability status="free">
+          <p>TEI material can be licensed differently depending on the use you intend to make of it.
+            Hence it is made available under both the CC+BY and BSD-2 licences. The CC+BY licence is
+            generally appropriate for usages which treat TEI content as data or documentation. The
+            BSD-2 licence is generally appropriate for usage of TEI content in a software
+            environment. For further information or clarification, please contact the TEI Consortium
+            (info@tei-c.org).</p>
+        </availability>
+      </publicationStmt>
+      <notesStmt>
+        <note type="ns">http://www.example.org/ns/nonTEI</note>
+      </notesStmt>
+      <sourceDesc>
+        <p>Adapté de tei_all.</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <!-- change log is always a good idea -->
+      <change when-iso="2018-01-31"> Création du document - Ajout de règles sur l'élément
+          <gi>ref</gi>
+      </change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <head>TEI vers Thèse</head>
+      <p> ODD créé pour guider la construction d'une thèse ou de quelque textes scientifique que ce
+        soit, au format XML TEI/P5. Inspiré de l'<ref
+          target="http://www.tei-c.org/release/xml/tei/custom/odd/tei_jtei.odd">ODD du
+        jTEI</ref>.</p>
+      <p>Je suis les recommendations du jTEI en ce qui est de la structure du document. Des
+          <gi>div</gi> (contenant nécessairement un attribut @xml:id) marquent la structure du
+        document, dont le premier enfant est un <gi>head</gi>, le titre de la division en cours. La
+        bibliographie est dans l'élément structurel <gi>back</gi>, dans un <gi>div</gi> de type
+        "bibliographie".</p>
+      <p>Les éléments utilisés le plus fréquemment sont les suivants: <gi>ref</gi> (bibliographie,
+        liens), <gi>note</gi>, <gi>title</gi>, <gi>foreign</gi>, <gi>quote</gi>, <gi>hi</gi> dans
+        des cas très précis. Ces quelques éléments recouvrent la majorité des besoins pour un texte
+        de sciences sociales.</p>
+      <schemaSpec ident="tei_odd" start="TEI teiCorpus">
+
+        <!-- required -->
+        <moduleRef key="tei"/>
+        <!-- required -->
+
+        <!-- required -->
+        <moduleRef key="core"/>
+        <!-- required -->
+        <elementSpec ident="hi" mode="change" module="core">
+          <attList>
+            <attDef ident="rend" mode="replace" usage="req">
+              <datatype>
+                <dataRef key="teidata.enumerated"/>
+              </datatype>
+              <valList type="closed">
+                <valItem ident="italique">
+                  <gloss>Mise en valeur traditionnelle: pensé pour être rendu en italique
+                    normalement</gloss>
+                </valItem>
+                <valItem ident="petites_capitales">
+                  <gloss>Mise en valeur spécifique: petites capitales (pour des titres ou des
+                    citations par exemple)</gloss>
+                </valItem>
+                <valItem ident="brouillon">
+                  <gloss>Vocation: existence temporaire. N'est pas censé être présent dans le
+                    document final. Permet une mise en valeur du texte ainsi balisé dans un objectif
+                    de modification ultérieure.</gloss>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+        <!-- required -->
+        <moduleRef key="header"/>
+        <!-- required -->
+
+        <moduleRef key="linking"/>
+        <!--rendre l'att. type obligatoire dans <seg/>-->
+        <elementSpec ident="ref" mode="change" module="linking">
+          <attList>
+            <attDef ident="type" mode="replace" usage="req">
+              <datatype>
+                <dataRef key="teidata.enumerated"/>
+              </datatype>
+              <valList type="closed">
+                <valItem ident="url">
+                  <gloss>Lien vers un URL</gloss>
+                </valItem>
+                <valItem ident="bibl">
+                  <gloss>Renvoi à une référence bibliographique</gloss>
+                </valItem>
+                <valItem ident="bibliographie">
+                  <gloss>Renvoi à la bibliographie</gloss>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+        <!--rendre l'att. type obligatoire dans <seg/>-->
+
+        <moduleRef key="namesdates"/>
+
+        <!-- required -->
+        <moduleRef key="textstructure"/>
+        <!-- required -->
+        <elementSpec ident="div" mode="change" module="textstructure">
+          <attList>
+            <attDef ident="xml:id" mode="replace" usage="req">
+              <datatype>
+                <dataRef key="teidata.enumerated"/>
+              </datatype>
+            </attDef>
+          </attList>
+        </elementSpec>
+
+
+
+        <elementSpec ident="p" mode="change" module="core">
+          <attList>
+            <attDef ident="rend" mode="replace" usage="opt">
+              <datatype>
+                <dataRef key="teidata.enumerated"/>
+              </datatype>
+              <!--Par défaut, le paragraphe sera indenté-->
+              <valList type="open">
+                <valItem ident="sans_indentation">
+                  <gloss>Paragraphe sans indentation</gloss>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+        <moduleRef key="tagdocs"/>
+      </schemaSpec>
+    </body>
+  </text>
+</TEI>
