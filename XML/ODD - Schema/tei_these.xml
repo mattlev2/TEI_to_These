@@ -57,7 +57,12 @@
 
         <!-- required -->
         <moduleRef key="core"
-          include="abbr add addrLine address analytic author bibl biblScope biblStruct binaryObject cb choice cit citedRange corr date del desc distinct divGen editor email emph expan foreign gap gb gloss graphic head headItem headLabel hi imprint index item l label lb lg list listBibl measure measureGrp media meeting mentioned milestone monogr name note num orig p postBox postCode ptr pubPlace publisher q quote ref relatedItem resp respStmt rs said series sic soCalled spstage street teiCorpus term textLang time title"/>
+          include="addrLine address analytic author bibl biblScope biblStruct 
+          cit citedRange date desc distinct divGen editor email emph expan foreign gb graphic 
+          head headItem headLabel hi imprint index item l label lg list listBibl 
+          measure measureGrp meeting mentioned milestone monogr name note num p ptr 
+          pubPlace publisher q quote ref relatedItem resp respStmt rs series sic soCalled spstage street 
+          term textLang time title"/>
         <!-- required -->
         <elementSpec ident="hi" mode="change" module="core">
           <attList>
