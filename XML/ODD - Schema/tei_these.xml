@@ -57,7 +57,7 @@
 
         <!-- required -->
         <moduleRef key="core"
-          include="addrLine address analytic author bibl biblScope biblStruct 
+          include="abbr addrLine address analytic author bibl biblScope biblStruct 
           cit citedRange date desc distinct divGen editor email emph expan foreign gb graphic 
           head headItem headLabel hi imprint index item l label lg list listBibl 
           measure measureGrp meeting mentioned milestone monogr name note num p ptr 
@@ -113,17 +113,16 @@
           include="abstract authority availability biblFull cRefPattern calendar calendarDesc catDesc catRef category change classCode classDecl correction correspAction 
           correspContext correspDesc creation distributor edition editionStmt editorialDecl encodingDesc extent fileDesc funder geoDecl handNote hyphenation idno interpretation keywords langUsage
           language licence listChange listPrefixDef namespace normalization notesStmt prefixDef principal profileDesc projectDesc publicationStmt punctuation quotation refState refsDecl rendition 
-          revisionDesc samplingDecl schemaRef scriptNote segmentation seriesStmt sourceDescstdVals tagUsage tagsDecl teiHeader textClass titleStmt"/>
+          revisionDesc samplingDecl schemaRef scriptNote segmentation seriesStmt sourceDesc stdVals tagUsage tagsDecl teiHeader textClass titleStmt"/>
         <!-- required -->
 
-        <moduleRef key="linking"/>
-        <!--rendre l'att. type obligatoire dans <seg/>-->
-        <!--rendre l'att. type obligatoire dans <seg/>-->
+        <!--<moduleRef key="linking"/>-->
 
-        <moduleRef key="namesdates"/>
+        <moduleRef key="namesdates"
+          include="forename location persName person place placeName surname"/>
 
         <!-- required -->
-        <moduleRef key="textstructure"/>
+        <moduleRef key="textstructure" include="TEI argument back body dateline div floatingText front group text"/>
         <!-- required -->
         <elementSpec ident="div" mode="change" module="textstructure">
           <attList>
@@ -134,8 +133,6 @@
             </attDef>
           </attList>
         </elementSpec>
-
-
 
         <elementSpec ident="p" mode="change" module="core">
           <attList>
@@ -152,7 +149,7 @@
             </attDef>
           </attList>
         </elementSpec>
-        <moduleRef key="tagdocs"/>
+        <moduleRef key="tagdocs" include="gi"/>
       </schemaSpec>
     </body>
   </text>
