@@ -9,7 +9,7 @@
         <author>Matthias Gille Levenson</author>
       </titleStmt>
       <publicationStmt>
-        <publisher>TEI Consortium</publisher>
+        <publisher>Non publié</publisher>
         <availability status="free">
           <p>TEI material can be licensed differently depending on the use you intend to make of it.
             Hence it is made available under both the CC+BY and BSD-2 licences. The CC+BY licence is
@@ -56,7 +56,8 @@
         <!-- required -->
 
         <!-- required -->
-        <moduleRef key="core"/>
+        <moduleRef key="core"
+          include="abbr add addrLine address analytic author bibl biblScope biblStruct binaryObject cb choice cit citedRange corr date del desc distinct divGen editor email emph expan foreign gap gb gloss graphic head headItem headLabel hi imprint index item l label lb lg list listBibl measure measureGrp media meeting mentioned milestone monogr name note num orig p postBox postCode ptr pubPlace publisher q quote ref relatedItem resp respStmt rs said series sic soCalled spstage street teiCorpus term textLang time title"/>
         <!-- required -->
         <elementSpec ident="hi" mode="change" module="core">
           <attList>
