@@ -1,16 +1,3 @@
-%%%%Préambule du fichier principal: les lignes suivantes, avant \begin{document} et le corps du texte:
-%\documentclass[francais,twoside,a4paper]{book}
-%R\UTF{00E9}soud le probl\UTF{00E8}me de registre (No room for...)
-%\usepackage{etex}
-%\reserveinserts{28}
-%%%%%%%%%%r\UTF{00E9}soud le probleme de registre%%%%%%%
-%Utiliser un fichier externe pour la bibliographie%
-%\usepackage{subfiles}
-%Utiliser un fichier externe pour la bibliographie%
-%\input{chemin du préambule}
-
-
-
 \usepackage[T1]{fontenc} 
 \usepackage{fbb}
 \usepackage[latin1]{inputenc}
@@ -22,7 +9,7 @@
 \usepackage{bookmark}
 \usepackage{caption}
 \widowpenalty=9999
-\usepackage{url}
+
 %contrôle de la mise en page générale
 \usepackage{layout}
 %contrôle de la mise en page générale
@@ -37,7 +24,7 @@
 \makeatother
 %Bonne hyphenation des urls
 
-\usepackage[top=2.5cm, bottom=1.5cm, left=2.25cm,right=3.25cm, heightrounded, marginparwidth=2.5cm, marginparsep=0.8cm, includefoot]{geometry}
+\usepackage[top=2.5cm, bottom=1.5cm, left=2.25cm,right=2.25cm, heightrounded, marginparwidth=2.5cm, marginparsep=0.8cm, includefoot]{geometry}
 
 %ESPACE ENTRE LES LIGNES
 %\DisemulatePackage{setspace}%n\UTF{00E9}cessaire pour que \UTF{00E7}a marche avec memoir
@@ -151,7 +138,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%BIBLIO%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{xpatch}
 \usepackage{filecontents}
-\usepackage[style=verbose-trad1,citestyle=authortitle, isbn=false, doi=false,backend=bibtex8,language=french,url=false]{biblatex}
+\usepackage[style=verbose-trad1,citestyle=authortitle-ibid, isbn=false, doi=false,backend=bibtex8,language=french,url=false]{biblatex}
+%Pas de pagebreak avant la biblio
+\defbibheading{secbib}[\bibname]{%
+ % \section*{#1}%
+ % \markboth{#1}{#1}
+ }
+  %Pas de pagebreak avant la biblio
 %\renewcommand*{\mkibid}{\emph}
 \DeclareFieldFormat[report]{title}{\textit{{#1}}}
 \DeclareFieldFormat[article]{journaltitle}{{\textit{{#1}}}}
@@ -187,9 +180,15 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%BIBLIO%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%Attention au chemin absolu ici !
 \subfile{/Users/Matt/Desktop/Pre-these/Projet_de_these/Sortie_LaTeX/Bibliographie/Biblio_projet_de_these.tex}
 \addbibresource{\jobname.bib}
 \title{Bibliographie}
 %\usepackage[urlcolor=green]{hyperref}%r\UTF{00E9}f\UTF{00E9}rences internes au document (toc, etc) \UTF{00E0} mettre en dernier
 
+
+% Attention à l'échappement des caractères spéciaux, dont # et _ qui en font partie !
+\usepackage{hyperref}
+%Attention : fonctionnement: \href{A=cible(url ou référence interne)}{B=texte que vous voulez voir apparaître} 
+%A et B sont OBLIGATOIRES !!
+% Attention à l'échappement des caractères spéciaux, dont # et _ qui en font partie !

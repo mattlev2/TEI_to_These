@@ -1,4 +1,8 @@
-\documentclass[francais,twoside,a4paper,titlepage,11pt]{book}
+ %%!TEX TS-program = arara
+% arara: pdflatex: { shell: yes }
+% arara: bibtex
+% arara: pdflatex: {shell: yes }
+\documentclass[francais,oneside,a4paper,12pt]{article}
 %R\UTF{00E9}soud le probl\UTF{00E8}me de registre (No room for...)
 \usepackage{etex}
 \reserveinserts{28}
@@ -6,18 +10,18 @@
 
 %Nécessaire pour gérer la bibliographie dans un fichier externe%%
 \usepackage{subfiles}
+
 %Nécessaire pour gérer la bibliographie dans un fichier externe%%
 
 \input{Preambule/preambule_projet_de_these.tex}
 
 
-\begin{document}
 
 
 \input{corps/corps_projet.tex}
 
 
-  \end{document}
+\end{document}
   
   
   %% AVERTISSEMENT IMPORTANT: bien faire attention à l'arborescence des fichiers et à l'encodage homogène des caractères (suppose de modifier les réglages dans l'éditeur XML et dans le programme de gestion bibliographique en plus du programme de compilation LaTeX. 

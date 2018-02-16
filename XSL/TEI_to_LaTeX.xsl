@@ -8,6 +8,11 @@
 
 
     <xsl:template match="/">
+        <xsl:text>\title{</xsl:text>
+        <xsl:apply-templates select="/tei:TEI/tei:teiHeader//tei:titleStmt/tei:title"/>
+        <xsl:text>}</xsl:text>
+        <xsl:text>\begin{document}
+        \maketitle</xsl:text>
         <xsl:apply-templates/>
     </xsl:template>
 
