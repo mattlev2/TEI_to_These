@@ -64,6 +64,26 @@
           pubPlace publisher q quote ref relatedItem resp respStmt rs series sic soCalled spstage street 
           term textLang time title"/>
         <!-- required -->
+        <elementSpec ident="ref" mode="change" module="linking">
+          <attList>
+            <attDef ident="type" mode="replace" usage="req">
+              <datatype>
+                <dataRef key="teidata.enumerated"/>
+              </datatype>
+              <valList type="closed">
+                <valItem ident="url">
+                  <gloss>Lien vers un URL</gloss>
+                </valItem>
+                <valItem ident="bibl">
+                  <gloss>Renvoi à une référence bibliographique</gloss>
+                </valItem>
+                <valItem ident="bibliographie">
+                  <gloss>Renvoi à la bibliographie</gloss>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
         <elementSpec ident="hi" mode="change" module="core">
           <attList>
             <attDef ident="rend" mode="replace" usage="req">
@@ -89,31 +109,15 @@
           </attList>
         </elementSpec>
         <!-- required -->
-        <moduleRef key="header"/>
+        <moduleRef key="header"
+          include="abstract authority availability biblFull cRefPattern calendar calendarDesc catDesc catRef category change classCode classDecl correction correspAction 
+          correspContext correspDesc creation distributor edition editionStmt editorialDecl encodingDesc extent fileDesc funder geoDecl handNote hyphenation idno interpretation keywords langUsage
+          language licence listChange listPrefixDef namespace normalization notesStmt prefixDef principal profileDesc projectDesc publicationStmt punctuation quotation refState refsDecl rendition 
+          revisionDesc samplingDecl schemaRef scriptNote segmentation seriesStmt sourceDescstdVals tagUsage tagsDecl teiHeader textClass titleStmt"/>
         <!-- required -->
 
         <moduleRef key="linking"/>
         <!--rendre l'att. type obligatoire dans <seg/>-->
-        <elementSpec ident="ref" mode="change" module="linking">
-          <attList>
-            <attDef ident="type" mode="replace" usage="req">
-              <datatype>
-                <dataRef key="teidata.enumerated"/>
-              </datatype>
-              <valList type="closed">
-                <valItem ident="url">
-                  <gloss>Lien vers un URL</gloss>
-                </valItem>
-                <valItem ident="bibl">
-                  <gloss>Renvoi à une référence bibliographique</gloss>
-                </valItem>
-                <valItem ident="bibliographie">
-                  <gloss>Renvoi à la bibliographie</gloss>
-                </valItem>
-              </valList>
-            </attDef>
-          </attList>
-        </elementSpec>
         <!--rendre l'att. type obligatoire dans <seg/>-->
 
         <moduleRef key="namesdates"/>
