@@ -104,8 +104,8 @@
         </xsl:if>
         <xsl:if test="@type = 'bibl'">
             <xsl:choose>
-                <xsl:when test="not(preceding-sibling::text()[1])">
-                    <xsl:text>\textsuperscript{,}\footnote{\cite</xsl:text>
+                <xsl:when test="following::text()[1]='' and following::tei:ref[@type='bibl']">
+                    <xsl:text>\footnote{\cite</xsl:text>
                     <xsl:if test="tei:measure">
                         <xsl:text>[</xsl:text>
                         <xsl:value-of select="tei:measure/text()"/>
@@ -113,7 +113,7 @@
                     </xsl:if>
                     <xsl:text>{</xsl:text>
                     <xsl:value-of select="@n"/>
-                    <xsl:text>}.}</xsl:text>
+                    <xsl:text>}.}\textsuperscript{,}</xsl:text>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:choose>
@@ -180,9 +180,9 @@
             <xsl:text>}</xsl:text>
         </xsl:if>
         <xsl:if test="@rend = 'brouillon'">
-            <xsl:text>\underline{</xsl:text>
+            <xsl:text>\textsc{\color{red}</xsl:text>
             <xsl:apply-templates/>
-            <xsl:text>}</xsl:text>
+            <xsl:text>\color{black}}</xsl:text>
         </xsl:if>
     </xsl:template>
     <!--Mise en valeur d'un morceau de texte-->
