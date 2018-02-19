@@ -57,11 +57,11 @@
 
         <!-- required -->
         <moduleRef key="core"
-          include="abbr addrLine address analytic author bibl biblScope biblStruct 
-          cit citedRange date desc distinct divGen editor email emph expan foreign gb graphic 
-          head headItem headLabel hi imprint index item l label lg list listBibl 
-          measure measureGrp meeting mentioned milestone monogr name note num p ptr 
-          pubPlace publisher q quote ref relatedItem resp respStmt rs series sic soCalled spstage street 
+          include="abbr analytic author bibl biblScope biblStruct 
+          cit date desc distinct editor email foreign gb graphic 
+          head hi imprint index item l lg list listBibl 
+          milestone monogr name note num p ptr 
+          pubPlace publisher q quote ref resp respStmt rs series sic 
           term textLang time title"/>
         <!-- required -->
         <elementSpec ident="ref" mode="change" module="linking">
@@ -110,10 +110,10 @@
         </elementSpec>
         <!-- required -->
         <moduleRef key="header"
-          include="abstract authority availability biblFull cRefPattern calendar calendarDesc catDesc catRef category change classCode classDecl correction correspAction 
-          correspContext correspDesc creation distributor edition editionStmt editorialDecl encodingDesc extent fileDesc funder geoDecl handNote hyphenation idno interpretation keywords langUsage
-          language licence listChange listPrefixDef namespace normalization notesStmt prefixDef principal profileDesc projectDesc publicationStmt punctuation quotation refState refsDecl rendition 
-          revisionDesc samplingDecl schemaRef scriptNote segmentation seriesStmt sourceDesc stdVals tagUsage tagsDecl teiHeader textClass titleStmt"/>
+          include="abstract authority availability change correction 
+         creation distributor edition editionStmt editorialDecl encodingDesc extent fileDesc keywords langUsage
+          language licence listChange namespace normalization notesStmt profileDesc projectDesc publicationStmt 
+          revisionDesc samplingDecl seriesStmt sourceDesc teiHeader titleStmt"/>
         <!-- required -->
 
         <!--<moduleRef key="linking"/>-->
@@ -122,7 +122,7 @@
           include="forename location persName person place placeName surname"/>
 
         <!-- required -->
-        <moduleRef key="textstructure" include="TEI argument back body dateline div floatingText front group text"/>
+        <moduleRef key="textstructure" include="TEI argument back body div front group"/>
         <!-- required -->
         <elementSpec ident="div" mode="change" module="textstructure">
           <attList>
