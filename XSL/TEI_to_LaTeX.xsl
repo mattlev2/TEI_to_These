@@ -66,16 +66,16 @@
         </xsl:choose>
     </xsl:template>
 
+
     <xsl:template match="tei:note">
         <xsl:text>\footnote{</xsl:text>
         <xsl:apply-templates/>
+        <!--Gérer la ponctuation: ajouter un point si il n'y en a pas en fin de note et si la ne note finit pas par 
+            une ref[biblatex le fait]-->
         <xsl:if test="not(tei:ref[last()]) and not(ends-with(., '.'))">
             <xsl:text>.</xsl:text>
         </xsl:if>
-        <!--Attention, la règle est foireuse avec les notes qui finissent sur une référence, va savoir pourquoi-->
-        <!--<xsl:if test="not(text())">
-            <xsl:text>.</xsl:text>
-        </xsl:if>-->
+        <!--Gérer la ponctuation-->
         <xsl:text>}</xsl:text>
     </xsl:template>
 
