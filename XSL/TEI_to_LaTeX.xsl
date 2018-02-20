@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--<?xml version="1.0" encoding="UTF-8"?>-->
-
+<!--Esperluette sur et dans la biblio !!-->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tei="http://www.tei-c.org/ns/1.0"
     exclude-result-prefixes="xs" version="2.0">
@@ -17,6 +17,7 @@
     </xsl:template>
 
     <xsl:template match="tei:head"/>
+    <!--Trouver un moyen d'appliquer les règles dans un head-->
     <xsl:template match="tei:teiHeader"/>
 
 
@@ -68,9 +69,10 @@
     <xsl:template match="tei:note">
         <xsl:text>\footnote{</xsl:text>
         <xsl:apply-templates/>
-        <xsl:if test="not(ends-with(., '.'))">
+        <xsl:if test="not(tei:ref[last()]) and not(ends-with(., '.'))">
             <xsl:text>.</xsl:text>
         </xsl:if>
+        <!--Attention, la règle est foireuse avec les notes qui finissent sur une référence, va savoir pourquoi-->
         <!--<xsl:if test="not(text())">
             <xsl:text>.</xsl:text>
         </xsl:if>-->
@@ -104,7 +106,7 @@
         </xsl:if>
         <xsl:if test="@type = 'bibl'">
             <xsl:choose>
-                <xsl:when test="following::text()[1]='' and following::tei:ref[@type='bibl']">
+                <xsl:when test="following::text()[1] = '' and following::tei:ref[@type = 'bibl']">
                     <xsl:text>\footnote{\cite</xsl:text>
                     <xsl:if test="tei:measure">
                         <xsl:text>[</xsl:text>
@@ -180,9 +182,9 @@
             <xsl:text>}</xsl:text>
         </xsl:if>
         <xsl:if test="@rend = 'brouillon'">
-            <xsl:text>\textsc{\color{red}</xsl:text>
+            <xsl:text>\textsc{\color{red}[</xsl:text>
             <xsl:apply-templates/>
-            <xsl:text>\color{black}}</xsl:text>
+            <xsl:text>]\color{black}}</xsl:text>
         </xsl:if>
     </xsl:template>
     <!--Mise en valeur d'un morceau de texte-->
