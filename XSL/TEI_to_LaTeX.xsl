@@ -70,8 +70,8 @@
     <xsl:template match="tei:note">
         <xsl:text>\footnote{</xsl:text>
         <xsl:apply-templates/>
-        <!--Gérer la ponctuation: ajouter un point si il n'y en a pas en fin de note et si la ne note finit pas par 
-            une ref[biblatex le fait]-->
+        <!--Gérer la ponctuation: ajouter un point si il n'y en a pas en fin de note ET si la ne note finit pas par 
+            une ref [biblatex le fait]-->
         <xsl:if test="not(tei:ref[last()]) and not(ends-with(., '.'))">
             <xsl:text>.</xsl:text>
         </xsl:if>
@@ -106,8 +106,9 @@
         </xsl:if>
         <xsl:if test="@type = 'bibl'">
             <xsl:choose>
-                <xsl:when test="following::text()[1] = '' and following::tei:ref[@type = 'bibl']">
-                    <xsl:text>\footnote{\cite</xsl:text>
+                <xsl:when
+                    test="preceding::text() = '' and preceding-sibling::tei:ref[@type = 'bibl']">
+                    <xsl:text>\textsuperscript{,}\footnote{\cite</xsl:text>
                     <xsl:if test="tei:measure">
                         <xsl:text>[</xsl:text>
                         <xsl:value-of select="tei:measure/text()"/>
@@ -115,7 +116,7 @@
                     </xsl:if>
                     <xsl:text>{</xsl:text>
                     <xsl:value-of select="@n"/>
-                    <xsl:text>}.}\textsuperscript{,}</xsl:text>
+                    <xsl:text>}.}</xsl:text>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:choose>
@@ -165,7 +166,7 @@
 
     <xsl:template match="tei:foreign">
         <xsl:text>\textit{</xsl:text>
-        <xsl:value-of select="."/>
+        <xsl:call-template name="grand_remplacement"/>
         <xsl:text>}</xsl:text>
     </xsl:template>
 
@@ -190,10 +191,11 @@
     <!--Mise en valeur d'un morceau de texte-->
 
     <!--Remplacements divers de chaînes de caractère, échappement de certains caractères spéciaux, etc-->
-    <xsl:template match="text()">
+    <xsl:template match="text()" name="grand_remplacement">
         <xsl:variable name="v1" select="replace(., 'LaTeX', '\\LaTeX~')"/>
         <xsl:variable name="v2" select="replace($v1, '~ ', '~')"/>
-        <xsl:value-of select="replace($v2, '&amp;', '\\&amp;')"/>
+        <xsl:variable name="v3" select="replace($v2, '&amp;', '\\&amp;')"/>
+        <xsl:value-of select="replace($v3, ' - ', ' -- ')"/>
     </xsl:template>
     <!--Remplacements divers de chaînes de caractère-->
 

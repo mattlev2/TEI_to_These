@@ -138,14 +138,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%BIBLIO%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{xpatch}
 \usepackage{filecontents}
-\usepackage[style=verbose-trad1,citestyle=authortitle-ibid, isbn=false, doi=false,backend=bibtex8,language=french,url=false]{biblatex}
+\usepackage[style=verbose-trad1,citestyle=authoryear-ibid, isbn=false, doi=false,backend=bibtex8,language=french,url=false]{biblatex}
 %Pas de pagebreak avant la biblio
 \defbibheading{secbib}[\bibname]{%
  % \section*{#1}%
  % \markboth{#1}{#1}
  }
   %Pas de pagebreak avant la biblio
-%\renewcommand*{\mkibid}{\emph}
+\renewcommand*{\mkibid}{\emph}
+\renewcommand{\mkbibnamelast}[1]{\textsc{#1}}
 \DeclareFieldFormat[report]{title}{\textit{{#1}}}
 \DeclareFieldFormat[article]{journaltitle}{{\textit{{#1}}}}
   \DeclareFieldFormat[book]{title}{{\textit{#1}}}
@@ -153,7 +154,6 @@
     \DeclareFieldFormat[book]{booktitle}{{\textit{#1}}}
    \DeclareFieldFormat[inbook]{booktitle}{{\textit{#1}}}
   \DeclareFieldFormat[techreport]{title}{{\textit{#1}}}
-\renewcommand{\mkbibnamelast}[1]{\textsc{#1}}
 \DeclareLanguageMapping{francais}{francais-apa}
 
 %change In: par \textit{in}
