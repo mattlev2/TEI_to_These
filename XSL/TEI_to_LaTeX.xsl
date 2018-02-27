@@ -51,12 +51,17 @@
         <xsl:apply-templates/>
     </xsl:template>
 
-    <xsl:template match="tei:title">
+    <xsl:template name="titre" match="tei:title">
         <xsl:choose>
             <xsl:when test="parent::tei:hi">
                 <xsl:text>``</xsl:text>
                 <xsl:value-of select="."/>
                 <xsl:text>''</xsl:text>
+            </xsl:when>
+            <xsl:when test="parent::tei:title">
+                <xsl:text>}</xsl:text>
+                <xsl:value-of select="."/>
+                <xsl:text>\textit{</xsl:text>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:text>\textit{</xsl:text>
