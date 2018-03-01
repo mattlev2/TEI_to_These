@@ -43,8 +43,8 @@
                tels des articles ou dans mon cas des th&#xe8;ses de doctorat.</p>
             <p>Ce fichier sera transform&#xe9; en fichier LaTeX par le biais de feuilles de style
                XSL, puis compil&#xe9; par un &#xe9;diteur LaTeX. L'ensemble du projet est disponible
-                  <ref type="url" target="https://github.com/mattlev2/TEI_to_These">sur mon
-                  d&#xe9;p&#xf4;t GitHub</ref>. </p>
+               sur mon d&#xe9;p&#xf4;t GitHub<ref type="url"
+                  target="https://github.com/mattlev2/TEI_to_These"/>. </p>
          </projectDesc>
       </encodingDesc>
    </teiHeader>
@@ -65,18 +65,18 @@
                      jour d'&#xe9;dition du texte latin, mais plusieurs des traductions au
                      vernaculaire ont &#xe9;t&#xe9; &#xe9;dit&#xe9;es ces vingt derni&#xe8;res
                      ann&#xe9;es</note>). &#xc9;crit autour de 1280<ref type="bibl"
-                     n="del_punta_f._donati_s._and_luna_c_egidio_1993"> [Del Punta 1993]</ref> par
-                  l'augustin Gilles de Rome pour le futur Philippe le Bel, cet ouvrage est
-                  compos&#xe9; de plus de deux cent chapitres, et se compose de trois parties. Se
-                  gouverner soi, gouverner sa maisonn&#xe9;e et gouverner son royaume sont les
-                  th&#xe8;mes d'un <foreign>speculum principum</foreign> qui sera un des vecteurs
-                  principaux de diffusion de l'aristot&#xe9;lisme m&#xe9;di&#xe9;val ainsi que de la
-                  conception tripartite de la philosophie pratique (en &#xc9;thique, &#xc9;conomie
-                  et Politique) en Europe<ref type="bibl" n="bizzarri_fray_2000">Bizzarri
-                        2000:<measure type="page">55</measure></ref>. Il est connu assez t&#xf4;t en
-                  Espagne: don Juan Manuel, par exemple, le mentionne dans le <title>Libro
-                     enfinido</title>, autour de 1336-1337<ref type="bibl" n="bizzarri_fray_2000"
-                     >Bizzarri 2000:<measure type="page">56</measure></ref>. </p>
+                     n="del_punta_egidio_1993"> [Del Punta 1993]</ref> par l'augustin Gilles de Rome
+                  pour le futur Philippe le Bel, cet ouvrage est compos&#xe9; de plus de deux cent
+                  chapitres, et se compose de trois parties. Se gouverner soi, gouverner sa
+                  maisonn&#xe9;e et gouverner son royaume sont les th&#xe8;mes d'un
+                     <foreign>speculum principum</foreign> qui sera un des vecteurs principaux de
+                  diffusion de l'aristot&#xe9;lisme m&#xe9;di&#xe9;val ainsi que de la conception
+                  tripartite de la philosophie pratique (en &#xc9;thique, &#xc9;conomie et
+                  Politique) en Europe<ref type="bibl" n="bizzarri_fray_2000">Bizzarri 2000:<measure
+                        type="page">55</measure></ref>. Il est connu assez t&#xf4;t en Espagne: don
+                  Juan Manuel, par exemple, le mentionne dans le <title>Libro enfinido</title>,
+                  autour de 1336-1337<ref type="bibl" n="bizzarri_fray_2000">Bizzarri 2000:<measure
+                        type="page">56</measure></ref>. </p>
                <p><!-- 1.1.2) ce qui s'est fait sur le texte castillan. Les versions. Projets d'édition.
                   Deux visions différentes.-->
                   Le <title>De regimine principum</title> est traduit au castillan autour de 1345,
@@ -359,16 +359,16 @@
                   &#xe9;dition au format XML-TEI/P5. Cela m'a permis de tracer les premiers contours
                   d'un arbre de relations probables entre manuscrits (<foreign>stemma
                      codicorum</foreign>), et de proposer une &#xe9;dition du texte sur la
-                  premi&#xe8;re partie du premier livre (<ref type="url"
+                  premi&#xe8;re partie du premier livre<ref type="url"
                      target="http://perso.ens-lyon.fr/matthias.gille-levenson/Annexes/pdf/Assemble.pdf"
-                     >ici</ref>). J'ai aussi pu commencer une &#xe9;tude id&#xe9;ologique du texte,
-                  portant notamment sur des questions de pauvret&#xe9; ou de rapport entre pouvoir
-                  temporel et spirituel<note>Un fait remarquable: le texte, a priori destin&#xe9;
-                     &#xe0; des gouvernants pr&#xe9;sents ou futurs, pr&#xe9;sente une aversion
-                     surprenante autant que cat&#xe9;gorique pour le pouvoir et son caract&#xe8;re
-                     corrupteur: <quote><foreign>Noble grado m&#xe1;s que bien andan&#xe7;a, e si
-                           los omnes bien supiesen qu&#xe1;ntos son los cuydados e los peligros e
-                           las mezquindades deste grado e desta corona, non la dev&#xed;a ninguno
+                  />. J'ai aussi pu commencer une &#xe9;tude id&#xe9;ologique du texte, portant
+                  notamment sur des questions de pauvret&#xe9; ou de rapport entre pouvoir temporel
+                  et spirituel<note>Un fait remarquable: le texte, a priori destin&#xe9; &#xe0; des
+                     gouvernants pr&#xe9;sents ou futurs, pr&#xe9;sente une aversion surprenante
+                     autant que cat&#xe9;gorique pour le pouvoir et son caract&#xe8;re corrupteur:
+                           <quote><foreign>Noble grado m&#xe1;s que bien andan&#xe7;a, e si los
+                           omnes bien supiesen qu&#xe1;ntos son los cuydados e los peligros e las
+                           mezquindades deste grado e desta corona, non la dev&#xed;a ninguno
                            levantar de la tierra, mas dexarla yazer!</foreign></quote> I, 1,
                      8.</note>: le franciscanisme ne semble jamais loin, comme l'affirme
                      Lambertini<ref type="bibl" n="briguglia_lost_2011"/>. Mon travail
@@ -381,14 +381,13 @@
                   divergents l'un par rapport &#xe0; l'autre - des manuscrits du Regimiento: on peut
                   trouver cette &#xe9;dition <ref type="url"
                      target="http://perso.ens-lyon.fr/matthias.gille-levenson/etude-prologues/Prologues.html"
-                     >ici</ref>. Je compte m'appuyer sur ces premi&#xe8;res bases pour commencer ma
-                  th&#xe8;se. D'un point de vue plus pratique, j'ai aussi pu me procurer une partie
-                  des manuscrits que je vais &#xe9;tudier pour ma th&#xe8;se ayant travaill&#xe9;
-                  pour mon m&#xe9;moire de Master II sur une partie des t&#xe9;moins de mon corpus :
-                  la majorit&#xe9; des reproductions n'est pas librement disponible, mais est
-                  cependant facilement accessible: les manuscrits sont tous en Espagne &#xe0;
-                  l'exception d'un t&#xe9;moin qui se trouve &#xe0; Philadelphie, aux
-                  &#xc9;tats-Unis.</p>
+                  />. Je compte m'appuyer sur ces premi&#xe8;res bases pour commencer ma th&#xe8;se.
+                  D'un point de vue plus pratique, j'ai aussi pu me procurer une partie des
+                  manuscrits que je vais &#xe9;tudier pour ma th&#xe8;se ayant travaill&#xe9; pour
+                  mon m&#xe9;moire de Master II sur une partie des t&#xe9;moins de mon corpus : la
+                  majorit&#xe9; des reproductions n'est pas librement disponible, mais est cependant
+                  facilement accessible: les manuscrits sont tous en Espagne &#xe0; l'exception d'un
+                  t&#xe9;moin qui se trouve &#xe0; Philadelphie, aux &#xc9;tats-Unis.</p>
             </div>
          </div>
          <div xml:id="seconde_partie">
@@ -810,9 +809,9 @@
                      sp&#xe9;cifiques: <ref type="url"
                         target="http://www.tei-c.org/release/doc/tei-p5-exemplars/html/tei_jtei.doc.html"
                      /></note>. Je me propose ainsi de r&#xe9;diger ma th&#xe8;se selon ce m&#xea;me
-                  standard d'encodage des textes, pour la transformer en LaTeX ensuite<note>on peut
+                  standard d'encodage des textes, pour la transformer en LaTeX ensuite<note>On peut
                      trouver la documentation d'un processus &#xe9;ditorial - au sens technique du
-                     terme - &#xe9;quivalent ici: <ref type="url"
+                     terme - &#xe9;quivalent: <ref type="url"
                         target="http://perso.ens-lyon.fr/matthias.gille-levenson/these/process.pdf"
                      />, p.99 notamment</note>. L'int&#xe9;r&#xea;t r&#xe9;side dans ce que j'ai
                   expos&#xe9; plus haut: il s'agira de cr&#xe9;er un texte dont la mise en page ne
@@ -895,9 +894,9 @@
                th&#xe8;se <hi rend="brouillon">S&#xe9;parer en sources principales, sources
                   secondaires</hi>
                <!--<hi rend="brouillon">Faire attention &#xe0; la biblio : g&#xe9;rer le probl&#xe8;me des lettres accentu&#xe9;es mal ordonn&#xe9;es par Biblatex (d&#xed;ez garretas)</hi>--><note>Une
-                  bibliographie plus exhaustive est accessible <ref type="url"
+                  bibliographie plus exhaustive est accessible au lien donné en note<ref type="url"
                      target="http://perso.ens-lyon.fr/matthias.gille-levenson/these/biblio.html"
-                     >ici</ref>.</note>. <ref type="bibliographie" target="biblio.biblatex"/>
+                  />.</note>. <ref type="bibliographie" target="biblio.biblatex"/>
             </p>
          </div>
       </back>
