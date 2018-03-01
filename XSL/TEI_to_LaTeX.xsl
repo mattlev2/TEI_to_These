@@ -110,23 +110,7 @@
             <xsl:text>}</xsl:text>
         </xsl:if>
         <xsl:if test="@type = 'bibl'">
-            <xsl:choose>
-                <xsl:when
-                    test="preceding::text() = '' and preceding-sibling::tei:ref[@type = 'bibl']">
-                    <xsl:text>\textsuperscript{,}\footnote{\cite</xsl:text>
-                    <xsl:if test="tei:measure">
-                        <xsl:text>[</xsl:text>
-                        <xsl:value-of select="tei:measure/text()"/>
-                        <xsl:text>]</xsl:text>
-                    </xsl:if>
-                    <xsl:text>{</xsl:text>
-                    <xsl:value-of select="@n"/>
-                    <xsl:text>}.}</xsl:text>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:choose>
-                        <xsl:when test="parent::tei:note">
-                            <xsl:text> \cite</xsl:text>
+                            <xsl:text>\cite</xsl:text>
                             <xsl:if test="tei:measure">
                                 <xsl:text>[</xsl:text>
                                 <xsl:value-of select="tei:measure/text()"/>
@@ -134,22 +118,7 @@
                             </xsl:if>
                             <xsl:text>{</xsl:text>
                             <xsl:value-of select="@n"/>
-                            <xsl:text>}.</xsl:text>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:text>\footnote{\cite</xsl:text>
-                            <xsl:if test="tei:measure">
-                                <xsl:text>[</xsl:text>
-                                <xsl:value-of select="tei:measure/text()"/>
-                                <xsl:text>]</xsl:text>
-                            </xsl:if>
-                            <xsl:text>{</xsl:text>
-                            <xsl:value-of select="@n"/>
-                            <xsl:text>}.}</xsl:text>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </xsl:otherwise>
-            </xsl:choose>
+                            <xsl:text>}</xsl:text>
         </xsl:if>
     </xsl:template>
 
