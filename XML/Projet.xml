@@ -162,6 +162,82 @@
                   conviene de notar <ref type="bibl" n="martin_sanz_magister_2009"><measure
                         type="page">221-226</measure></ref>--></p>
             </div>
+            <div xml:id="I_4">
+               <head>&#xc9;tat de la recherche personnel</head>
+               <p>J'ai commenc&#xe9; &#xe0; travailler sur le <title>Regimiento de los
+                     pr&#xed;n&#xe7;ipes</title> en Master II: il s'est agi pour moi de
+                  d&#xe9;couvrir le texte selon une perspective traditionnelle, &#xe0; savoir une
+                  &#xe9;dition critique de type b&#xe9;dieriste, avec comme base de travail une
+                  &#xe9;dition au format XML-TEI/P5. Cela m'a permis de tracer les premiers contours
+                  d'un arbre de relations probables entre manuscrits (<foreign>stemma
+                     codicorum</foreign>), et de proposer une &#xe9;dition du texte sur la
+                  premi&#xe8;re partie du premier livre<ref type="url"
+                     target="http://perso.ens-lyon.fr/matthias.gille-levenson/Annexes/pdf/Assemble.pdf"
+                  />. J'ai aussi pu commencer une &#xe9;tude id&#xe9;ologique du texte, portant
+                  notamment sur des questions de pauvret&#xe9; ou de rapport entre pouvoir temporel
+                  et spirituel<note>Un fait remarquable: le texte, a priori destin&#xe9; &#xe0; des
+                     gouvernants pr&#xe9;sents ou futurs, pr&#xe9;sente une aversion surprenante
+                     autant que cat&#xe9;gorique pour le pouvoir et son caract&#xe8;re corrupteur:
+                           <quote><foreign>Noble grado m&#xe1;s que bien andan&#xe7;a, e si los
+                           omnes bien supiesen qu&#xe1;ntos son los cuydados e los peligros e las
+                           mezquindades deste grado e desta corona, non la dev&#xed;a ninguno
+                           levantar de la tierra, mas dexarla yazer!</foreign></quote> I, 1,
+                     8.</note>: le franciscanisme ne semble jamais loin, comme l'affirme
+                     Lambertini<ref type="bibl" n="briguglia_lost_2011"/>. Mon travail
+                  d'&#xe9;dition a donn&#xe9; deux r&#xe9;sultats: une &#xe9;dition traditionnelle
+                     <quote>papier</quote>, et une &#xe9;dition au format html<note>On peut
+                     retrouver cette &#xe9;dition &#xe0; l'adresse suivante: <ref type="url"
+                        target="http://perso.ens-lyon.fr/matthias.gille-levenson/Annexes/XSLT/Build/Edition-dig.html"
+                     /></note>. En outre, j'ai commenc&#xe9; &#xe0; d&#xe9;velopper un prototype
+                  d'&#xe9;dition synoptique des diff&#xe9;rents prologues - tous tr&#xe8;s
+                  divergents l'un par rapport &#xe0; l'autre - des manuscrits du Regimiento: on peut
+                  trouver cette &#xe9;dition <ref type="url"
+                     target="http://perso.ens-lyon.fr/matthias.gille-levenson/etude-prologues/Prologues.html"
+                  />. Je compte m'appuyer sur ces premi&#xe8;res bases pour commencer ma th&#xe8;se.
+                  D'un point de vue plus pratique, j'ai aussi pu me procurer une partie des
+                  manuscrits que je vais &#xe9;tudier pour ma th&#xe8;se ayant travaill&#xe9; pour
+                  mon m&#xe9;moire de Master II sur une partie des t&#xe9;moins de mon corpus : la
+                  majorit&#xe9; des reproductions n'est pas librement disponible, mais est cependant
+                  facilement accessible: les manuscrits sont tous en Espagne &#xe0; l'exception d'un
+                  t&#xe9;moin qui se trouve &#xe0; Philadelphie, aux &#xc9;tats-Unis.</p>
+            </div>
+         </div>
+         <div xml:id="seconde_partie">
+            <head>II - Probl&#xe9;matiques - Axes de recherche</head>
+            <div xml:id="II_1">
+               <head>D&#xe9;limitation du corpus</head>
+               <p>Plusieurs options s'offrent au chercheur qui veut travailler sur cette traduction
+                  glos&#xe9;e et recompos&#xe9;e. On peut d&#xe9;fendre l'id&#xe9;e qu'une
+                  &#xe9;dition de la version B reste &#xe0; faire, si on consid&#xe8;re que c'est un
+                  texte en soi, distinct de la premi&#xe8;re version. Cette version B semble en
+                  effet avoir &#xe9;t&#xe9; la plus diffus&#xe9;e &#xe0; partir du XVe si&#xe8;cle;
+                  c'est celle sur laquelle travaille Beneyto P&#xe9;rez en 1947. Une
+                  r&#xe9;-&#xe9;dition du texte qui prendrait en compte sa nature de "seconde main"
+                  me semble &#xea;tre un travail justifiable du point de vue scientifique. Ce projet
+                  est int&#xe9;ressant, mais ce n'est pas celui que j'ai retenu pour ma th&#xe8;se.
+                  En effet, au vu de la taille de l'ouvrage et du corpus de manuscrits (plus de deux
+                  cent chapitres, un dizaine de t&#xe9;moins, entre 160 et 600 folios par
+                  manuscrit), il semble assez clair que c'est un travail qui ne peut &#xea;tre
+                  accompli en trois ou quatre ans, temps attendu, avec la r&#xe9;forme de la
+                  th&#xe8;se, pour mener &#xe0; bien un projet doctoral complet; d'o&#xf9;
+                  l'id&#xe9;e de r&#xe9;duire la taille du corpus pour m'int&#xe9;resser &#xe0; la
+                  fin du texte, &#xe0; savoir la partie 3 du livre III. Son titre est
+                        <quote><foreign>Del gobierno de la ciudad e del reyno en tiempo de
+                        guerra</foreign></quote>. C'est la deuxi&#xe8;me partie d'un diptique qui
+                  traite du gouvernement de la Cit&#xe9;, la premi&#xe8;re &#xe9;tant consacr&#xe9;e
+                  aux gouvernement en temps de paix<note>Segunda parte, <quote><foreign>Del gobierno
+                           de la ciudad e del reyno en tiempo de paz</foreign></quote>. La
+                     premi&#xe8;re partie du troisi&#xe8;me livre est consacr&#xe9;e aux
+                        <quote>opinions des philosophes</quote>(je traduis).</note>. Cette
+                  derni&#xe8;re partie traite ainsi de la question de la noblesse et plus
+                  particuli&#xe8;rement de la chevalerie. Le corpus choisi s'&#xe9;tend donc sur
+                  III, 3, soit la derni&#xe8;re partie de l'ouvrage, qui compte vingt trois
+                  chapitres. En ce qui concerne les t&#xe9;moins de mon travail, je choisirai les
+                  manuscrits de B qui courent sur tout le livre III (un total de six manuscrits plus
+                  un
+                  incunable)<!-- ainsi qu'un des manuscrits de la version A, pour avoir un point de comparaison tant formelle qu'id&#xe9;ologique entre les deux versions-->.
+               </p>
+            </div>
             <div xml:id="I_3">
                <head>Noblesse et chevalerie. &#xc9;tat de la recherche th&#xe9;matique</head>
                <p>L'&#xe9;tude du texte que je me propose de faire s'articulera autour du concept de
@@ -267,82 +343,6 @@
                      n="rodriguez_velasco_diego_1996">Rodriguez Velasco 1996:<measure type="page"
                         >23-24</measure></ref><hi rend="brouillon">Probl&#xe8;me: tu ne vas pas au
                      texte: essayer de donner des exemples concrets?</hi>.</p>
-            </div>
-            <div xml:id="I_4">
-               <head>&#xc9;tat de la recherche personnel</head>
-               <p>J'ai commenc&#xe9; &#xe0; travailler sur le <title>Regimiento de los
-                     pr&#xed;n&#xe7;ipes</title> en Master II: il s'est agi pour moi de
-                  d&#xe9;couvrir le texte selon une perspective traditionnelle, &#xe0; savoir une
-                  &#xe9;dition critique de type b&#xe9;dieriste, avec comme base de travail une
-                  &#xe9;dition au format XML-TEI/P5. Cela m'a permis de tracer les premiers contours
-                  d'un arbre de relations probables entre manuscrits (<foreign>stemma
-                     codicorum</foreign>), et de proposer une &#xe9;dition du texte sur la
-                  premi&#xe8;re partie du premier livre<ref type="url"
-                     target="http://perso.ens-lyon.fr/matthias.gille-levenson/Annexes/pdf/Assemble.pdf"
-                  />. J'ai aussi pu commencer une &#xe9;tude id&#xe9;ologique du texte, portant
-                  notamment sur des questions de pauvret&#xe9; ou de rapport entre pouvoir temporel
-                  et spirituel<note>Un fait remarquable: le texte, a priori destin&#xe9; &#xe0; des
-                     gouvernants pr&#xe9;sents ou futurs, pr&#xe9;sente une aversion surprenante
-                     autant que cat&#xe9;gorique pour le pouvoir et son caract&#xe8;re corrupteur:
-                           <quote><foreign>Noble grado m&#xe1;s que bien andan&#xe7;a, e si los
-                           omnes bien supiesen qu&#xe1;ntos son los cuydados e los peligros e las
-                           mezquindades deste grado e desta corona, non la dev&#xed;a ninguno
-                           levantar de la tierra, mas dexarla yazer!</foreign></quote> I, 1,
-                     8.</note>: le franciscanisme ne semble jamais loin, comme l'affirme
-                     Lambertini<ref type="bibl" n="briguglia_lost_2011"/>. Mon travail
-                  d'&#xe9;dition a donn&#xe9; deux r&#xe9;sultats: une &#xe9;dition traditionnelle
-                     <quote>papier</quote>, et une &#xe9;dition au format html<note>On peut
-                     retrouver cette &#xe9;dition &#xe0; l'adresse suivante: <ref type="url"
-                        target="http://perso.ens-lyon.fr/matthias.gille-levenson/Annexes/XSLT/Build/Edition-dig.html"
-                     /></note>. En outre, j'ai commenc&#xe9; &#xe0; d&#xe9;velopper un prototype
-                  d'&#xe9;dition synoptique des diff&#xe9;rents prologues - tous tr&#xe8;s
-                  divergents l'un par rapport &#xe0; l'autre - des manuscrits du Regimiento: on peut
-                  trouver cette &#xe9;dition <ref type="url"
-                     target="http://perso.ens-lyon.fr/matthias.gille-levenson/etude-prologues/Prologues.html"
-                  />. Je compte m'appuyer sur ces premi&#xe8;res bases pour commencer ma th&#xe8;se.
-                  D'un point de vue plus pratique, j'ai aussi pu me procurer une partie des
-                  manuscrits que je vais &#xe9;tudier pour ma th&#xe8;se ayant travaill&#xe9; pour
-                  mon m&#xe9;moire de Master II sur une partie des t&#xe9;moins de mon corpus : la
-                  majorit&#xe9; des reproductions n'est pas librement disponible, mais est cependant
-                  facilement accessible: les manuscrits sont tous en Espagne &#xe0; l'exception d'un
-                  t&#xe9;moin qui se trouve &#xe0; Philadelphie, aux &#xc9;tats-Unis.</p>
-            </div>
-         </div>
-         <div xml:id="seconde_partie">
-            <head>II - Probl&#xe9;matiques - Axes de recherche</head>
-            <div xml:id="II_1">
-               <head>D&#xe9;limitation du corpus</head>
-               <p>Plusieurs options s'offrent au chercheur qui veut travailler sur cette traduction
-                  glos&#xe9;e et recompos&#xe9;e. On peut d&#xe9;fendre l'id&#xe9;e qu'une
-                  &#xe9;dition de la version B reste &#xe0; faire, si on consid&#xe8;re que c'est un
-                  texte en soi, distinct de la premi&#xe8;re version. Cette version B semble en
-                  effet avoir &#xe9;t&#xe9; la plus diffus&#xe9;e &#xe0; partir du XVe si&#xe8;cle;
-                  c'est celle sur laquelle travaille Beneyto P&#xe9;rez en 1947. Une
-                  r&#xe9;-&#xe9;dition du texte qui prendrait en compte sa nature de "seconde main"
-                  me semble &#xea;tre un travail justifiable du point de vue scientifique. Ce projet
-                  est int&#xe9;ressant, mais ce n'est pas celui que j'ai retenu pour ma th&#xe8;se.
-                  En effet, au vu de la taille de l'ouvrage et du corpus de manuscrits (plus de deux
-                  cent chapitres, un dizaine de t&#xe9;moins, entre 160 et 600 folios par
-                  manuscrit), il semble assez clair que c'est un travail qui ne peut &#xea;tre
-                  accompli en trois ou quatre ans, temps attendu, avec la r&#xe9;forme de la
-                  th&#xe8;se, pour mener &#xe0; bien un projet doctoral complet; d'o&#xf9;
-                  l'id&#xe9;e de r&#xe9;duire la taille du corpus pour m'int&#xe9;resser &#xe0; la
-                  fin du texte, &#xe0; savoir la partie 3 du livre III. Son titre est
-                        <quote><foreign>Del gobierno de la ciudad e del reyno en tiempo de
-                        guerra</foreign></quote>. C'est la deuxi&#xe8;me partie d'un diptique qui
-                  traite du gouvernement de la Cit&#xe9;, la premi&#xe8;re &#xe9;tant consacr&#xe9;e
-                  aux gouvernement en temps de paix<note>Segunda parte, <quote><foreign>Del gobierno
-                           de la ciudad e del reyno en tiempo de paz</foreign></quote>. La
-                     premi&#xe8;re partie du troisi&#xe8;me livre est consacr&#xe9;e aux
-                        <quote>opinions des philosophes</quote>(je traduis).</note>. Cette
-                  derni&#xe8;re partie traite ainsi de la question de la noblesse et plus
-                  particuli&#xe8;rement de la chevalerie. Le corpus choisi s'&#xe9;tend donc sur
-                  III, 3, soit la derni&#xe8;re partie de l'ouvrage, qui compte vingt trois
-                  chapitres. En ce qui concerne les t&#xe9;moins de mon travail, je choisirai les
-                  manuscrits de B qui courent sur tout le livre III (un total de six manuscrits plus
-                  un
-                  incunable)<!-- ainsi qu'un des manuscrits de la version A, pour avoir un point de comparaison tant formelle qu'id&#xe9;ologique entre les deux versions-->.
-               </p>
             </div>
             <div xml:id="II_2">
                <head>Les actualisations du texte</head>
@@ -498,7 +498,7 @@
                   statuer sur la date de la première mise en glose?]--></p>
             </div>
             <div xml:id="II_3">
-               <head>M&#xe9;thodes</head>
+               <head>M&#xe9;thodologie</head>
                <p>
                   <!--microscopie/macroscopie:--> Comme affirm&#xe9; plus haut, il nous a
                   sembl&#xe9; n&#xe9;cessaire de restreindre mon travail &#xe0; une partie du texte.
@@ -583,7 +583,7 @@
                   h&#xe9;raldique r&#xe9;alis&#xe9;e en 2003 par F&#xe9;lix Mart&#xed;nez
                      Llorente<ref type="bibl" n="diez_garretas_manuscritos_2003"><measure
                         type="page">98-106</measure></ref> pour compl&#xe9;ter mon travail sur le
-                  contexte de production et de copie/re-cr&#xe9;ation des textes.</p>
+                  contexte de production et de copie/re-cr&#xe9;ation des textes. </p>
             </div>
          </div>
          <div xml:id="I_2">
@@ -681,13 +681,14 @@
                <!--Lire VAINIO 2007--></p>
             <div xml:id="III_1">
                <head>Une &#xe9;dition &#xe9;lectronique native. Le standard XML-TEI/P5.</head>
-               <p><hi rend="brouillon"> Mon &#xe9;dition du Regimiento de pr&#xed;n&#xe7;ipes
-                     glosado sera <quote>nativement digitale</quote>: base tei, cr&#xe9;diter
-                     Ariane</hi> la transcription de base . La TEI (pour <foreign>Text Encoding
-                     Initiative</foreign>) est un consortium international de chercheurs en
-                  humanit&#xe9;s, fond&#xe9;e &#xe0; la fin des ann&#xe9;es 80, et qui a pour
-                  objectif la mise en place d'un standard de r&#xe8;gles d'&#xe9;ditions de textes
-                  de tous types, en utilisant le langage de description XML<note>Une bonne
+               <p>Mon &#xe9;dition du Regimiento de pr&#xed;n&#xe7;ipes glosado sera
+                     <quote>nativement digitale</quote>: elle sera construite sur une base de
+                  documents XML-TEI. Je reprends cette d&#xe9;nomination de la th&#xe8;se (en cours)
+                  d'Ariane Pinche<ref type="url" target="http://theses.fr/s150996"/>. La TEI (pour
+                     <foreign>Text Encoding Initiative</foreign>) est un consortium international de
+                  chercheurs en humanit&#xe9;s, fond&#xe9;e &#xe0; la fin des ann&#xe9;es 80, et qui
+                  a pour objectif la mise en place d'un standard de r&#xe8;gles d'&#xe9;ditions de
+                  textes de tous types, en utilisant le langage de description XML<note>Une bonne
                      introduction &#xe0; XML peut &#xea;tre trouv&#xe9;e dans l'article de
                         Salvador<ref type="bibl" n="salvador_isilex_2017"><measure type="page"
                            >101-105</measure></ref> Voir aussi: <ref type="url"
@@ -845,14 +846,18 @@
          </div>
          <div xml:id="quatrieme_partie">
             <head>IV - Localisation</head>
-            <p>Je souhaiterais pouvoir travailler avec Carlos Heusch, qui me dirige depuis mon M1.
-               Professeur des Universit&#xe9;s, chercheur au CIHAM [Centre Interuniversitaire
-               d'Histoire et d'Arch&#xe9;ologie M&#xe9;di&#xe9;vales] - Histoire, arch&#xe9;ologie,
-               litt&#xe9;ratures des mondes chr&#xe9;tiens et musulmans m&#xe9;di&#xe9;vaux, il a en
-               effet beaucoup travaill&#xe9; sur des questions de th&#xe9;orisation politique (<hi
-                  rend="petites_capitales">Theorica II</hi>), sur les concepts de chevalerie et de
-               lignage en particulier, avec de nombreux articles consacr&#xe9;s &#xe0; ce sujet.
-               L'oeuvre que je veux &#xe9;tudier a aussi &#xe9;t&#xe9; comment&#xe9;e &#xe0;
+            <p>Mon &#xe9;tablissement de rattachement sera donc l'ENS de Lyon, &#xe9;tablissement au
+               sein duquel je souhaiterais pouvoir travailler avec Carlos Heusch, qui me dirige
+               depuis mon M1. Professeur des Universit&#xe9;s, chercheur au CIHAM [Centre
+               Interuniversitaire d'Histoire et d'Arch&#xe9;ologie M&#xe9;di&#xe9;vales] - Histoire,
+               arch&#xe9;ologie, litt&#xe9;ratures des mondes chr&#xe9;tiens et musulmans
+               m&#xe9;di&#xe9;vaux. Carlos Heusch a en effet beaucoup travaill&#xe9; sur des
+               questions de th&#xe9;orisation politique (je pense par exemple &#xe0; <ref type="url"
+                  target="http://calenda.org/268320">Theorica
+                  II</ref>, un atelier organis&#xe9; par M. Heusch autour du
+               th&#xe8;me de la noblesse et du lignage en Castille), sur les concepts de chevalerie
+               et de lignage en particulier, avec de nombreux articles consacr&#xe9;s &#xe0; ce
+               sujet. L'oeuvre que je veux &#xe9;tudier a aussi &#xe9;t&#xe9; comment&#xe9;e &#xe0;
                plusieurs reprises par Carlos Heusch<note><ref type="bibl"
                      n="heusch_translation_2005">Heusch 2005</ref>
                   <ref type="bibl" n="heusch_caballeriayer_2010">Heusch 2010a</ref>
@@ -879,7 +884,11 @@
                      Moulinier.</item>
                   <item>Axe transversal 5: <hi rend="petites_capitales">Humanit&#xe9;s
                         num&#xe9;riques</hi>.</item>
-               </list>
+               </list></p>
+            <p>D'un point de vue plus p&#xe9;dagogique, je souhaiterais pouvoir effectuer une
+               activit&#xe9; d'enseignement compl&#xe9;mentaire dans mon &#xe9;tablissement de
+               rattachement, &#xe0; savoir l'ENS de Lyon. </p>
+            <p>
                <!--- Conclusion importante: j'espère avoir bien montré que Sur «le texte»: l'hypothèse de travail qui motive ce projet de thèse est qu'il n'y a pas de «texte», mais «des textes». Pour l'instant donc, je parlerai de corpus. (?) Sur le titre: le titre canonique du texte est Glosa castellana al regimiento de prínçpes. Au cours de mon travail de Master II, il m'a semblé important d'insister sur la nécessité de trouver un titre plus adapté à ce corpus. En effet, du point de vue de la réception du texte, c'est bien du De regimine principum qui OBJECTIFS DU TRAVAIL: déterminer l'histoire du texte, les raisons de la recomposition de la glose. Pourquoi on reforme un texte qui va prendre son indépendance par rapport à l'original, et où l'original disparaît peu à peu ?--></p>
          </div>
       </body>

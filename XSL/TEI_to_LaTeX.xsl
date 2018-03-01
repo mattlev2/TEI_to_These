@@ -92,7 +92,7 @@
         <xsl:if test="@target = 'biblio.biblatex'">
             <xsl:text>~ \printbibliography[heading=secbib]</xsl:text>
         </xsl:if>
-        
+
         <!--gestion des lien de type url-->
         <xsl:if test="@type = 'url'">
             <!--Mettre les url sans texte de description en note de bas de page 
@@ -109,8 +109,8 @@
             <xsl:text>}</xsl:text>
             <xsl:text>{</xsl:text>
             <xsl:choose>
-                <xsl:when test="text()">
-                    <xsl:value-of select="text()"/>
+                <xsl:when test="node()">
+                    <xsl:apply-templates/>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:value-of select="replace($echappement1, '_', '\\_')"/>
@@ -122,7 +122,7 @@
             </xsl:if>
         </xsl:if>
         <!--gestion des lien de type url-->
-        
+
         <!--gestion des citations biblio-->
         <xsl:if test="@type = 'bibl'">
             <xsl:choose>
