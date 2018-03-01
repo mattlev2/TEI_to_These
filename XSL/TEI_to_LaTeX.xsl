@@ -93,6 +93,9 @@
             <xsl:text>~ \printbibliography[heading=secbib]</xsl:text>
         </xsl:if>
         <xsl:if test="@type = 'url'">
+            <xsl:if test="not(text()) and not(parent::tei:note)">
+                <xsl:text>\footnote{</xsl:text>
+            </xsl:if>
             <xsl:text>\href{</xsl:text>
             <xsl:variable name="echappement1" select="replace(@target, '#', '\\#')"/>
             <xsl:value-of select="replace($echappement1, '_', '\\_')"/>
@@ -107,6 +110,9 @@
                 </xsl:otherwise>
             </xsl:choose>
             <xsl:text>}</xsl:text>
+            <xsl:if test="not(text()) and not(parent::tei:note)">
+                <xsl:text>}</xsl:text>
+            </xsl:if>
         </xsl:if>
         <xsl:if test="@type = 'bibl'">
             <xsl:choose>
