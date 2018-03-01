@@ -138,14 +138,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%BIBLIO%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{xpatch}
 \usepackage{filecontents}
-\usepackage[style=verbose-trad1,citestyle=authoryear-ibid, isbn=false, doi=false,backend=bibtex8,language=french,url=false]{biblatex}
+\usepackage[style=verbose-trad1,citestyle=authoryear, isbn=false, doi=false,backend=bibtex8,language=french,url=false]{biblatex}
 %Pas de pagebreak avant la biblio
 \defbibheading{secbib}[\bibname]{%
  % \section*{#1}%
  % \markboth{#1}{#1}
  }
   %Pas de pagebreak avant la biblio
-\renewcommand*{\mkibid}{\emph}
+%\renewcommand*{\mkibid}{\emph}% À mettre avec un style qui utilise ibid (pour rendre ibid italique).
 \renewcommand{\mkbibnamelast}[1]{\textsc{#1}}
 \DeclareFieldFormat[report]{title}{\textit{{#1}}}
 \DeclareFieldFormat[article]{journaltitle}{{\textit{{#1}}}}

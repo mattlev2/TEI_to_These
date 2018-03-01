@@ -75,9 +75,8 @@
     <xsl:template match="tei:note">
         <xsl:text>\footnote{</xsl:text>
         <xsl:apply-templates/>
-        <!--Gérer la ponctuation: ajouter un point si il n'y en a pas en fin de note ET si la ne note finit pas par 
-            une ref [biblatex le fait]-->
-        <xsl:if test="not(tei:ref[last()]) and not(ends-with(., '.'))">
+        <!--Gérer la ponctuation: ajouter un point si il n'y en a pas en fin de note-->
+        <xsl:if test="not(ends-with(., '.'))">
             <xsl:text>.</xsl:text>
         </xsl:if>
         <!--Gérer la ponctuation-->
@@ -110,15 +109,28 @@
             <xsl:text>}</xsl:text>
         </xsl:if>
         <xsl:if test="@type = 'bibl'">
-                            <xsl:text>\cite</xsl:text>
-                            <xsl:if test="tei:measure">
-                                <xsl:text>[</xsl:text>
-                                <xsl:value-of select="tei:measure/text()"/>
-                                <xsl:text>]</xsl:text>
-                            </xsl:if>
-                            <xsl:text>{</xsl:text>
-                            <xsl:value-of select="@n"/>
-                            <xsl:text>}</xsl:text>
+            <xsl:choose>
+                <xsl:when test="not(parent::tei:note)">
+                    <xsl:text> [</xsl:text>
+                </xsl:when>
+                <!--Gestion des espaces-->
+                <xsl:otherwise>
+                    <xsl:text> </xsl:text>
+                </xsl:otherwise>
+                <!--Gestion des espaces-->
+            </xsl:choose>
+            <xsl:text>\cite</xsl:text>
+            <xsl:if test="tei:measure">
+                <xsl:text>[</xsl:text>
+                <xsl:value-of select="tei:measure/text()"/>
+                <xsl:text>]</xsl:text>
+            </xsl:if>
+            <xsl:text>{</xsl:text>
+            <xsl:value-of select="@n"/>
+            <xsl:text>}</xsl:text>
+            <xsl:if test="not(parent::tei:note)">
+                <xsl:text>]</xsl:text>
+            </xsl:if>
         </xsl:if>
     </xsl:template>
 
