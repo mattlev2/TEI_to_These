@@ -745,6 +745,14 @@ hi[rend = 'brouillon'] {
     color: rgb(153, 0, 0);
 }
 
+hi[rend = 'brouillon']:before{
+    content:' ['
+}
+
+hi[rend = 'brouillon']:after{
+    content:'] '
+}
+
 hi[rend = "bold"] {
     display: inline;
     font-weight: bold;

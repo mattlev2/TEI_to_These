@@ -1,0 +1,904 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--Pour l'ODD: ce qui suit est à refaire. Respecter la façon de faire du jTEI
+   j'ai modifié un peu la façon dont on conçoit les références bibliographiques. 
+    Le convertisseur Zotero to Latex marche mal pour les ouvrages collectifs, je convertis 
+    donc en biblatex, et je n'ai donc pas besoin de <listBibl>. L'encodage d'un référence bibliographique sera donc: 
+<ref type="bibl" n="diez_garretas_juan_2002">Díez Garretas 2002<measure type="page">135</measure></ref>
+-type obligatoire dans ref. Liste fermée: biblio, url, -->
+<!--Pourquoi c'est important, quelles lacunes, bien présenter la problématique, justifier
+               pour c'est important? Très grosse diffusion , à faire parce que la seule édition qui
+               existe est inutilisable, et que les travaux jusque là ne sont que philologiques,
+               qu'il reste à comprendre la pourquoi du comment de cette glose. Propre à l'Espagne?
+               Mouvements de mise en glose du texte en France? Traductions avec un peu de glose?
+               Travail de vraie re-création? Voir, déterminer la faisabilité de la thèse. Essayer de
+               donner un calendrier. Pas inutile de rappeler que j'ai consacré du temps au texte >
+               débroussailler du terrain, se procurer les ms, commencer à transcrire. Commencer par
+               la partie philologique ou ecdotique. Le gros du travail va consister à comprendre les
+               versions. Idée à peu près claire. ERC (y réflechir). Donner une dimension
+               1.1) Philologique 1.1.1) présentation du texte [résumé rapide].-->
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_minimal.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_minimal.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-stylesheet type="text/css" href="../CSS/tei_perso.css"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>La version B du <title>Regimiento de los pr&#xed;ncipes</title> glos&#xe9;
+               (1374-1494). &#xc9;tude et &#xe9;ditions de la partie sur le gouvernement de la
+               cit&#xe9; par temps de guerre (III, 3)</title>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Matthias Gille Levenson</publisher>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Projet de th&#xe8;se nativement xml. </p>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <projectDesc>
+            <p>Projet de th&#xe8;se nativement xml: permet de montrer les possibilit&#xe9;s offertes
+               par la TEI pour la construction de textes acad&#xe9;miques (sur le mod&#xe8;le jTEI),
+               tels des articles ou dans mon cas des th&#xe8;ses de doctorat.</p>
+            <p>Ce fichier sera transform&#xe9; en fichier LaTeX par le biais de feuilles de style
+               XSL, puis compil&#xe9; par un &#xe9;diteur LaTeX. L'ensemble du projet est disponible
+                  <ref type="url" target="https://github.com/mattlev2/TEI_to_These">sur mon
+                  d&#xe9;p&#xf4;t GitHub</ref>. </p>
+         </projectDesc>
+      </encodingDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div xml:id="premiere_partie">
+            <head>I - &#xc9;tat de la recherche</head>
+            <div xml:id="I_1">
+               <head>Les travaux sur le <title>De Regimine principum</title></head>
+               <p>
+                  <!--Du latin au castillan. Les sources.-->
+                  <title>De regimine principum</title> est une des oeuvres de litt&#xe9;rature
+                  politique latine les plus diffus&#xe9;es au bas-Moyen &#xc2;ge (plus de 350
+                  manuscrits sont recens&#xe9;s pour la seule version latine<ref type="bibl"
+                     n="briggs_manuscripts_1993">Briggs 1993<measure type="page"
+                  >255</measure></ref>, on compte des traductions m&#xe9;di&#xe9;vale dans de
+                  nombreuses langues europ&#xe9;ennes<note>Il n'existe malheureusement pas &#xe0; ce
+                     jour d'&#xe9;dition du texte latin, mais plusieurs des traductions au
+                     vernaculaire ont &#xe9;t&#xe9; &#xe9;dit&#xe9;es ces vingt derni&#xe8;res
+                     ann&#xe9;es</note>). &#xc9;crit autour de 1280<ref type="bibl"
+                     n="del_punta_f._donati_s._and_luna_c_egidio_1993"> [Del Punta 1993]</ref> par
+                  l'augustin Gilles de Rome pour le futur Philippe le Bel, cet ouvrage est
+                  compos&#xe9; de plus de deux cent chapitres, et se compose de trois parties. Se
+                  gouverner soi, gouverner sa maisonn&#xe9;e et gouverner son royaume sont les
+                  th&#xe8;mes d'un <foreign>speculum principum</foreign> qui sera un des vecteurs
+                  principaux de diffusion de l'aristot&#xe9;lisme m&#xe9;di&#xe9;val ainsi que de la
+                  conception tripartite de la philosophie pratique (en &#xc9;thique, &#xc9;conomie
+                  et Politique) en Europe<ref type="bibl" n="bizzarri_fray_2000">Bizzarri
+                        2000:<measure type="page">55</measure></ref>. Il est connu assez t&#xf4;t en
+                  Espagne: don Juan Manuel, par exemple, le mentionne dans le <title>Libro
+                     enfinido</title>, autour de 1336-1337<ref type="bibl" n="bizzarri_fray_2000"
+                     >Bizzarri 2000:<measure type="page">56</measure></ref>. </p>
+               <p><!-- 1.1.2) ce qui s'est fait sur le texte castillan. Les versions. Projets d'édition.
+                  Deux visions différentes.-->
+                  Le <title>De regimine principum</title> est traduit au castillan autour de 1345,
+                  ce qui contribue &#xe0; sa forte diffusion en Castille entre les XIVe et XVe
+                  si&#xe8;cles. Il sera par exemple r&#xe9;sum&#xe9; et synth&#xe9;tis&#xe9; en
+                  partie par le lettr&#xe9; Pedro de Chinchilla en 1464, dans un court ouvrage
+                     (<title>Exorta&#xe7;i&#xf3;n o ynforma&#xe7;i&#xf3;n de buena et sana
+                     doctrina</title>) &#xe0; destination du jeune <quote>roi-usurpateur</quote>
+                  Alfonse XII, texte que j'ai &#xe9;dit&#xe9; dans le cadre de mon m&#xe9;moire de
+                  Master I. L'autorit&#xe9; du texte est probl&#xe9;matique, tant les divergences
+                  sont grandes entre les t&#xe9;moins <ref type="bibl" n="diez_garretas_juan_2002"
+                  />: la critique, ancienne comme plus r&#xe9;cente, a retenu Juan de Castrojeriz
+                  comme auteur du texte, mais la r&#xe9;alit&#xe9; de cette autorit&#xe9; est
+                  douteuse, ainsi que l'indiquent D&#xed;ez Garretas <ref type="bibl"
+                     n="diez_garretas_juan_2002"><measure type="page">135</measure></ref> et
+                  Mart&#xed;n Sanz<ref type="bibl" n="martin_sanz_magister_2009">Mart&#xed;n Sanz
+                        2009:<measure>p. 199, note n&#xba;6</measure></ref>: Juan Garc&#xed;a de
+                  Castrojeriz semble &#xea;tre pour la critique plus r&#xe9;cente une autorit&#xe9;
+                  de convenance. L'int&#xe9;r&#xea;t de la recherche de l'auteur de la recomposition
+                  est certain: il s'agit de d&#xe9;terminer le contexte id&#xe9;ologique en
+                  particulier de re-cr&#xe9;ation de l'oeuvre de l'augustin. Des indices laissent
+                  ainsi penser que l'auteur est franciscain (on retrouve ainsi des
+                  &#xe9;l&#xe9;ments qui font penser au d&#xe9;bat sur la pauvret&#xe9; qui avait
+                  lieu chez les Franciscains<ref type="bibl" n="briguglia_lost_2011"><measure
+                        type="page">3-5</measure></ref>). En ce qui concerne les sources de cette
+                  traduction glos&#xe9;e et remani&#xe9;e, on note un recours important, du fait de
+                  la longueur du texte, &#xe0; des sources ant&#xe9;rieures/ext&#xe9;rieures.
+                  Cependant, les sources se r&#xe9;duiraient &#xe0; deux ou trois textes qui
+                  fournissent le plus gros de la mati&#xe8;re de la glose: on citera notamment Jean
+                  de Salisbury (avec le Policraticus), Jean de Galles, source principale<ref
+                     type="bibl" n="briguglia_lost_2011"><measure type="page">6</measure></ref>, et
+                  Guillaume de Conches <ref type="bibl" n="guardiola_influencia_1985">Guardiola
+                     1985</ref>.</p>
+               <p> Ce texte a connu une seule &#xe9;dition acad&#xe9;mique, publi&#xe9;e en 1947 par
+                  Juan Beneyto P&#xe9;rez sous le titre <title>Glosa castellana al ``Regimiento de
+                     pr&#xed;ncipes''</title> et republi&#xe9; en 2005 par l'<foreign>Instituto de
+                     Estudios Pol&#xed;tico</foreign><ref type="bibl"
+                     n="juan_beneyto_perez_glosa_1947"/>. Cette &#xe9;dition est criticable du point
+                  de vue philologique<note><ref type="bibl" n="briguglia_lost_2011"><measure
+                           type="page">2</measure></ref>. L'auteur affirme s'&#xea;tre servi de
+                     quelques manuscrits et de l'incunable pour composer son &#xe9;dition, mais ne
+                     propose aucun apparat critique ni note venant expliquer sa d&#xe9;marche
+                     d'&#xe9;dition, par exemple. Le t&#xe9;moin suivi est majoritairement
+                     l'incunable de 1494. </note>, mais elle a le m&#xe9;rite d'exister et de
+                  proposer une vue d'ensemble approximative du texte. Un groupe de chercheurs de
+                  l'Universit&#xe9; de Valladolid travaille sur la traduction glos&#xe9;e au
+                     <title>De regimine principum</title> depuis la fin des ann&#xe9;es 1990. Ce
+                  groupe de chercheur a d&#xe9;termin&#xe9; l'histoire globale du texte. Selon eux,
+                  il est possible de mettre en lumi&#xe8;re l'existence de deux recompositions
+                  successives. Une premi&#xe8;re recomposition donnerait lieu &#xe0; un texte dont
+                  la glose prend de plus en plus de place au d&#xe9;triment de la traduction,
+                  jusqu'&#xe0; la faire dispara&#xee;tre compl&#xe8;tement dans certains chapitres.
+                  Une seconde recomposition voit le jour durant le XVe si&#xe8;cle, remaniement qui
+                  a donn&#xe9; un texte r&#xe9;duit &#xe0; 104 chapitres, la structure en livres et
+                  partie ayant disparu. Ces trois versions du texte, qui sont le fruit de
+                  remaniements successifs mais dont les t&#xe9;moins peuvent &#xea;tre
+                  contemporains, sont nomm&#xe9;es A, B et C<note><ref type="bibl"
+                        n="carlos_alvar_glosa_2002"/><ref type="bibl"
+                        n="diez_garretas_manuscritos_2003"/><ref type="bibl"
+                        n="diez_garretas_transmision_2003"/><ref type="bibl"
+                        n="diez_garretas_aproximacion_2004"/><ref type="bibl"
+                        n="diez_garretas_versiones_2005"/></note>.Trois chercheurs sont encore
+                  actifs sur ce th&#xe8;me aujourd'hui: une professeure d'Universit&#xe9;
+                  (Mar&#xed;a Jes&#xfa;s D&#xed;ez Garretas) et deux doctorants, dont Demetrio
+                  Mart&#xed;n Sanz<note>Trouver le nom de la seconde doctorante!</note> qui
+                  travaillent respectivement sur les versions A et C: c'est de la version B, qui ne
+                  conna&#xee;t donc pas d'&#xe9;dition scientifique, que je vais m'occuper.
+                  Plusieurs chercheurs ont mis en valeur la "bataille" qui aurait lieu entre ces
+                  deux entit&#xe9;s textuelles, glose et traduction, que ce soit tant du point de
+                  vue du contenu du texte (le volume compar&#xe9; des deux entit&#xe9;s) que de
+                  celui de la mise en forme (ph&#xe9;nom&#xe8;nes de disparition, de reconfiguration
+                  de la fronti&#xe8;re entre glose et traduction, puis de r&#xe9;apparition de cette
+                  distinction avec le manuscrit humaniste du XVe si&#xe8;cle (Francisco Bautista).
+                  Ainsi, certains chercheurs ont compar&#xe9; ce texte copi&#xe9;, recopi&#xe9;,
+                  glos&#xe9; et annot&#xe9; &#xe0; un champ de bataille textuelle autant que
+                  culturelle et id&#xe9;ologique<note><ref type="bibl"
+                        n="rodriguez_velasco_produccion_2010"><measure type="page"
+                        >251</measure></ref><ref type="bibl"
+                        n="rodriguez_velasco_``bibliotheca_2001"/>,<ref type="bibl"
+                        n="martin_sanz_magister_2009"/></note>.<hi rend="brouillon">Quelques
+                     exemples d'&#xe9;tude du
+                  texte???</hi><!-- Mas aquí
+                  conviene de notar <ref type="bibl" n="martin_sanz_magister_2009"><measure
+                        type="page">221-226</measure></ref>--></p>
+            </div>
+            <div xml:id="I_2">
+               <head>&#xc9;tat de la recherche m&#xe9;thodologique. Variance et <foreign>New
+                     Philology</foreign></head>
+               <p> La <quote>nouvelle vague</quote> critique qu'est la Nouvelle Philologie (aussi
+                  appel&#xe9;e <foreign>Material Philology</foreign>, philologie mat&#xe9;rielle)
+                  appara&#xee;t au d&#xe9;but des ann&#xe9;es 1990<note>Le volume n&#xba;65 de
+                     Speculum, paru en janvier 1990, est consid&#xe9;r&#xe9; comme le point de
+                     d&#xe9;part de la <foreign>New Philology</foreign>.</note>. Elle est
+                     inspir&#xe9;e<note>Comme le montre l'article introductif de la revue Speculum
+                     par Nichols d&#xe8;s la premi&#xe8;re page.<ref type="bibl"
+                        n="nichols_introduction:_1990"><measure type="page">1</measure></ref></note>
+                  d'une s&#xe9;rie d'article et ouvrages publi&#xe9;s dans les ann&#xe9;es 1980 par
+                  Bernard Cerquiglini<note><ref type="bibl" n="cerquiglini_eloge_1983"/><ref
+                        type="bibl" n="cerquiglini_eloge_1989"/></note>, qui pose que le texte
+                  m&#xe9;di&#xe9;val est fondamentalement variance <note><quote>L'oeuvre
+                        litt&#xe9;raire, au Moyen Age, est une variable</quote>.<ref type="bibl"
+                        n="cerquiglini_eloge_1989">Cerquiglini 1989: <measure type="page"
+                           >57</measure></ref>
+                  </note>. Cette <quote>philologie nouvelle</quote> tente de proposer une
+                  alternative &#xe0; l'opposition historique entre (n&#xe9;o)lachmannisme et
+                  b&#xe9;di&#xe9;risme, et refuse l'id&#xe9;e d'&#xe9;ditions se fondant sur la
+                  hi&#xe9;rarchisation des t&#xe9;moins en fonction de leur valeur <ref type="bibl"
+                     n="stolz_new_2003"><measure type="page">140-141</measure></ref>: en
+                  l'id&#xe9;alisant, les deux m&#xe9;thodes passeraient &#xe0; c&#xf4;t&#xe9; du
+                  texte m&#xe9;di&#xe9;val qui est justement l'absence d'unicit&#xe9;<ref
+                     type="bibl" n="cerquiglini_eloge_1983"><measure type="page">33</measure></ref>:
+                  la New Philology met au contraire l'accent sur la mat&#xe9;rialit&#xe9; du
+                  manuscrit, r&#xe9;sultat d'une multitude d'op&#xe9;rations intellectuelles comme
+                     artistiques<ref type="bibl" n="nichols_introduction:_1990">Nichols 1990</ref>.
+                  L'arriv&#xe9;e de ce courant philologique a donn&#xe9; lieu &#xe0; des
+                  pol&#xe9;miques importantes, comme l'article de Cerquiglini (2000) le fait
+                        sentir<note><ref type="bibl" n="cerquiglini_nouvelle_2000"/> La lecture des
+                     premi&#xe8;res pages de Varvaro 1999 suffit &#xe0; se rendre compte des remous
+                     qu'ont suscit&#xe9; les &#xe9;crits de Cerquiglini, au ton souvent provocateur:
+                        <ref type="bibl" n="varvaro_new_1999"/></note>. D'un point de vue historique
+                  et technique, un point d'achoppement entre les scientifiques qui est &#xe0;
+                  relever semble &#xea;tre la qualit&#xe9; du scribe, entre copiste et remanieur, si
+                  l'on veut un opposition sch&#xe9;matique et pour reprendre les mots de Bernard
+                     Cerquiglini<ref type="bibl" n="cerquiglini_eloge_1983">Cerquiglini
+                        1983:<measure type="page">30</measure></ref>; plus g&#xe9;n&#xe9;ralement,
+                  Matthew Driscoll propose une distinction int&#xe9;ressante faite entre oeuvre
+                        (<quote><foreign>work</foreign></quote>, je traduis), texte et artefact: la
+                     <foreign>New Philology</foreign> mettrait l'accent sur le dernier
+                  &#xe9;l&#xe9;ment, le plus mat&#xe9;riel, tandis que la philologie traditionnelle
+                  tendrait plus &#xe0; privil&#xe9;gier le texte avec comme objectif d'arriver
+                  &#xe0; l'oeuvre<ref type="bibl" n="driscoll_words_2010"/>; cette distinction est
+                  encore actuelle aujourd'hui, comme le souligne l'article &#xe9;crit r&#xe9;cemment
+                  par Duval<ref type="bibl" n="duval_pour_2017"/>. Le d&#xe9;bat porte ici surtout
+                  sur des textes po&#xe9;tiques, au sens le plus fort du mot; dans le cas qui
+                  m'int&#xe9;resse, c'est plut&#xf4;t une opposition entre &#xe9;coles
+                  id&#xe9;ologiques, entre familles, statuts, classes sociales ou simplement moments
+                  historiques divergents qui seront au centre de mon travail. En ce sens,
+                  consid&#xe9;rer chaque manuscrit comme un t&#xe9;moin &#xe0; part enti&#xe8;re qui
+                  peut diverger des autres me semble &#xea;tre un point de vue productif et
+                  tr&#xe8;s int&#xe9;ressant<ref type="bibl" n="duval_pour_2017"/>, avec les limites
+                  philologiques que l'on peut imaginer, avec par exemples la pr&#xe9;sence de clairs
+                     <foreign>codices descripti</foreign><hi rend="brouillon">Est-ce que c'est pas
+                     contradictoire?</hi>. Les id&#xe9;es que j'avance me semble
+                  particuli&#xe8;rement adapt&#xe9;es aux manuscrits que j'&#xe9;tudie et &#xe0;
+                  l'histoire de leur texte; je n'ai pas de volont&#xe9; particuli&#xe8;re de
+                  th&#xe9;oriser de fa&#xe7;on g&#xe9;n&#xe9;rale, globale, ni, comme je l'ai dit
+                  plus haut, de me positionner de fa&#xe7;on abstraite dans le d&#xe9;bat
+                     philologique<note>Ainsi, selon Frandsen, on ne peut parfois &#xe9;chapper
+                     &#xe0; la notion d'oeuvre ni d'intention de l'auteur, comme c'est le cas par
+                     exemple avec le Chansonnier N.<ref type="bibl" n="frandsen_dialectique_2005"
+                           >Frandsen:2005<measure type="page">117</measure></ref></note>: je choisis
+                  de privil&#xe9;gier une m&#xe9;thode qui me semble appropri&#xe9;e &#xe0;
+                  l'&#xe9;tude de mes t&#xe9;moins. </p>
+               <p>Mon travail s'inscrira donc principalement dans ce courant m&#xe9;thodologique; il
+                  ne s'agit cependant pas de suivre une &#xe9;cole mais plut&#xf4;t d'utiliser un
+                  ensemble d'outils conceptuels et th&#xe9;oriques pour travailler sur les
+                  t&#xe9;moins du <title><abbr>Regimiento</abbr></title>. Le cadre th&#xe9;orique le
+                  plus important sera donc celui de la <foreign>New Philology</foreign> - les
+                  caract&#xe9;ristiques des textes face auxquels l'on se trouve, plusieurs
+                  &#xe9;tats de texte, un flou auctorial certain, se pr&#xea;tent bien &#xe0; une
+                  analyse qui en suivrait les cadres -, mais je ne m'interdirai pas d'utiliser des
+                  concepts venus d'ailleurs ni d'en affirmer les
+                  limites<!--<note>Par exemple, Cerquiglini pose la nécessité de
+                     proposer à l'édition d'un texte tous les témoins: cela pose clairement un
+                     problème matériel, de ressources en termes financiers et de temps</note>-->.
+               </p>
+            </div>
+            <div xml:id="I_3">
+               <head>Noblesse et chevalerie. &#xc9;tat de la recherche th&#xe9;matique</head>
+               <p>L'&#xe9;tude du texte que je me propose de faire s'articulera autour du concept de
+                  chevalerie. Plusieurs chercheurs &#xe9;tudient depuis une vingtaine d'ann&#xe9;e
+                  les questions de chevalerie dans la Castille m&#xe9;di&#xe9;vale. Le concept de
+                  chevalerie est difficile &#xe0; s&#xe9;parer de celui de noblesse, tant les deux
+                  sont entrem&#xea;l&#xe9;s, mais il ne lui est pas &#xe9;quivalent. Il me semble
+                  important d'insister sur le flou et la variabilit&#xe9; de l'id&#xe9;e de
+                  chevalerie, sur la difficult&#xe9; qu'il y a &#xe0; d&#xe9;finir ce concept. Comme
+                  l'affirme Carlos Heusch, <quote><foreign>la realidad caballeresca es, en su mayor
+                        parte, un mundo de textos, de discursos</foreign></quote><ref type="bibl"
+                     n="heusch_caballericastellana_2000"><measure type="page">16</measure></ref>: il
+                  est soumis &#xe0; l'interpr&#xe9;tation des auteurs/acteurs des textes et de leurs
+                  int&#xe9;r&#xea;ts id&#xe9;ologiques autant que politiques. En Castille, au bas
+                  Moyen-&#xc2;ge, la chevalerie, qui peut &#xea;tre d&#xe9;finie <foreign>a
+                     minima</foreign> comme l'&#xe9;tat [est-ce un &#xe9;tat?] de l'homme qui porte
+                  les armes, va n&#xe9;cessiter un appui th&#xe9;orique et juridique que vont
+                  apporter des acteurs, en particulier le pouvoir monarchique. Le concept de
+                  chevalerie surgit presque <foreign>ex nihilo</foreign> comme concept politique au
+                  XIIIe si&#xe8;cle, bien qu'ayant probablement pr&#xe9;exist&#xe9; en tant qu'ordre
+                  social: il s'agit, selon Rodr&#xed;guez Velasco, d'une <quote>invention</quote> de
+                  la Monarchie, au sens rh&#xe9;torique du terme <ref type="bibl"
+                     n="fleckenstein_caballeriy_2006">Fleckenstein 2006: <measure type="page"
+                        >XI-XII</measure></ref>. On observe ainsi deux mouvements parall&#xe8;les
+                  concernant la chevalerie, th&#xe9;orisation et
+                  l&#xe9;galisation.<!-- [Rucquoi, Velasco 1993 et pour la France Arriaza 2006]-->
+                  La chevalerie n'est pas n&#xe9;cessairement noble au XIIIe ni au XIVe si&#xe8;cle,
+                  comme le prouve l'existence des <foreign>caballeros villanos</foreign><ref
+                     type="bibl" n="heusch_caballericastellana_2000">Heusch 2000:<measure
+                        type="page">11</measure></ref>: l'assimilation de la chevalerie &#xe0; la
+                  noblesse se r&#xe9;alise dans ces deux si&#xe8;cles de fin du Moyen-&#xc2;ge (cela
+                  arrive plus t&#xf4;t pour le royaume de France, autour de la fin du XIIIe
+                  si&#xe8;cle, selon Armand Arriaza<ref type="bibl" n="arriaza_noblesse_2006"
+                        ><measure type="page">338</measure></ref>); elle commence avec les
+                     <title>Partidas</title>, texte dans lequel on a not&#xe9; l'absence de
+                  r&#xe9;f&#xe9;rences &#xe0; la chevalerie non noble<ref type="bibl"
+                     n="heusch_caballericastellana_2000">Heusch 2000:<measure type="page"
+                        >11-12</measure></ref>. Dans ce bas du Moyen-&#xc2;ge, la chevalerie est un
+                  enjeu de pouvoir dans l'&#xe9;quilibre des forces entre noblesse et monarchie.
+                  Ainsi, au XIVe si&#xe8;cle, il s'agit pour le pouvoir monarchique d'englober la
+                  noblesse dans une chevalerie qui a pour t&#xea;te le roi; le renforcement de la
+                  noblesse a alors la fonction de maintien d'un l'ordre politique et social qui met
+                  au centre du jeu le Roi dans un contexte de tensions politiques entre la monarchie
+                  et la noblesse<note><ref type="bibl" n="rodriguez_velasco_oficio_1993"
+                        >Rodr&#xed;guez Velasco 1993</ref><ref type="bibl"
+                        n="heusch_caballericastellana_2000">Heusch 2000:<measure type="page"
+                           >63</measure></ref></note>: appara&#xee;t &#xe0; ce moment ce que l'on a
+                  pu nommer l'<quote>image chevaleresque de la monarchie</quote><ref type="bibl"
+                     n="rodriguez_velasco_diego_1996"><measure>35</measure></ref>. Jes&#xfa;s
+                  Rodr&#xed;guez Velasco a mis en valeur trois &#xe9;tapes principales dans
+                  l'histoire de la chevalerie en Castille: une p&#xe9;riode de d&#xe9;finition
+                  (1250-1350), une de restriction (1350-1390), et enfin une derni&#xe8;re &#xe9;tape
+                  d'expansion finale (1390-1492)<ref type="bibl" n="rodriguez_velasco_para_1997"
+                     >Rodr&#xed;guez Velasco 1997</ref><hi rend="brouillon">Essayer d'en dire un peu
+                     plus</hi>. C'est &#xe0; cheval entre la seconde et la troisi&#xe8;me &#xe9;tape
+                  que sont copi&#xe9;s et diffus&#xe9;s nos t&#xe9;moins.
+                  <!-- [auteurs qui ont travaillé là dessus. Rodríguez Velasco, Alice Carette, Monsalvo Antón, Beceiro Pita?] Noblesse vs chevalerie. La prudence chevaleresque. Selon Jesús Rodríguez Velasco, on observe dès la fin du XIIIe siècle une union intime entre savoir technique et savoir moral avec les <title><title>Partidas</title></title>, dès la fin du XIIIe siècle ! [<ref type="bibl" n="rodriguez_velasco_oficio_1993">Rodríguez Velasco 1993:<measure type="page">74-75</measure></ref>]--></p>
+               <p> Le rapport de ces concepts et statuts au bartolisme, courant juridique du nom de
+                  Bartole de Sassosferrato (1313-1356), qui semble lui-m&#xea;me avoir &#xe9;t&#xe9;
+                  influenc&#xe9; par Gilles de Rome<ref type="bibl" n="briguglia_lost_2011"><measure
+                        type="page">1</measure></ref>, est particuli&#xe8;rement important: en
+                  Castille, une pragmatique de 1427, date qui correspond au moment de plus forte
+                  circulation et diffusion des manuscrits que j'&#xe9;tudie, &#xe9;dicte
+                  l'obligation de suivre la doctrine de Bartole<note><ref type="bibl"
+                        n="rodriguez_velasco_discurso_2000"><measure type="page"
+                        >36-39</measure></ref><ref type="bibl" n="rodriguez_velasco_diego_1996"
+                        >Rodriguez Velasco 1996:<measure type="page">114</measure></ref></note> en
+                  ce qui concerne la noblesse. Selon Heusch et Rodr&#xed;guez Velasco, la
+                  nouveaut&#xe9; de cette doctrine r&#xe9;side dans le fait qu'elle met en avant la
+                  vertu individuelle du chevalier <ref type="bibl"
+                     n="heusch_caballericastellana_2000"><measure type="page">14</measure></ref>: on
+                  retrouve ici de forts &#xe9;chos avec le <title><abbr>De Regimine</abbr></title>
+                  qui met lui-m&#xea;me en avant la vertu du prince et plus g&#xe9;n&#xe9;ralement
+                  de tout lecteur potentiel<note><quote><foreign>La ter&#xe7;era es que maguer este
+                           libro se faga para los Reyes, enpero todos los omnes pueden ser
+                           ense&#xf1;ados por &#xe9;l, &amp; por ende todos lo deven aprender &amp;
+                           saber, &amp; &#xe7;ierto es que el pueblo non puede ser tan s&#xf3;til
+                           que pueda aprender Razones s&#xf3;tiles, &amp; por ende conviene que se
+                           den en &#xe9;l Razones gruesas &amp; palpables &amp; exenplos muchos de
+                           los Reyes &amp; de los omnes, por que los puedan todos
+                           aprender.</foreign></quote>
+                     <title>Regimento de los pr&#xed;n&#xe7;ipes</title>, I, 1, 1.</note>. Ce
+                  courant juridique a donc connu une r&#xe9;ception particuli&#xe8;rement favorable
+                  de part des pouvoirs centraux europ&#xe9;ens. Cela peut ais&#xe9;ment s'expliquer,
+                  selon Armand Arriaza, si l'on se rappelle les enjeux de pouvoir entre noblesse et
+                  royaut&#xe9; que j'ai &#xe9;voqu&#xe9;s plus haut: <quote>ce qui attirait
+                     l'attention des souverains de toute l'Europe, c'est que dans le
+                     tra&#xee;t&#xe9; [de Bartole], le pouvoir d'octroyer un statut nobiliaire
+                     &#xe9;tait du ressort exclusif de l'autorit&#xe9; centrale d'une entit&#xe9;
+                     politique autogouvernante<ref type="bibl" n="arriaza_noblesse_2006"><measure
+                           type="page">346-347</measure></ref></quote>. En relation avec ces enjeux
+                  de pouvoir, une des particularit&#xe9;s du texte, selon Rodr&#xed;guez Velasco,
+                  est qu'il accorde une place particuli&#xe8;re &#xe0; la vertu de prudence pour
+                  d&#xe9;finir la chevalerie. Gilles de Rome serait ainsi le premier &#xe0; avoir
+                  th&#xe9;oris&#xe9; et construit une hi&#xe9;rarchie des prudence, le Roi
+                  &#xe9;tant le seul &#xe0; poss&#xe9;der les cinq types de prudence <hi
+                     rend="brouillon">(singular, ycon&#xf3;mica, regnativa, &#xe7;ibdadana,
+                     cavalleresca)</hi>; pour le chevalier, cette prudence devient <quote>la vertu
+                     par antonomase</quote> (je traduis l'expression du chercheur), qui &#xe9;tait
+                  jusqu'alors la force d'&#xe2;me; cette &#xe9;volution s'inscrit dans un mouvement
+                  de l&#xe9;gitimation des lettr&#xe9;s qui peuvent ainsi pr&#xe9;tendre de
+                  fa&#xe7;on plus l&#xe9;gitime au statut de Chevalerie<ref type="bibl"
+                     n="rodriguez_velasco_diego_1996">Rodriguez Velasco 1996:<measure type="page"
+                        >23-24</measure></ref><hi rend="brouillon">Probl&#xe8;me: tu ne vas pas au
+                     texte: essayer de donner des exemples concrets?</hi>.</p>
+            </div>
+            <div xml:id="I_4">
+               <head>&#xc9;tat de la recherche personnel</head>
+               <p>J'ai commenc&#xe9; &#xe0; travailler sur le <title>Regimiento de los
+                     pr&#xed;n&#xe7;ipes</title> en Master II: il s'est agi pour moi de
+                  d&#xe9;couvrir le texte selon une perspective traditionnelle, &#xe0; savoir une
+                  &#xe9;dition critique de type b&#xe9;dieriste, avec comme base de travail une
+                  &#xe9;dition au format XML-TEI/P5. Cela m'a permis de tracer les premiers contours
+                  d'un arbre de relations probables entre manuscrits (<foreign>stemma
+                     codicorum</foreign>), et de proposer une &#xe9;dition du texte sur la
+                  premi&#xe8;re partie du premier livre (<ref type="url"
+                     target="http://perso.ens-lyon.fr/matthias.gille-levenson/Annexes/pdf/Assemble.pdf"
+                     >ici</ref>). J'ai aussi pu commencer une &#xe9;tude id&#xe9;ologique du texte,
+                  portant notamment sur des questions de pauvret&#xe9; ou de rapport entre pouvoir
+                  temporel et spirituel<note>Un fait remarquable: le texte, a priori destin&#xe9;
+                     &#xe0; des gouvernants pr&#xe9;sents ou futurs, pr&#xe9;sente une aversion
+                     surprenante autant que cat&#xe9;gorique pour le pouvoir et son caract&#xe8;re
+                     corrupteur: <quote><foreign>Noble grado m&#xe1;s que bien andan&#xe7;a, e si
+                           los omnes bien supiesen qu&#xe1;ntos son los cuydados e los peligros e
+                           las mezquindades deste grado e desta corona, non la dev&#xed;a ninguno
+                           levantar de la tierra, mas dexarla yazer!</foreign></quote> I, 1,
+                     8.</note>: le franciscanisme ne semble jamais loin, comme l'affirme
+                     Lambertini<ref type="bibl" n="briguglia_lost_2011"/>. Mon travail
+                  d'&#xe9;dition a donn&#xe9; deux r&#xe9;sultats: une &#xe9;dition traditionnelle
+                     <quote>papier</quote>, et une &#xe9;dition au format html<note>On peut
+                     retrouver cette &#xe9;dition &#xe0; l'adresse suivante: <ref type="url"
+                        target="http://perso.ens-lyon.fr/matthias.gille-levenson/Annexes/XSLT/Build/Edition-dig.html"
+                     /></note>. En outre, j'ai commenc&#xe9; &#xe0; d&#xe9;velopper un prototype
+                  d'&#xe9;dition synoptique des diff&#xe9;rents prologues - tous tr&#xe8;s
+                  divergents l'un par rapport &#xe0; l'autre - des manuscrits du Regimiento: on peut
+                  trouver cette &#xe9;dition <ref type="url"
+                     target="http://perso.ens-lyon.fr/matthias.gille-levenson/etude-prologues/Prologues.html"
+                     >ici</ref>. Je compte m'appuyer sur ces premi&#xe8;res bases pour commencer ma
+                  th&#xe8;se. D'un point de vue plus pratique, j'ai aussi pu me procurer une partie
+                  des manuscrits que je vais &#xe9;tudier pour ma th&#xe8;se ayant travaill&#xe9;
+                  pour mon m&#xe9;moire de Master II sur une partie des t&#xe9;moins de mon corpus :
+                  la majorit&#xe9; des reproductions n'est pas librement disponible, mais est
+                  cependant facilement accessible: les manuscrits sont tous en Espagne &#xe0;
+                  l'exception d'un t&#xe9;moin qui se trouve &#xe0; Philadelphie, aux
+                  &#xc9;tats-Unis.</p>
+            </div>
+         </div>
+         <div xml:id="seconde_partie">
+            <head>II - Probl&#xe9;matiques - Axes de recherche</head>
+            <div xml:id="II_1">
+               <head>D&#xe9;limitation du corpus</head>
+               <p>Plusieurs options s'offrent au chercheur qui veut travailler sur cette traduction
+                  glos&#xe9;e et recompos&#xe9;e. On peut d&#xe9;fendre l'id&#xe9;e qu'une
+                  &#xe9;dition de la version B reste &#xe0; faire, si on consid&#xe8;re que c'est un
+                  texte en soi, distinct de la premi&#xe8;re version. Cette version B semble en
+                  effet avoir &#xe9;t&#xe9; la plus diffus&#xe9;e &#xe0; partir du XVe si&#xe8;cle;
+                  c'est celle sur laquelle travaille Beneyto P&#xe9;rez en 1947. Une
+                  r&#xe9;-&#xe9;dition du texte qui prendrait en compte sa nature de "seconde main"
+                  me semble &#xea;tre un travail justifiable du point de vue scientifique. Ce projet
+                  est int&#xe9;ressant, mais ce n'est pas celui que j'ai retenu pour ma th&#xe8;se.
+                  En effet, au vu de la taille de l'ouvrage et du corpus de manuscrits (plus de deux
+                  cent chapitres, un dizaine de t&#xe9;moins, entre 160 et 600 folios par
+                  manuscrit), il semble assez clair que c'est un travail qui ne peut &#xea;tre
+                  accompli en trois ou quatre ans, temps attendu, avec la r&#xe9;forme de la
+                  th&#xe8;se, pour mener &#xe0; bien un projet doctoral complet; d'o&#xf9;
+                  l'id&#xe9;e de r&#xe9;duire la taille du corpus pour m'int&#xe9;resser &#xe0; la
+                  fin du texte, &#xe0; savoir la partie 3 du livre III. Son titre est
+                        <quote><foreign>Del gobierno de la ciudad e del reyno en tiempo de
+                        guerra</foreign></quote>. C'est la deuxi&#xe8;me partie d'un diptique qui
+                  traite du gouvernement de la Cit&#xe9;, la premi&#xe8;re &#xe9;tant consacr&#xe9;e
+                  aux gouvernement en temps de paix<note>Segunda parte, <quote><foreign>Del gobierno
+                           de la ciudad e del reyno en tiempo de paz</foreign></quote>. La
+                     premi&#xe8;re partie du troisi&#xe8;me livre est consacr&#xe9;e aux
+                        <quote>opinions des philosophes</quote>(je traduis).</note>. Cette
+                  derni&#xe8;re partie traite ainsi de la question de la noblesse et plus
+                  particuli&#xe8;rement de la chevalerie. Le corpus choisi s'&#xe9;tend donc sur
+                  III, 3, soit la derni&#xe8;re partie de l'ouvrage, qui compte vingt trois
+                  chapitres. En ce qui concerne les t&#xe9;moins de mon travail, je choisirai les
+                  manuscrits de B qui courent sur tout le livre III (un total de six manuscrits plus
+                  un
+                  incunable)<!-- ainsi qu'un des manuscrits de la version A, pour avoir un point de comparaison tant formelle qu'id&#xe9;ologique entre les deux versions-->.
+               </p>
+            </div>
+            <div xml:id="II_2">
+               <head>Les actualisations du texte</head>
+               <p><!-- DECRIRE SOMMAIREMENT LES MANUSCRITS. [le travail d'édition ne va pas se faire sur une partie très large du texte, mais la nature des témoins conservés fait qu'il est indispensable de prendre en considération toutes les variantes et de tenter une édition symoptique pour déterminer les courants, etc] [pourquoi imprimé à Séville? à travailler, important ! ] Tu dois décider quels manuscrits tu choisis: tous ceux de A + B? seulement B? L'inventaire de Rodriguez Velasco rebat les cartes = deux visions très distinctes de l'histoire du texte. [Rodriguez Velasco 1996:117 > deux versions, une première qui serait la B, une seconde qui serait une autre traduction glosée du texte français plutôt] III,3. Nombre de chapitres, justification de l'unité du corpus. Nombre de témoins (6 manuscrits + 1 incunable). Extensible en fonction de mes accords avec Valladolid? Utiliser plusieurs axes de lecture pour essayer de comprendre le texte. AJOUTER OU PAS LES TEXTES DE VA? On pourrait le justifier en différenciant mon travail de celui de Valladolid: je ne suis pas en train de faire une édition critique du texte, mais je l'étudie dans sa globlité pour ce qui est de son idéologie... 2.1 idée générale du travail 2.1.1ce que le travail n'est pas Premièrement, il s'agit de présenter ce que mon travail n'est pas.-->
+                  Il m'est important de pr&#xe9;senter rapidement ce que n'est pas mon projet de
+                  th&#xe8;se. Mon travail ne sera pas une &#xe9;tude de la noblesse ni de la
+                  chevalerie aux 14e et au 15e si&#xe8;cle, deux questions auxquelles ont
+                  &#xe9;t&#xe9; consacr&#xe9;e deux th&#xe8;ses au cours des vingt derni&#xe8;res
+                        ann&#xe9;es<note><ref type="bibl" n="rodriguez_velasco_diego_1996"/><ref
+                        type="bibl" n="gonzalez_vazquez_representation_2013"/></note>, mais bien une
+                  &#xe9;tude du corpus des diff&#xe9;rents <title>Regimiento de los
+                     pr&#xed;n&#xe7;ipes</title> au prisme des questions de noblesse et de
+                  chevalerie. Par rapport &#xe0; la publication de 1947, il s'agira de proposer une
+                  &#xe9;dition claire et document&#xe9;e de plusieurs t&#xe9;moins sur III, 3; plus
+                  avant, il s'agira de d&#xe9;terminer les points de fluctuation entre chaque
+                  t&#xe9;moin et entre les familles. Je consid&#xe8;re ainsi que la m&#xe9;thode et
+                  la conception du manuscrits envisag&#xe9;es par la <quote>philologie
+                     nouvelle</quote><ref type="bibl" n="cerquiglini_nouvelle_2000">Cerquiglini
+                     2000</ref> peut &#xea;tre un axe int&#xe9;ressant d'&#xe9;tude
+                  exp&#xe9;rimental du texte. Le genre du texte qu'il m'est donn&#xe9;
+                  d'&#xe9;tudier, un miroir des princes, un texte avant tout th&#xe9;orique -
+                  m&#xea;me si la mati&#xe8;re narrative ne peut pas &#xea;tre mise de
+                  c&#xf4;t&#xe9; -, se pr&#xea;te particuli&#xe8;rement &#xe0; l'id&#xe9;e de
+                  variation selon le contexte de production et de copie des texte: l'id&#xe9;e de
+                  variance id&#xe9;ologique me semble plus facile &#xe0; d&#xe9;fendre que celle de
+                  variance esth&#xe9;tique. L'id&#xe9;e globale est donc la suivante pour
+                  l'&#xe9;tude de mon texte: aller chercher dans la variation entre les
+                  diff&#xe9;rents t&#xe9;moins des points de friction qui seraient significatifs du
+                  point de vue de la th&#xe9;orie, de l'id&#xe9;ologie que l'on veut transmettre,
+                  des &#xe9;l&#xe9;ments <quote><foreign>sociologically and historically
+                        interesting</foreign></quote> pour reprendre Driscoll<ref type="bibl"
+                     n="driscoll_words_2010"/>. Ces points de friction semblent clairs entre les
+                  manuscrits et l'incunable (&#xe0; tel point que l'on pourrait presque m&#xea;me
+                  parler d'une nouvelle recomposition du texte<note><hi rend="brouillon">[Attention,
+                        tu dis &#xe7;a dans une note plus bas] Un argument de plus dans la critique
+                        qui doit &#xea;tre faite &#xe0; l'oeuvre de Beneyto: le
+                           <title>Regimiento</title> &#xe9;dit&#xe9; par le lettr&#xe9; espagnol est
+                        majoritairement celui du temps des Rois Catholiques et diverge
+                        d&#xe9;j&#xe0; beaucoup des diff&#xe9;rents t&#xe9;moins
+                     manuscrits.</hi></note>), plus subtils entre les diff&#xe9;rents
+                  manuscrits.<!--Voici une hypothèse de travail: je n'ai pas de certitude absolue de trouver quelque chose: dans tous les cas, il s'agit d'expérimenter pour en tirer des conclusions théoriques autour du concept de «texte»: combien de texte(s) entre mes différents témoins y a-t-il?-->
+                  Je refuse l'id&#xe9;e d'une d&#xe9;t&#xe9;rioration des textes avec le temps: pour
+                  l'instant, il me para&#xee;t bien plus profitable de parler d'actualisations
+                     successives<ref type="bibl" n="nichols_introduction:_1990"><measure type="page"
+                        >8</measure></ref>.<!-- Il est déjà possible de parler de grandes variatioins entre le texte des manuscrits et le texte de l'incunable (montrer les variations). Cet échantillon de variations montre le peu de fiabilité que l'on peut accorder à l'édition de 1947; de même, il existe une occasion de variation importante (si elle est significative) entre les manuscrits [le cas de la prudence vs providence]. Dire que c'est encore en chantier et qu'il s'agit d'une quasi-expérimentation; cependant, montrer que c'est pas en vain avec une petite analyse de la différence entre les manuscrits et l'incunable [permet en plus de montrer que l'édition n'est pas «correcte»!!]. Deux types d'actualisation: d&#xfb;e à la traduction ET d&#xfb;e à la recomposition. Différence entre interne et externe? A et B vs B et B!-->
+                  <!--PARLER DE LA GLOSE--></p>
+               <p>La premi&#xe8;re question &#xe0; se poser est tr&#xe8;s g&#xe9;n&#xe9;rale :
+                  quelle est exactement l'histoire de ce texte, si important si l'on tient en compte
+                  sa diffusion au bas Moyen-&#xc2;ge? Je pr&#xe9;ciserai cette question par le biais
+                  des interrogations suivantes: comment fonctionne la seconde version par rapport
+                  &#xe0; la premi&#xe8;re? Quelles sont les caract&#xe9;ristiques de la
+                  recomposition qui a eu lieu? Qu'a-t-on voulu faire du <title>Regimine
+                     principum</title> aux XIVe et XVe si&#xe8;cle? La question de la r&#xe9;ception
+                  du texte m&#xe9;di&#xe9;val est ici centrale. Le rapport entre traduction et
+                  glose, avec une affirmation toujours plus importante de la derni&#xe8;re au fil du
+                  temps, sera particuli&#xe8;rement &#xe9;tudi&#xe9;. Cet ensemble de questions sera
+                  pos&#xe9; en regardant &#xe0; travers le prisme de l'&#xe9;volution
+                  id&#xe9;ologique du texte: l'actualisation formelle du <title>Regimiento de los
+                     pr&#xed;n&#xe7;ipes glosado</title>, la plus visible, a-t-elle &#xe9;t&#xe9;
+                  accompagn&#xe9;e d'une actualisation de la pens&#xe9;e du texte sur la noblesse et
+                  la chevalerie? Il semble acquis qu'il y a au moins deux textes entre A et
+                     B<note>Il est important de ne pas penser ces versions en terme de succession
+                     chronologique: bien que logiquement cr&#xe9;&#xe9;es l'une apr&#xe8;s l'autre,
+                     elles se diffusent de tout &#xe9;vidence simultan&#xe9;ment en
+                  Castille.</note>; je voudrais pouvoir aller plus loin et d&#xe9;terminer, pour le
+                  dire synth&#xe9;tiquement, le caract&#xe8;re homog&#xe8;ne ou
+                  h&#xe9;t&#xe9;rog&#xe8;ne de la version B <note>L'incunable, qui est rattach&#xe9;
+                     &#xe0; la version B, montre de fa&#xe7;on assez explicite que la question
+                     m&#xe9;rite d'&#xea;tre pos&#xe9;e: il est assez diff&#xe9;rent par rapport aux
+                     manuscrits de la m&#xea;me version. Ajouts, remaniement de la structure (des
+                     chapitres sont scind&#xe9;s en III,3, par exemple) sont ais&#xe9;ment
+                     observables pour ce t&#xe9;moin, ce qui est par ailleurs une bonne preuve que
+                     l'&#xe9;dition acad&#xe9;mique de 1947, fond&#xe9;e essentiellement sur
+                     l'incunable, est &#xe0; refaire.</note>. Plus g&#xe9;n&#xe9;ralement, je
+                  propose la la probl&#xe9;matique suivante: <hi rend="italique">quelles sont les
+                     marques mat&#xe9;rielles et textuelles du d&#xe9;bat et plus
+                     g&#xe9;n&#xe9;ralement de l'histoire des concepts de noblesse et de chevalerie
+                     pr&#xe9;sentes dans les t&#xe9;moins du <title>Regimiento de los
+                        pr&#xed;n&#xe7;ipes glosado</title>?</hi> Ces marques apparaissent-elles au
+                  travers de variance entre les t&#xe9;moins de la version B? &#xc0; partir des
+                  r&#xe9;ponses apport&#xe9;es &#xe0; cette premi&#xe8;re question, je pourrai
+                  tenter de formuler une r&#xe9;ponse plus g&#xe9;n&#xe9;rale et plus th&#xe9;orique
+                  au d&#xe9;bat philologique pr&#xe9;sent&#xe9; plus haut: il me sera possible de
+                  d&#xe9;terminer s'il y a lieu, du point de vue id&#xe9;ologique, <hi
+                     rend="italique">pour le corpus singulier que j'&#xe9;tudie</hi> (je n'ai pas de
+                  pr&#xe9;tention &#xe0; th&#xe9;oriser sur <quote>le</quote> texte en
+                  g&#xe9;n&#xe9;ral), de parler de <quote>texte</quote> au pluriel<note>Par
+                     commodit&#xe9; de langage, je tends dans cette pr&#xe9;sentation &#xe0; parler
+                     de texte au singulier</note>.</p>
+               <!--<p>[TOUJOURS ALLER VOIR A!! Expliquer que le but final est de trouver l'histoire du
+                  texte]</p>-->
+               <p><!--2.1.3 l'importance de la variance (seconde actualisation) [rodriguez velasco 2010] 
+                     Lambertini: quelle actualisation du texte et du discours politique entre les différentes 
+                     versions/sous-versions si elles existent? 
+                     Le dernier type d'actualisation du texte pourrait se diviser en: diachronique (évolution 
+                     entre les versions) et, éventuellement, «diastratique» (évolution d'un 
+                     témoin à l'autre en fonction du contexte de production, du responsable de la commande 
+                     de l'ouvrage, de l'appartenance religieuse du copiste à un ordre particulier, à 
+                     une maison, etc). Pour reprendre mon propos sur la chevalerie: le principal problème est 
+                     le suivant: le lecteur se trouve devant une traduction glosée; la source est le 
+                     De regimine principum, écrit à la fin du XIIIe siècle dans un contexte 
+                     différent du contexte castillan (la France de Philippe III), avec une théorisation
+                     particulière de la noblesse. Plusieurs questions se posent: > le texte traduit et glosé 
+                     est-il actualisé? Dans quel sens? > quels sont les points de tension entre théories 
+                     politiques qui peuvent diverger? Il est probable qu'il y ait une divergence entre le texte source 
+                     et le texte final. Une des questions à laquelle répondre sera donc centrée autour 
+                     de la version B (puisqu'il y a consensus sur la distinction entre versions): la version B peut-elle 
+                     être considérée comme «un texte»? Problématique: difficile de 
+                     trouver une problématique englobante tant les problèmes posés par ce sujet 
+                     sont divers. Il s'agira tout d'abord de discuter, dans la lignée des études sur
+                     cette traduction glosée, s'il y a lieu de parler de «texte» au singulier. 
+                     L'hypothèse de départ serait, que derrière «le texte de Castrojeriz» 
+                     se trouve un système complexe d'interactions entre versions et témoins, du point 
+                     de vue idéologique notamment. Quelle est l'histoire de ces interactions? --></p>
+               <p><!--2.1.4 axes d'études/ axes d'approche. De la glose au récit: l'exemplum à son comble -->La
+                  noblesse et la chevalerie seront donc l'axe principal de mon &#xe9;tude, mais je
+                  m'int&#xe9;resserai aussi &#xe0; un aspect important du texte que constitue
+                  l'ensemble des <foreign>exempla</foreign> dont il est compos&#xe9; (cela
+                  correspond en volume &#xe0; une bonne moiti&#xe9; du texte), fragments que
+                  j'&#xe9;tudierai en tant qu'objets narratifs<note>La place que prend cette forme
+                     narrative est en effet tr&#xe8;s int&#xe9;ressante: par exemple, elle en vient
+                     presque &#xe0; devenir ind&#xe9;pendante de la th&#xe9;orie expos&#xe9;e par le
+                     texte au-fur-et-&#xe0;-mesure de la progression de III,3. En effet, les
+                     derniers moments du texte exposent/racontent l'histoire d'Alexandre de
+                     fa&#xe7;on suivie, alors que la majorit&#xe9; des exemples, jusque l&#xe0;,
+                     n'avaient pas de connexion (chrono)logique entre eux</note>. Cette &#xe9;tude
+                  n'est cependant pas sans rapport avec l'objet principal de mon projet doctoral: la
+                  mati&#xe8;re exemplaire est d'un genre particulier, elle est presque exclusivement
+                  historique (pour III, 3, nous ne nous trouvons donc pas devant des exemples
+                  traditionnels), une caract&#xe9;ristique qui s'inscrit pleinement dans le contexte
+                  de naissance de l'humanisme castillan dans la noblesse de la fin du XIVe
+                  si&#xe8;cle - d&#xe9;but du XVe si&#xe8;cle: un mod&#xe8;le de chevalier humaniste
+                  est en train d'appara&#xee;tre, qui met en avant les mod&#xe8;les antiques<ref
+                     type="bibl" n="heusch_chevalerie_2000">Heusch 2000:<measure type="page"
+                        >64</measure></ref>. Une &#xe9;tude pr&#xe9;cise des
+                     <foreign>exempla</foreign> pr&#xe9;sents dans mon texte (dans les chapitres
+                  choisis pour l'&#xe9;dition ou, plus globalement, dans l'oeuvre enti&#xe8;re) me
+                  semble donc avoir sa place dans mon travail doctoral; pour ce, je m'appuierai sur
+                  les travaux r&#xe9;alis&#xe9;s sur mon texte<ref type="bibl"
+                     n="diez_garretas_recursos_2009"/> et ceux plus g&#xe9;n&#xe9;raux de la
+                  recherche fran&#xe7;aise notamment<ref type="bibl" n="berlioz_les_1998"/>.
+                  <!--[ALEXANDRE AU MOYEN AGE] [recours à l'exemplum,
+                  retour en arrière: 1420-1430, ejemplos históricos: que des grands, etc,
+                  très du 15e siècle. À partir de Ayala, exemplum historiographique.
+                  Plus rare au XIVe siècle. Ayala va en Avignon et baigne dans la culture
+                  classique avignonnaise. Premier, après DJM, ouvert à la culture
+                  classique. Une autre version, donc, qui doive dire autre chose? Ne pas confondre,
+                  l'exemple à la latine avec l'exemple médiéval antérieur, avec
+                  des animaux, etc. Voir Heusch 2000:64 = un nouvel idéal chevaleresque au XVe
+                  siècle: le chevalier humaniste apparaît, et cela se voit, au niveau
+                  narratif, par l'appartion de nouveau modèles qui sont antiques: à relier
+                  avec, comme le dit Carlos, les sujets des exemples de III, 3!!! Permettrait de
+                  statuer sur la date de la première mise en glose?]--></p>
+            </div>
+            <div xml:id="II_3">
+               <head>M&#xe9;thodes</head>
+               <p>
+                  <!--microscopie/macroscopie:--> Comme affirm&#xe9; plus haut, il nous a
+                  sembl&#xe9; n&#xe9;cessaire de restreindre mon travail &#xe0; une partie du texte.
+                  Je n'abandonne pas pour autant mon ambition d'explication globale du texte, tant
+                  du point de vue philologique qu'id&#xe9;ologique. On pourra ainsi voir mon travail
+                  comme une &#xe9;tude microscopique &#xe0; vis&#xe9;e macroscopique. Ce travail ne
+                  sera donc pas lin&#xe9;aire, et devra aborder des points qui me permettront de
+                  comprendre le texte et sa construction dans leur ensemble. Ainsi, je pense
+                  continuer et int&#xe9;grer &#xe0; mon travail de th&#xe8;se
+                  l'&#xe9;tude/&#xe9;dition synoptique des prologues &#xe9;voqu&#xe9;e plus haut,
+                  que j'ai commenc&#xe9; &#xe0; r&#xe9;aliser cette ann&#xe9;e. Cette &#xe9;tude est
+                  une premi&#xe8;re id&#xe9;e de ce que pourra &#xea;tre mon &#xe9;dition des
+                  versions du texte. La question de la distinction entre glose et traduction est un
+                  point important et int&#xe9;ressant: la pr&#xe9;sentation du texte r&#xe9;sulte
+                  forc&#xe9;ment d'un choix &#xe9;ditorial sur le point de vue adopt&#xe9;: &#xe0;
+                  quel point les contemporains des textes avaient conscience de la qualit&#xe9; des
+                  textes qu'ils lisaient? Savaient-ils diff&#xe9;rencier ais&#xe9;ment la glose de
+                  la traduction, pour des manuscrits qui, dans leur extr&#xea;me majorit&#xe9;, ne
+                  faisaient pas la diff&#xe9;rence entre les deux? </p>
+               <p>En ce qui concerne les m&#xe9;thodes pr&#xe9;cises d'&#xe9;tude des textes, le
+                  travail principal sera celui de la comparaison pr&#xe9;cise et m&#xe9;thodique des
+                  t&#xe9;moins sur III, 3, en prenant en compte tous les aspects mat&#xe9;riels
+                  &#xe0; disposition pour tenter de d&#xe9;terminer les usages des manuscrits en
+                  plus de leur contenu. Cependant, un travail philologique classique peut &#xea;tre
+                  int&#xe9;ressant: une m&#xe9;thode ne vient pas balayer l'autre<ref type="bibl"
+                     n="driscoll_words_2010"/>. Il s'agira d'approfondir ma connaissance des
+                  relations entre manuscrits: une tentative d'&#xe9;tablissement d'un arbre de
+                  relations probables me para&#xee;t &#xea;tre encore utile, non pas pour
+                  l'&#xe9;dition et le classement des t&#xe9;moins, mais bien pour la
+                  compr&#xe9;hension de l'histoire des textes ainsi que de leur circulation. Ceci
+                  dit, il me faudra &#xea;tre tr&#xe8;s attentif aux critiques que formule
+                  d&#xe9;j&#xe0; B&#xe9;dier &#xe0; la fin des ann&#xe9;es 1920 sur les limites
+                  &#xe9;pist&#xe9;mologiques que supposent les <foreign>stemmata</foreign>
+                  <hi rend="brouillon">contradiction: la r&#xe9;gler en refusant l'id&#xe9;e de
+                     stemma et en parlant de mod&#xe8;le de proximit&#xe9; entre t&#xe9;moins, un
+                     truc comme &#xe7;a. En tous cas, on peut d&#xe9;terminer grosso modo des
+                     grandes familles?</hi><note><quote>Or, quand une fois [l'&#xe9;diteur] s'est
+                        arr&#xea;t&#xe9; &#xe0; l'&#xe9;tape, qu'il croit la derni&#xe8;re, d'un
+                        classement en trois familles, <hi rend="italique">x</hi>, <hi
+                           rend="italique">y</hi>, <hi rend="italique">z</hi>, il ne se peut
+                        gu&#xe8;re qu'il ne rencontre quelques variantes unissant <hi
+                           rend="italique">x</hi> et <hi rend="italique">y</hi> contre (ou <hi
+                           rend="italique">x</hi> et <hi rend="italique">z</hi> contre <hi
+                           rend="italique">y</hi>, ou <hi rend="italique">y</hi> et <hi
+                           rend="italique">x</hi> contre <hi rend="italique">z</hi>) qui lui
+                        sugg&#xe8;rent l'id&#xe9;e qu'elles peuvent repr&#xe9;senter des
+                        innovations, donc des fautes [...] la force dichotomique, une fois
+                        d&#xe9;cha&#xee;n&#xe9;e, agit jusqu'au bout. Le syst&#xe8;me lachmannien
+                        l'a lanc&#xe9; dans la chasse aux fautes communes, mais sans lui donner
+                        aucun moyen de savoir &#xe0; quel moment il a le devoir de
+                        s'arr&#xea;ter.</quote><ref type="bibl" n="bedier_tradition_1970"
+                        >B&#xe9;dier 1970:<measure type="page">15-16</measure></ref></note>. Une
+                  attention particuli&#xe8;re sera accord&#xe9;e &#xe0; l'utilisation d'outils
+                  informatiques pour l'&#xe9;tablissement de cet arbre de relations probables, en
+                  m'appuyant sur la recherche d&#xe9;j&#xe0; effectu&#xe9;e, par exemple, avec les
+                        <title><foreign>Canterbury Tales</foreign></title> &#xe0; la fin des
+                  ann&#xe9;es 1990 <ref type="bibl" n="barbrook_phylogeny_1998">Barbrook 1998</ref>. </p>
+               <p><!--2.2.3 Chronologie.--> Si l'on veut travailler sur de la variance, et
+                  consid&#xe9;rer le texte comme un t&#xe9;moin (au sens presque juridique du
+                  terme), il est indispensable de s'int&#xe9;resser et de tenter de dater avec
+                  pr&#xe9;cision les manuscrits sur lesquels je vais travailler. Le travail
+                  indiqu&#xe9; au paragraphe pr&#xe9;c&#xe9;dent pourra poser un premier jalon, avec
+                  une chronologie relative entre les t&#xe9;moins. Le t&#xe9;moin le plus
+                  r&#xe9;cent qu'est l'incunable de 1494, par sa grande variation<ref type="bibl"
+                     n="moulinier-brogi_science_2007"><measure type="page">10</measure></ref>, me
+                  para&#xee;t particuli&#xe8;rement int&#xe9;ressant: une &#xe9;tude des imprimeurs
+                  et des auteurs de ce t&#xe9;moin me semble indispensable pour d&#xe9;terminer la
+                  r&#xe9;ception du texte dans l'Espagne des Rois Catholiques, le texte ayant
+                  &#xe9;t&#xe9; imprim&#xe9; &#xe0; S&#xe9;ville, dans un contexte d'utilisation
+                  croissante de l'imprimerie par la monarchie dans un but de propagande<ref
+                     type="bibl" n="nieto_soria_origenes_1999"><measure type="page"
+                        >299-301</measure></ref>. Plus largement, un travail de mise en contexte
+                  historique, sera ainsi n&#xe9;cessaire, notamment sur la question de la
+                  production, de la r&#xe9;ception, de la transmission des textes. Il faudra ainsi
+                  travailler sur les ordres qui semblent souvent &#xea;tre &#xe0; l'origine des
+                  textes, en particulier les ordres franciscains; une &#xe9;tude des centres de
+                  production et de copie (notamment nobiliaires au XVe si&#xe8;cle, avec
+                  l'apparition et le fort d&#xe9;veloppement des biblioth&#xe8;ques priv&#xe9;es
+                     nobiliaires<ref type="bibl" n="beceiro_pita_libros_2007"/>) pourront permettre
+                  d'&#xe9;clairer l'histoire des t&#xe9;moins. De m&#xea;me, il sera important, dans
+                  mon &#xe9;tude mat&#xe9;rielle des textes, de reprendre l'&#xe9;tude
+                  h&#xe9;raldique r&#xe9;alis&#xe9;e en 2003 par F&#xe9;lix Mart&#xed;nez
+                     Llorente<ref type="bibl" n="diez_garretas_manuscritos_2003"><measure
+                        type="page">98-106</measure></ref> pour compl&#xe9;ter mon travail sur le
+                  contexte de production et de copie/re-cr&#xe9;ation des textes.</p>
+            </div>
+         </div>
+         <div xml:id="troisieme_partie">
+            <head>III - Un ensemble d'outils techniques &#xe0; mettre en place</head>
+            <p>Pour des raisons de praticit&#xe9; et de clart&#xe9;, j'ai d&#xe9;cid&#xe9; de
+               s&#xe9;parer les aspects techniques et plus th&#xe9;matiques dans la
+               pr&#xe9;sentation de mon projet de th&#xe8;se; cependant cette distinction est
+               artificielle tant les enjeux sont entrem&#xea;l&#xe9;s. Mon travail s'inscrit dans un
+               cadre de pens&#xe9;e qui est &#xe0; rapprocher de la <quote>philosophie du
+                  libre</quote><ref type="bibl" n="vainio_free_2007"/>: j'accorde une importance
+               particuli&#xe8;re &#xe0; la question du partage de la connaissance, tant savante que
+               technique. Mon travail sur les textes du <title><abbr>Regimiento</abbr></title>, tant
+               philologique qu'informatique, est intimement li&#xe9; &#xe0; ma r&#xe9;flexion
+               m&#xe9;thodologique.<!-- (comment faire?), &#xe9;pist&#xe9;mologique (sur quoi conclure?) autant que technique (quels outils mettre en place?)-->. <!--[développer cette idée]-->
+               <!--3.1 L'enjeu &#xe9;pist&#xe9;mique de l'&#xe9;dition standardis&#xe9;e.-->
+               <!--Lire VAINIO 2007--></p>
+            <div xml:id="III_1">
+               <head>Une &#xe9;dition &#xe9;lectronique native. Le standard XML-TEI/P5.</head>
+               <p><hi rend="brouillon"> Mon &#xe9;dition du Regimiento de pr&#xed;n&#xe7;ipes
+                     glosado sera <quote>nativement digitale</quote>: base tei, cr&#xe9;diter
+                     Ariane</hi> la transcription de base . La TEI (pour <foreign>Text Encoding
+                     Initiative</foreign>) est un consortium international de chercheurs en
+                  humanit&#xe9;s, fond&#xe9;e &#xe0; la fin des ann&#xe9;es 80, et qui a pour
+                  objectif la mise en place d'un standard de r&#xe8;gles d'&#xe9;ditions de textes
+                  de tous types, en utilisant le langage de description XML<note>Une bonne
+                     introduction &#xe0; XML peut &#xea;tre trouv&#xe9;e dans l'article de
+                        Salvador<ref type="bibl" n="salvador_isilex_2017"><measure type="page"
+                           >101-105</measure></ref> Voir aussi: <ref type="url"
+                        target="https://fr.wikipedia.org/wiki/Extensible_Markup_Language"/> et <ref
+                        type="url" target="https://fr.wikipedia.org/wiki/Text_Encoding_Initiative"
+                     /></note>. Ces r&#xe8;gles ou recommandations sont nomm&#xe9;es en anglais
+                     <foreign>Guidelines</foreign><note><ref type="url"
+                        target="http://www.tei-c.org/Guidelines/"/></note>; ce sont celles que je
+                  suis dans mon travail. Je trouve deux int&#xe9;r&#xea;ts majeurs et fondamentaux
+                  &#xe0; l'utilisation et la pratique de la norme d'&#xe9;dition de textes
+                  XML-TEI/P5. Le premier concerne la description id&#xe9;ale (au sens presque
+                  platonicien) des textes. Un encodage TEI id&#xe9;al permet une description du
+                  texte dans ce qu'il est, sans aucune interf&#xe9;rence avec la mani&#xe8;re dont
+                  il sera pr&#xe9;sent&#xe9; dans l'&#xe9;dition. En quelque sorte, un fichier
+                  XML-TEI propose <quote>un texte sans forme</quote>, l'id&#xe9;e du texte (ou du
+                  manuscrit, ou de l'oeuvre, suivant la vision envisag&#xe9;e) pure. Le second
+                  int&#xe9;r&#xea;t de la norme TEI/P5 r&#xe9;side &#xe0; mes yeux dans son
+                  caract&#xe8;re standard: son ambition id&#xe9;ale est ainsi de voir toutes les
+                  &#xe9;ditions scientifiques r&#xe9;alis&#xe9;es selon les m&#xea;mes normes, avec
+                  les m&#xea;mes r&#xe8;gles et pouvant &#xea;tre process&#xe9;es de la m&#xea;me
+                  mani&#xe8;re, pour pouvoir garantir une interoperabilit&#xe9; maximale, ainsi
+                  qu'une facilit&#xe9; de mise en place de travaux collaboratifs, comme par exemple
+                  avec le projet d'&#xe9;dition collaborative et ouverte de testaments de poilus,
+                  ouvert il y a peu<note><ref type="url"
+                        target="https://testaments-de-poilus.huma-num.fr"/></note>. Ainsi par
+                  exemple, une &#xe9;dition XML-TEI bien form&#xe9;e (c'est-&#xe0;-dire, conforme
+                  &#xe0; la syntaxe fondamentale du XML) et valide (conforme aux r&#xe8;gles
+                  &#xe9;dict&#xe9;es par la TEI) pourra &#xea;tre r&#xe9;utilis&#xe9;e dans d'autres
+                  projets, que son auteur n'avait peut &#xea;tre pas imagin&#xe9;s: on pourra
+                  int&#xe9;grer les textes &#xe9;dit&#xe9;s dans une base de donn&#xe9;e par
+                  exemple, un dictionnaire, ou autre. Le travail collaboratif en est simplifi&#xe9;,
+                  l'utilisation d'outils num&#xe9;riques, de programmes informatiques ou
+                  d'algorithmes pour traiter des textes, facilit&#xe9;e. En ce sens, si l'on se
+                  place dans la perspective plus large des humanit&#xe9;s num&#xe9;riques,
+                  l'int&#xe9;r&#xea;t de l'&#xe9;dition &#xe9;lectronique r&#xe9;side selon moi
+                  avant tout dans la possibilit&#xe9; de standardiser r&#xe9;ellement les textes (en
+                  consid&#xe9;rant comme horizon id&#xe9;al un usage exclusif de la TEI par les
+                  philologues). Les avantages d'une &#xe9;dition &#xe9;lectronique native sont
+                  &#xe9;videmment tr&#xe8;s importants, et on retient en g&#xe9;n&#xe9;ral
+                  l'id&#xe9;e de pouvoir proposer plus que ce qu'un livre imprim&#xe9; ou
+                  num&#xe9;ris&#xe9; peut faire; cependant je les consid&#xe8;re comme secondaires
+                  &#xe0; c&#xf4;t&#xe9; de la r&#xe9;elle r&#xe9;volution scientifique et
+                  &#xe9;pist&#xe9;mologique que constitue la cr&#xe9;ation et le maintien d'un
+                  standard de description de textes comme l'est la <foreign>Text Encoding
+                     Initiative</foreign>.</p>
+               <p>En amont du travail d'encodage des textes, il est important de r&#xe9;aliser deux
+                  op&#xe9;rations qui engageront toute l'&#xe9;dition. Ces deux op&#xe9;rations,
+                  intimement li&#xe9;es, sont les suivantes: d&#xe9;terminer, en premier lieu, quoi
+                  encoder et comment (normes de transcription, niveau de d&#xe9;tail de l'encodage
+                  des textes). Je compte travailler au plus pr&#xe8;s de la r&#xe9;alit&#xe9;
+                  textuelle. J'indiquerai donc la ponctuation, les abr&#xe9;viations, les sauts de
+                  ligne, les marques textuelles de seconde main/relecture (ajouts, suppressions,
+                  notes, passages surlign&#xe9;s), l'ensemble des donn&#xe9;es graphiques/textuelles
+                  qui entourent le texte et le mettent en forme (lettrines, rubriques, titres
+                  courants, mots d'appel, etc). Ce travail sera coupl&#xe9; de la r&#xe9;daction de
+                  la documentation de mon travail &#xe9;ditorial, par le biais d'un fichier XML
+                  nomm&#xe9; ODD<note>Il est possible de trouver plus d'information sur l'ODD ici
+                        <ref type="url"
+                        target="http://www.tei-c.org/Guidelines/Customization/odds.xml"/></note>
+                  (pour <quote><foreign>One Document Does it all</foreign></quote>, document
+                     tout-en-un<ref type="bibl" n="burnard_quest-ce_2015">Burnard 2015:<measure
+                        type="page">p. 93, traduction Marjorie Burghart.</measure></ref>). Ce
+                  document a deux utilit&#xe9;s principales. En simplifiant beaucoup, il permet
+                  d'abord une explication synth&#xe9;tique du travail d'encodage<ref type="bibl"
+                     n="burnard_quest-ce_2015">Burnard 2015:<measure type="page"
+                  >100</measure></ref>], et apr&#xe8;s transformation, donne un document (le
+                  sch&#xe9;ma) qui renferme de fa&#xe7;on compr&#xe9;hensible pour un ordinateur les
+                  r&#xe8;gles de la TEI, personnalis&#xe9;es pour mon travail, ce qui permet de
+                  travailler avec des gardes-fou (ce que l'on appelle la validation<note>Par
+                     exemple, le logiciel saura me dire <quote>tu es pass&#xe9; du folio 145v &#xe0;
+                        146v, attention!</quote>, ou, de fa&#xe7;on plus utile, <quote>tu ne
+                        respectes pas les r&#xe8;gles de la TEI, tu n'encodes pas de fa&#xe7;on
+                        standard: telle balise n'a pas sa place ici</quote>.</note>). </p>
+               <p>La vision que j'ai de ma th&#xe8;se d'&#xe9;dition serait de pouvoir proposer un
+                  panorama clair, bien que r&#xe9;duit &#xe0; la derni&#xe8;re partie du livre III,
+                  de l'histoire de cet ensemble de textes, avec la possibilit&#xe9; pour le lecteur
+                  de comparer les diff&#xe9;rentes versions, les diff&#xe9;rents t&#xe9;moins, de
+                  fa&#xe7;on globale et autonome, mais aussi et avant tout guid&#xe9;e<note>Dans le
+                     cadre de ce travail, je voudrais pouvoir poser les bases d'un outil technique
+                     de recherche et d'interrogation des exemples pr&#xe9;sents dans mon texte,
+                     point qui m'a d&#xe9;j&#xe0; int&#xe9;ress&#xe9; dans la premi&#xe8;re de mes
+                     deux petites &#xe9;ditions digitales. Comme il m'a sembl&#xe9; important de le
+                     mentionner, la part d'exempla est importante dans l'ouvrage et je veux les
+                     &#xe9;tudier. Une mise en valeur de cette mati&#xe8;re narrative me semble un
+                     objectif important: j'ai comme objectif final la cr&#xe9;ation d'une base de
+                     donn&#xe9;es qui rassemblerait ces exemples. Mon &#xe9;dition html de la
+                     premi&#xe8;re partie du texte proposait un petit outil d'indexation que je
+                     reprendrai dans mon &#xe9;dition &#xe0; venir. &#xc0; plus long terme,
+                     l'id&#xe9;e est d'&#xe9;tendre cette base de donn&#xe9;es &#xe0; tous les
+                     exemples de la litt&#xe9;rature en castillan ou en espagnol</note>. Mon
+                  &#xe9;dition devra &#xea;tre accompagn&#xe9;e d'une r&#xe9;flexion pratique sur la
+                  mani&#xe8;re la plus efficace de mener le lecteur au point o&#xf9; je veux aller:
+                  il me faudra &#xe9;viter l'&#xe9;cueil d'une &#xe9;dition complexe et peu
+                  ergonomique, voire illisible pour le lecteur.</p>
+            </div>
+            <div xml:id="III_2">
+               <head>R&#xe9;daction, vulgarisation, communication</head>
+               <p> Cette derni&#xe8;re id&#xe9;e m'am&#xe8;ne &#xe0; parler du dernier point que je
+                  veux aborder dans ce projet de th&#xe8;se: les enjeux p&#xe9;dagogiques, de
+                  diffusion et de communication de mon travail. En effet, il me semble important de
+                  r&#xe9;fl&#xe9;chir &#xe0; la mani&#xe8;re dont mon &#xe9;dition va &#xea;tre
+                  diffus&#xe9;e et lue. Synoptique, elle aura besoin d'un minimum de guidage de ma
+                  part, au travers de rails qu'il me faudra penser et construire (je donnerai un
+                  petit exemple, l'encadr&#xe9; <quote>options</quote> de mon &#xe9;dition des
+                  prologues, qui indique quels manuscrits sont proches selon des crit&#xe8;res
+                        formels<note><ref type="url"
+                        target="http://perso.ens-lyon.fr/matthias.gille-levenson/etude-prologues/Prologues.html#option2"
+                     /></note>)<hi rend="brouillon">Approfondir</hi>.</p>
+               <p> J'ai pour projet de r&#xe9;diger ma th&#xe8;se en suivant le m&#xea;me standard
+                  XML-TEI/P5. &#xc9;crire ma th&#xe8;se en respectant ce standard pourra faciliter
+                  la cr&#xe9;ation de liens entre deux documents au m&#xea;me format, l'&#xe9;dition
+                  et son commentaire. Cela ne changerait rien au niveau de l'apparence finale des
+                  textes, mais le partage de mon travail s'en trouverait facilit&#xe9;<note>La
+                     communaut&#xe9; de la TEI offre d&#xe9;j&#xe0; la possibilit&#xe9;
+                     d'&#xe9;crire des articles scientifiques en XML selon des r&#xe8;gles
+                     sp&#xe9;cifiques: <ref type="url"
+                        target="http://www.tei-c.org/release/doc/tei-p5-exemplars/html/tei_jtei.doc.html"
+                     /></note>. Je me propose ainsi de r&#xe9;diger ma th&#xe8;se selon ce m&#xea;me
+                  standard d'encodage des textes, pour la transformer en LaTeX ensuite<note>on peut
+                     trouver la documentation d'un processus &#xe9;ditorial - au sens technique du
+                     terme - &#xe9;quivalent ici: <ref type="url"
+                        target="http://perso.ens-lyon.fr/matthias.gille-levenson/these/process.pdf"
+                     />, p.99 notamment</note>. L'int&#xe9;r&#xea;t r&#xe9;side dans ce que j'ai
+                  expos&#xe9; plus haut: il s'agira de cr&#xe9;er un texte dont la mise en page ne
+                  sera qu'un d&#xe9;tail final et qui sera parfaitement standardis&#xe9;e: la
+                  s&#xe9;paration entre les id&#xe9;es expos&#xe9;es dans mon travail et la
+                  mani&#xe8;re de les mettre en forme, en texte, sera maximale. Ce projet de
+                  th&#xe8;se est lui-m&#xea;me issu d'un document conforme &#xe0; la norme
+                  XML-TEI/P5 et transform&#xe9; en document LaTeX<note>Ci-contre le lien vers le
+                     dossier GitHub qui documente l'ensemble du processus: <ref type="url"
+                        target="https://github.com/mattlev2/TEI_to_These"/></note>. Je tenterai
+                  ainsi de proposer une vision nouvelle de la th&#xe8;se, fondamentalement
+                  &#xe9;lectronique. Ce point rejoint une id&#xe9;e expos&#xe9;e plus haut: il est
+                  important de d&#xe9;terminer de nouvelles fa&#xe7;ons d'illustrer ou d'argumenter
+                  un propos, quand on travaille sur des objets scientifiques nouveaux comme
+                  l'&#xe9;dition &#xe9;lectronique. Comment faire le lien dans une &#xe9;dition
+                  &#xe9;lectronique entre la th&#xe8;se et cette &#xe9;dition? Ce question devra
+                  trouver une r&#xe9;ponse au cours de mes ann&#xe9;es de doctorat. </p>
+               <p/>
+               <p>Par ailleurs, je pense alimenter un carnet de recherche technique, qui expliquerai
+                  au fur-et-&#xe0;-mesure de l'avancement de mon travail les choix, les enjeux qui y
+                  sont impliqu&#xe9;s. Il me permettra aussi de proposer des articles d'explication
+                  des fondamentaux de tel ou tel outil informatique: je crois &#xe0; la formation
+                  autonome, mais je sais aussi par exp&#xe9;rience que les premiers pas avec un
+                  langage informatique, avec un standard, etc, sont les plus difficiles, d'autant
+                  plus que les ressources en langue anglaise sont pr&#xe9;dominantes. Je ne
+                  s&#xe9;pare pas ce versant p&#xe9;dagogique et de communication/vulgarisation du
+                  premier versant plus proprement scientifique: dans un projet comme le mien, la
+                  clart&#xe9; dans la documentation et l'explication de la d&#xe9;marche du
+                  chercheur est essentielle, pour des raisons de partage de connaissance et de
+                  m&#xe9;thode notamment.</p>
+            </div>
+            <!--3.2) Le travail sur la variance s'accomode parfaitement des outils informatiques.
+               3.3) Des enjeux pédagogiques/didactiques/de vulgarisation. 3.4) Une nouvelle manière d'écrire sa thèse: suivre le standard TEI/P5.-->
+         </div>
+         <div xml:id="quatrieme_partie">
+            <head>IV - Localisation</head>
+            <p>Je souhaiterais pouvoir travailler avec Carlos Heusch, qui me dirige depuis mon M1.
+               Professeur des Universit&#xe9;s, chercheur au CIHAM [Centre Interuniversitaire
+               d'Histoire et d'Arch&#xe9;ologie M&#xe9;di&#xe9;vales] - Histoire, arch&#xe9;ologie,
+               litt&#xe9;ratures des mondes chr&#xe9;tiens et musulmans m&#xe9;di&#xe9;vaux, il a en
+               effet beaucoup travaill&#xe9; sur des questions de th&#xe9;orisation politique (<hi
+                  rend="petites_capitales">Theorica II</hi>), sur les concepts de chevalerie et de
+               lignage en particulier, avec de nombreux articles consacr&#xe9;s &#xe0; ce sujet.
+               L'oeuvre que je veux &#xe9;tudier a aussi &#xe9;t&#xe9; comment&#xe9;e &#xe0;
+               plusieurs reprises par Carlos Heusch<note><ref type="bibl"
+                     n="heusch_translation_2005">Heusch 2005</ref>
+                  <ref type="bibl" n="heusch_caballeriayer_2010">Heusch 2010a</ref>
+                  <ref type="bibl" n="heusch_biografidebate:_2010">Heusch
+               2010b:291-296</ref></note>. Je pense aussi travailler avec Francisco Bautista,
+               Professeur titulaire &#xe0; l'Universit&#xe9; de Salamanque, qui a &#xe9;t&#xe9; le
+               co-directeur de mon M&#xe9;moire de Master III. Sur le versant Humanit&#xe9;s
+               Num&#xe9;riques, je voudrais pouvoir &#xea;tre encadr&#xe9; par Marjorie Burghart,
+               elle-m&#xea;me charg&#xe9;e de recherche au CIHAM. Marjorie Burghart a &#xe9;t&#xe9;
+               ma formatrice principale du point de vue de la TEI, lors des diff&#xe9;rents stages
+               que j'ai pu r&#xe9;aliser &#xe0; Lyon ou ailleurs dans le cadre du <ref type="url"
+                  target="https://www.digitalmanuscripts.eu/">DEMM</ref>. En ce qui concerne le
+               rattachement &#xe0; un laboratoire de recherche, mon travail me semble s'inscrire
+               assez bien dans le cadre de recherche du CIHAM. Il se pr&#xea;te assez ais&#xe9;ment
+               &#xe0; un rattachement &#xe0; plusieurs axes de recherche, dont les trois suivants
+               m'ont paru les plus proches de mon travail: <list>
+                  <item>Axe 2: <hi rend="petites_capitales">Pouvoir et autorit&#xe9;</hi>
+                     <!--<quote>Culture nobiliaire / Les mots pour le dire.</quote>--></item>
+                  <item>Axe 4: <hi rend="petites_capitales">&#xc9;criture, livre,
+                     translation</hi>.</item>
+                  <item> Axe 3: <hi rend="petites_capitales">Construction et communication des
+                        savoirs</hi>, dont Carlos Heusch est co-responsable avec Laurence
+                     Moulinier.</item>
+                  <item>Axe transversal 5: <hi rend="petites_capitales">Humanit&#xe9;s
+                        num&#xe9;riques</hi>.</item>
+               </list>
+               <!--- Conclusion importante: j'espère avoir bien montré que Sur «le texte»: l'hypothèse de travail qui motive ce projet de thèse est qu'il n'y a pas de «texte», mais «des textes». Pour l'instant donc, je parlerai de corpus. (?) Sur le titre: le titre canonique du texte est Glosa castellana al regimiento de prínçpes. Au cours de mon travail de Master II, il m'a semblé important d'insister sur la nécessité de trouver un titre plus adapté à ce corpus. En effet, du point de vue de la réception du texte, c'est bien du De regimine principum qui OBJECTIFS DU TRAVAIL: déterminer l'histoire du texte, les raisons de la recomposition de la glose. Pourquoi on reforme un texte qui va prendre son indépendance par rapport à l'original, et où l'original disparaît peu à peu ?--></p>
+         </div>
+      </body>
+      <back>
+         <div xml:id="V" type="bibliographie">
+            <head>V - Bibliographie indicative </head>
+            <!--Comment insérer la biblio?-->
+            <p rend="sans_indentation">Ci-dessous la bibliographie indicative de mon projet de
+               th&#xe8;se <hi rend="brouillon">S&#xe9;parer en sources principales, sources
+                  secondaires</hi>
+               <!--<hi rend="brouillon">Faire attention &#xe0; la biblio : g&#xe9;rer le probl&#xe8;me des lettres accentu&#xe9;es mal ordonn&#xe9;es par Biblatex (d&#xed;ez garretas)</hi>--><note>Une
+                  bibliographie plus exhaustive est accessible <ref type="url"
+                     target="http://perso.ens-lyon.fr/matthias.gille-levenson/these/biblio.html"
+                     >ici</ref>.</note>. <ref type="bibliographie" target="biblio.biblatex"/>
+            </p>
+         </div>
+      </back>
+   </text>
+</TEI>
