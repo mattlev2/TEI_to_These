@@ -10,9 +10,17 @@
     <xsl:template match="/">
         <xsl:text>\title{</xsl:text>
         <xsl:apply-templates select="/tei:TEI/tei:teiHeader//tei:titleStmt/tei:title"/>
+        <xsl:text>\vspace{-6ex}}</xsl:text>
+        <xsl:text>\begin{document}</xsl:text>
+        <xsl:text>\auteur{</xsl:text>
+        <xsl:value-of select="tei:TEI//tei:publisher/tei:persName"/>
+        <xsl:text>\\</xsl:text>
+        <xsl:value-of select="translate(tei:TEI//tei:publisher/tei:persName/@type, '_', ' ')"/>
+        <xsl:text>}
+       {\let\newpage\relax\maketitle}%voir https://tex.stackexchange.com/questions/86249/maketitle-text-before-title
+       \legende{</xsl:text>
+        <xsl:value-of select="//tei:sourceDesc/tei:p"/>
         <xsl:text>}</xsl:text>
-        <xsl:text>\begin{document}
-        \maketitle</xsl:text>
         <xsl:apply-templates/>
     </xsl:template>
 
@@ -51,6 +59,24 @@
         <xsl:apply-templates/>
     </xsl:template>
 
+
+    <!--Mise en page de la date-->
+    <xsl:template match="tei:date">
+        <xsl:text>\textsc{</xsl:text>
+        <xsl:value-of select="text()"/>
+        <xsl:text>}</xsl:text>
+        <xsl:if test="tei:abbr">
+            <xsl:text>\textsuperscript{</xsl:text>
+            <xsl:value-of select="tei:abbr"/>
+            <xsl:text>}</xsl:text>
+        </xsl:if>
+    </xsl:template>
+    <!--Mise en page de la date-->
+
+    <xsl:template match="tei:abbr">
+                <xsl:apply-templates/>
+    </xsl:template>
+
     <xsl:template name="titre" match="tei:title">
         <xsl:choose>
             <xsl:when test="parent::tei:hi">
@@ -83,9 +109,7 @@
         <xsl:text>}</xsl:text>
     </xsl:template>
 
-    <xsl:template match="tei:abbr">
-        <xsl:apply-templates/>
-    </xsl:template>
+
 
 
     <xsl:template match="tei:ref">
