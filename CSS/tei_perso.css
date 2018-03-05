@@ -247,6 +247,8 @@ TEI {
 abbr {
     display: inline;
 }
+
+
 add {
     display: inline;
     color: green;
@@ -433,6 +435,11 @@ creation {
 }
 date {
     display: inline;
+}
+
+date > abbr {
+    vertical-align: super;
+    font-size:small;
 }
 
 change > date,
@@ -745,12 +752,12 @@ hi[rend = 'brouillon'] {
     color: rgb(153, 0, 0);
 }
 
-hi[rend = 'brouillon']:before{
-    content:' ['
+hi[rend = 'brouillon']:before {
+    content: ' ['
 }
 
-hi[rend = 'brouillon']:after{
-    content:'] '
+hi[rend = 'brouillon']:after {
+    content: '] '
 }
 
 hi[rend = "bold"] {
@@ -1241,6 +1248,13 @@ time {
 }
 title {
     display: inline;
+    font-style: italic;
+}
+
+
+title > abbr {
+    display: inline;
+    font-style: italic;
 }
 
 seriesStmt > title,

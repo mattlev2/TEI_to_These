@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--Attention à bien régulariser l'emploi des <quote/>: un texte entre guillemets n'est pas nécessairement une citation-->
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
   xml:lang="en">
@@ -75,7 +75,7 @@
                   <gloss>Lien vers un URL</gloss>
                 </valItem>
                 <valItem ident="bibl">
-                  <gloss>Renvoi à une référence bibliographique</gloss>
+                  <gloss>Renvoi à une référence bibliographique qui doit apparaître dans la bibliographie</gloss>
                 </valItem>
                 <valItem ident="bibliographie">
                   <gloss>Renvoi à la bibliographie</gloss>

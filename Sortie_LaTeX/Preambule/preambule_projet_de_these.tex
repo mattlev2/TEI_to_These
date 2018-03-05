@@ -46,6 +46,10 @@
 \setcounter{secnumdepth}{0}
 %profondeur de la numérotation structurelle
 
+
+\newcommand{\legende}[1]{\begin{center}\LARGE#1\normalsize\end{center}}%Centrer une portion de texte, police moyenne
+\newcommand{\auteur}[1]{\large \noindent #1\normalsize}%crée une macro pour l'auteur (en haut à gauche de la page)
+
 %ESPACEMENT DU TITRE
 %\titlespacing*{\tableofcontents}{-90pt}{-70pt}{10pt}
 %ESPACEMENT DU TITRE
@@ -184,6 +188,7 @@
 \subfile{/Users/Matt/Desktop/Pre-these/Projet_de_these/Sortie_LaTeX/Bibliographie/Biblio_projet_de_these.tex}
 \addbibresource{\jobname.bib}
 \title{Bibliographie}
+\date{}%Enlever la date quand on utilise \maketitle
 %\usepackage[urlcolor=green]{hyperref}%r\UTF{00E9}f\UTF{00E9}rences internes au document (toc, etc) \UTF{00E0} mettre en dernier
 
 
