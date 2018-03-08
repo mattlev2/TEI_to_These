@@ -59,6 +59,11 @@
         <xsl:apply-templates/>
     </xsl:template>
 
+<xsl:template match="tei:num">
+    <xsl:text>\textsc{</xsl:text>
+    <xsl:value-of select="."/>
+    <xsl:text>}</xsl:text>
+</xsl:template>
 
     <!--Mise en page de la date-->
     <xsl:template match="tei:date">
