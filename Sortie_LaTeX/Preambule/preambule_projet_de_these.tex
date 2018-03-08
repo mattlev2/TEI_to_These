@@ -1,7 +1,7 @@
 \usepackage[T1]{fontenc} 
 \usepackage{fbb}
 \usepackage[latin1]{inputenc}
-\usepackage[francais]{babel}
+\usepackage[frenchb]{babel}
 \usepackage{lipsum}
 %Différents types de guillemets selon la tradition du pays
 \usepackage{csquotes}
@@ -24,7 +24,7 @@
 \makeatother
 %Bonne hyphenation des urls
 
-\usepackage[top=2.5cm, bottom=1.5cm, left=2.25cm,right=2.25cm, heightrounded, marginparwidth=2.5cm, marginparsep=0.8cm, includefoot]{geometry}
+\usepackage[top=1.5cm, bottom=1.5cm, left=2cm,right=2cm, heightrounded, marginparwidth=2.5cm, marginparsep=0.8cm, includefoot]{geometry}
 
 %ESPACE ENTRE LES LIGNES
 %\DisemulatePackage{setspace}%n\UTF{00E9}cessaire pour que \UTF{00E7}a marche avec memoir
@@ -47,8 +47,8 @@
 %profondeur de la numérotation structurelle
 
 
-\newcommand{\legende}[1]{\begin{center}\LARGE#1\normalsize\end{center}}%Centrer une portion de texte, police moyenne
-\newcommand{\auteur}[1]{\large \noindent #1\normalsize}%crée une macro pour l'auteur (en haut à gauche de la page)
+\newcommand{\legende}[1]{\begin{center}\LARGE\textbf{#1}\normalsize\end{center}}%Centrer une portion de texte, police moyenne
+\newcommand{\auteur}[1]{\large \noindent #1 \normalsize}%crée une macro pour l'auteur (en haut à gauche de la page)
 
 %ESPACEMENT DU TITRE
 %\titlespacing*{\tableofcontents}{-90pt}{-70pt}{10pt}

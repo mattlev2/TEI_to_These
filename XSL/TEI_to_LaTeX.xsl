@@ -47,6 +47,7 @@
         <xsl:value-of select="tei:head/text()"/>
         <xsl:text>\textit{</xsl:text>
         <xsl:value-of select="tei:head/tei:title"/>
+        <xsl:value-of select="tei:head/tei:foreign"/>
         <xsl:text>}</xsl:text>
         <!--Pas propre du tout. Trouver une façon de le faire mieux-->
         <xsl:text>}</xsl:text>
