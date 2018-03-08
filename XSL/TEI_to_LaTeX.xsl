@@ -10,17 +10,17 @@
     <xsl:template match="/">
         <xsl:text>\title{</xsl:text>
         <xsl:apply-templates select="/tei:TEI/tei:teiHeader//tei:titleStmt/tei:title"/>
-        <xsl:text>\vspace{-6ex}}</xsl:text>
+        <xsl:text>\vspace{-4ex}}</xsl:text>
         <xsl:text>\begin{document}</xsl:text>
         <xsl:text>\auteur{</xsl:text>
         <xsl:value-of select="tei:TEI//tei:publisher/tei:persName"/>
         <xsl:text>\\</xsl:text>
         <xsl:value-of select="translate(tei:TEI//tei:publisher/tei:persName/@type, '_', ' ')"/>
-        <xsl:text>}
-       {\let\newpage\relax\maketitle}%voir https://tex.stackexchange.com/questions/86249/maketitle-text-before-title
-       \legende{</xsl:text>
+        <xsl:text>\vspace{2ex}}
+            \legende{</xsl:text>
         <xsl:value-of select="//tei:sourceDesc/tei:p"/>
-        <xsl:text>}</xsl:text>
+        <xsl:text>\vspace{-4ex}}</xsl:text>
+       {\let\newpage\relax\maketitle}%voir https://tex.stackexchange.com/questions/86249/maketitle-text-before-title
         <xsl:apply-templates/>
     </xsl:template>
 
@@ -42,7 +42,13 @@
                 <xsl:text>\section{</xsl:text>
             </xsl:otherwise>
         </xsl:choose>
-        <xsl:value-of select="tei:head"/>
+        <!--Appliquer les règles des titres dans les sections. 
+            Pas propre du tout. Trouver une façon de le faire mieux-->
+        <xsl:value-of select="tei:head/text()"/>
+        <xsl:text>\textit{</xsl:text>
+        <xsl:value-of select="tei:head/tei:title"/>
+        <xsl:text>}</xsl:text>
+        <!--Pas propre du tout. Trouver une façon de le faire mieux-->
         <xsl:text>}</xsl:text>
         <xsl:apply-templates/>
     </xsl:template>
@@ -191,9 +197,9 @@
     </xsl:template>
 
     <xsl:template match="tei:quote">
-        <xsl:text>``</xsl:text>
+        <xsl:text>«</xsl:text>
         <xsl:apply-templates/>
-        <xsl:text>''</xsl:text>
+        <xsl:text>»</xsl:text>
     </xsl:template>
 
     <xsl:template match="tei:foreign">
